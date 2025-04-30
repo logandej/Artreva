@@ -27,7 +27,7 @@
                     "name": "Is Tracked",
                     "type": "Button",
                     "id": "6bb4e248-e42b-47c3-b66c-79566508ca74",
-                    "expectedControlType": "Button",
+                    "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
@@ -500,6 +500,17 @@
                     "isPartOfComposite": true
                 },
                 {
+                    "name": "",
+                    "id": "1484cbe9-9168-49da-ac7f-72fe14dd171d",
+                    "path": "<PicoAimHand>/deviceRotation",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Rotation",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
                     "name": "Vector 3 Fallback",
                     "id": "14aeff85-d719-43ff-a124-b1cd7ca8686d",
                     "path": "Vector3Fallback",
@@ -542,6 +553,17 @@
                     "action": "Position",
                     "isComposite": false,
                     "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "d2ecb642-96d5-4951-ad04-4ff0b2397c26",
+                    "path": "<PicoAimHand>/devicePosition",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Position",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 },
                 {
                     "name": "",
@@ -622,6 +644,17 @@
                 },
                 {
                     "name": "",
+                    "id": "1ce4f6fd-96cc-4026-9dfa-602cf4f98f16",
+                    "path": "<PicoAimHand>{LeftHand}/devicePosition",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Aim Position",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "2623b909-75bd-40da-97bd-ae1ecfb0a89b",
                     "path": "<MetaAimHand>{LeftHand}/deviceRotation",
                     "interactions": "",
@@ -657,6 +690,17 @@
                     "name": "",
                     "id": "4848899c-8c90-455a-a915-6422290f501b",
                     "path": "<HoloLensHand>{LeftHand}/pointer/rotation",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Aim Rotation",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "2df028e5-e3e2-4faf-bfae-5f241733d918",
+                    "path": "<PicoAimHand>{LeftHand}/deviceRotation",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -822,6 +866,17 @@
                     "name": "",
                     "id": "286f44f6-74a5-4f92-8468-42445c7a3cb8",
                     "path": "<MetaAimHand>{LeftHand}/aimFlags",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Meta Aim Flags",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "fcea1c2e-0845-40f7-8f48-8adcccd7b21b",
+                    "path": "<PicoAimHand>{LeftHand}/aimFlags",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -1715,6 +1770,17 @@
                 },
                 {
                     "name": "",
+                    "id": "a2a4c011-25bf-4a29-81da-ac035e12f9e4",
+                    "path": "<PicoAimHand>{RightHand}/devicePosition",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Aim Position",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "2bb1158a-2d78-446b-9351-6f9b3f1364cb",
                     "path": "<MetaAimHand>{RightHand}/deviceRotation",
                     "interactions": "",
@@ -1750,6 +1816,17 @@
                     "name": "",
                     "id": "2fac2635-e015-4fb7-9578-34b85a5d5797",
                     "path": "<HoloLensHand>{RightHand}/pointer/rotation",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Aim Rotation",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "91d31141-e022-4933-80a9-1a2aab5cfa81",
+                    "path": "<PicoAimHand>{RightHand}/deviceRotation",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -1915,6 +1992,17 @@
                     "name": "",
                     "id": "5469d4d1-9645-4397-a596-d74f876eafc2",
                     "path": "<MetaAimHand>{RightHand}/aimFlags",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Meta Aim Flags",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "19abbf62-4556-4e80-9910-bfa98a415eba",
+                    "path": "<PicoAimHand>{RightHand}/aimFlags",
                     "interactions": "",
                     "processors": "",
                     "groups": "",

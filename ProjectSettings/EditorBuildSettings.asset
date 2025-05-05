@@ -20,9 +20,12 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/VRAssets/Scenes/PicoHandSeeThrough.unity
     guid: 9635e9f5d92210c4b847dda015119c4e
-  - enabled: 1
+  - enabled: 0
     path: Assets/VRAssets/Scenes/PicoHandGesture.unity
     guid: be4b498c5f05c284f96ee018847524f2
+  - enabled: 1
+    path: Assets/Scenes/IntroScene.unity
+    guid: 7883c6f9d871751488aa907161adae4d
   m_configObjects:
     Unity.XR.PICO.LivePreview.Settings: {fileID: 11400000, guid: 498920830a5e5ae4daaa8b485bd88b1b, type: 2}
     Unity.XR.PXR.Settings: {fileID: 11400000, guid: 5faf208111cfda54698690fcce7327f0, type: 2}

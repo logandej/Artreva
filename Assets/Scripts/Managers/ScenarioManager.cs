@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class ScenarioManager : MonoBehaviour
@@ -5,11 +6,13 @@ public class ScenarioManager : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
 
     [Header("FirstEnigma")]
-    [SerializeField] OrbSocket OrbDateSocket;
-    [SerializeField] Orb orbDate;
+    [SerializeField] List<OrbEnigma> orbEnigma;
     void Start()
     {
-        OrbDateSocket.SetAllowedOrb(orbDate);       
+        foreach (var enigma in orbEnigma)
+        {
+            enigma.StartEnigma();
+        }
     }
 
     // Update is called once per frame

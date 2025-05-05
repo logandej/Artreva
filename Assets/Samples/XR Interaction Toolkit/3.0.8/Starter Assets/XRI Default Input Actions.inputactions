@@ -1233,6 +1233,17 @@
                 },
                 {
                     "name": "",
+                    "id": "a22a5133-3a87-48af-94ea-86359fcd5625",
+                    "path": "<PicoAimHand>{LeftHand}/indexPressed",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "UI Press",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "71d94579-1bf4-4034-ab9e-e7166842128f",
                     "path": "<XRController>{LeftHand}/{Trigger}",
                     "interactions": "",
@@ -1268,6 +1279,17 @@
                     "name": "",
                     "id": "c7b5ae56-e532-43a3-a053-8d66df507df1",
                     "path": "<HoloLensHand>{LeftHand}/select",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "UI Press Value",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "e4f1c7bf-ff5a-4a35-a933-1dd3f7337fb6",
+                    "path": "<PicoAimHand>{LeftHand}/pinchStrengthIndex",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -2348,6 +2370,17 @@
                 },
                 {
                     "name": "",
+                    "id": "e770df6c-e381-41bb-8400-0400222068ff",
+                    "path": "<PicoAimHand>{RightHand}/indexPressed",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "UI Press",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "5b4ef08d-9ddd-4f0a-8539-d1114d14d143",
                     "path": "<XRController>{RightHand}/{Trigger}",
                     "interactions": "",
@@ -2383,6 +2416,17 @@
                     "name": "",
                     "id": "e2fbf204-5031-483f-beaa-abf05113dbc7",
                     "path": "<HoloLensHand>{RightHand}/select",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "UI Press Value",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "cfd62ee5-1ffd-4b7e-9dcb-b419acf9b011",
+                    "path": "<PicoAimHand>{RightHand}/pinchStrengthIndex",
                     "interactions": "",
                     "processors": "",
                     "groups": "",

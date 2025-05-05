@@ -8,13 +8,16 @@ public class OrbSocket : MonoBehaviour
 {
     private List<Orb> allowedOrbs = new List<Orb>();
 
-    //private Orb currentAttachedOrb;
+    private Orb currentAttachedOrb;
 
     [SerializeField] MeshRenderer mesh;
     private Color defaultMeshColor;
 
     public UnityEvent eventValidate = new();
     public UnityEvent eventRefuse = new();
+
+    public UnityEvent eventOrbInSocket = new();
+    public UnityEvent eventOrbOutSocket = new();
 
     #region XREvents
 
@@ -43,7 +46,9 @@ public class OrbSocket : MonoBehaviour
     {
         if (IsOrb(args.interactableObject, out Orb orb))
         {
-            OnSelectOrb(orb);
+            //OnSelectOrb();
+            currentAttachedOrb = orb;
+            eventOrbInSocket?.Invoke();
         }
     }
 
@@ -51,7 +56,9 @@ public class OrbSocket : MonoBehaviour
     {
         if (IsOrb(args.interactableObject, out Orb orb))
         {
+            currentAttachedOrb = null;
             ChangeColor(defaultMeshColor);
+            eventOrbOutSocket?.Invoke();
         }
     }
     #endregion
@@ -67,9 +74,9 @@ public class OrbSocket : MonoBehaviour
         this.allowedOrbs = allowedOrbs;
     }
 
-    private void OnSelectOrb(Orb orb)
+    public void ShowIfGood()
     {
-        if (CheckOrb(orb))
+        if (CheckOrb())
         {
             ValidateOrb();
         }
@@ -80,9 +87,9 @@ public class OrbSocket : MonoBehaviour
     }
 
     //Check if the orb is a good answer or not
-    private bool CheckOrb(Orb orb)
+    public bool CheckOrb()
     {
-        return allowedOrbs.Contains(orb);
+        return allowedOrbs.Contains(currentAttachedOrb);
     }
 
     //Validate the Orb, which means it was a good answer

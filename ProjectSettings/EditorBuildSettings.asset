@@ -6,22 +6,22 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 0
-    path: Assets/Scenes/picoHandTracking.unity
+    path: Assets/VRAssets/Scenes/picoHandTracking.unity
     guid: e17d7144c87c3e542858c0930c1d011c
   - enabled: 0
     path: Assets/Samples/XR Interaction Toolkit/3.0.8/Starter Assets/DemoScene.unity
     guid: 319dafa5c80f29f428dc1e0d03f04177
   - enabled: 0
-    path: Assets/Scenes/SampleScene.unity
+    path: Assets/VRAssets/Scenes/SampleScene.unity
     guid: 99c9720ab356a0642a771bea13969a05
   - enabled: 0
     path: Assets/Samples/XR Interaction Toolkit/3.0.8/Hands Interaction Demo/HandsDemoScene.unity
     guid: 3ff35cecbcc52cc42945cf531638a60a
-  - enabled: 1
-    path: Assets/Scenes/PicoHandSeeThrough.unity
-    guid: 9635e9f5d92210c4b847dda015119c4e
   - enabled: 0
-    path: Assets/Scenes/PicoHandGesture.unity
+    path: Assets/VRAssets/Scenes/PicoHandSeeThrough.unity
+    guid: 9635e9f5d92210c4b847dda015119c4e
+  - enabled: 1
+    path: Assets/VRAssets/Scenes/PicoHandGesture.unity
     guid: be4b498c5f05c284f96ee018847524f2
   m_configObjects:
     Unity.XR.PICO.LivePreview.Settings: {fileID: 11400000, guid: 498920830a5e5ae4daaa8b485bd88b1b, type: 2}

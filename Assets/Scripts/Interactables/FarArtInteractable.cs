@@ -1,16 +1,18 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 public class FarArtInteractable : MonoBehaviour
 {
     [Header("Activation Settings")]
-    public float activationDelay = 1f;
-    public bool canDeactivate = true;
-    public float deactivationDelay = 1f;
+    [SerializeField] float activationDelay = 1f;
+    [SerializeField] bool canDeactivate = true;
+    [SerializeField] float deactivationDelay = 1f;
 
     private bool isFocusing = false;
     private bool isActive = false;
     private float focusTimer = 0f;
 
+    public UnityEvent eventActivated = new();
     void Update()
     {
         if (isFocusing)
@@ -50,9 +52,10 @@ public class FarArtInteractable : MonoBehaviour
         {
             Invoke(nameof(DeactivateNow), deactivationDelay);
         }
+        eventActivated?.Invoke();
     }
 
-    private void DeactivateNow()
+    public void DeactivateNow()
     {
         isActive = false;
         focusTimer = 0f;

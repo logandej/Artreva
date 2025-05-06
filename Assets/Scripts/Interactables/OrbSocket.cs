@@ -28,7 +28,7 @@ public class OrbSocket : MonoBehaviour
 
     public void HoverEntered(HoverEnterEventArgs args)
     {
-        if(IsOrb(args.interactableObject,out Orb orb))
+        if(IsOrb(args.interactableObject,out Orb orb) && currentAttachedOrb==null)
         {
             ChangeLocalScale(Vector3.one/2);
         }
@@ -36,7 +36,7 @@ public class OrbSocket : MonoBehaviour
 
     public void HoverExited(HoverExitEventArgs args)
     {
-        if(IsOrb(args.interactableObject, out Orb orb))
+        if(IsOrb(args.interactableObject, out Orb orb) && currentAttachedOrb==null)
         {
             ChangeLocalScale(Vector3.one / 3);
         }

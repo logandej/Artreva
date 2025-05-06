@@ -159,6 +159,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8713473791493706137, guid: 11928dd7f463ebc42aaed5a100dcec8c, type: 3}
+      propertyPath: m_MaxDistance
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8713473791493706137, guid: 11928dd7f463ebc42aaed5a100dcec8c, type: 3}
+      propertyPath: m_SmoothingSpeed
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 8713473791493706137, guid: 11928dd7f463ebc42aaed5a100dcec8c, type: 3}
+      propertyPath: m_ClampToMaxDistance
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9179421079549415499, guid: 11928dd7f463ebc42aaed5a100dcec8c, type: 3}
       propertyPath: m_PresetInfoIsWorld
       value: 1

@@ -30,7 +30,8 @@ public class OrbSocket : MonoBehaviour
     {
         if(IsOrb(args.interactableObject,out Orb orb) && currentAttachedOrb==null)
         {
-            ChangeLocalScale(Vector3.one/2);
+            //ChangeLocalScale(Vector3.one/2);
+            ObjectHelper.ChangeLocalScale(this.gameObject, Vector3.one / 2);
         }
     }
 
@@ -38,7 +39,7 @@ public class OrbSocket : MonoBehaviour
     {
         if(IsOrb(args.interactableObject, out Orb orb) && currentAttachedOrb==null)
         {
-            ChangeLocalScale(Vector3.one / 3);
+            ObjectHelper.ChangeLocalScale(this.gameObject, Vector3.one / 3);
         }
     }
 
@@ -57,7 +58,7 @@ public class OrbSocket : MonoBehaviour
         if (IsOrb(args.interactableObject, out Orb orb))
         {
             currentAttachedOrb = null;
-            ChangeColor(defaultMeshColor);
+            ObjectHelper.ChangeColor(mesh.gameObject, defaultMeshColor);
             eventOrbOutSocket?.Invoke();
         }
     }
@@ -96,25 +97,18 @@ public class OrbSocket : MonoBehaviour
     private void ValidateOrb()
     {
         eventValidate?.Invoke();
-        ChangeColor(Color.green);
+        ObjectHelper.ChangeColor(mesh.gameObject, Color.green);
     }
 
     //Refuse the Orb, which means it wasn't a good answer
     private void RefuseOrb()
     {
         eventRefuse?.Invoke();
-        ChangeColor(Color.red);
+        //ChangeColor(Color.red);
+        ObjectHelper.ChangeColor(mesh.gameObject, Color.red);
     }
 
-    private void ChangeColor(Color color)
-    {
-        mesh.material.color =color;
-    }
 
-    private void ChangeLocalScale(Vector3 scale)
-    {
-        mesh.transform.localScale = scale;
-    }
 
     //Does the interactable is an Orb ?
     private bool IsOrb(IXRInteractable interactable, out Orb orb)

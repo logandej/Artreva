@@ -44,7 +44,7 @@ public class FarArtInteractable : MonoBehaviour
         }
     }
 
-    private void ActivateNow()
+    protected void ActivateNow()
     {
         isActive = true;
         ObjectHelper.ChangeColor(gameObject, Color.yellow);

@@ -20,13 +20,13 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/VRAssets/Scenes/PicoHandSeeThrough.unity
     guid: 9635e9f5d92210c4b847dda015119c4e
-  - enabled: 1
+  - enabled: 0
     path: Assets/VRAssets/Scenes/PicoHandGesture.unity
     guid: be4b498c5f05c284f96ee018847524f2
   - enabled: 0
     path: Assets/Scenes/IntroScene.unity
     guid: 7883c6f9d871751488aa907161adae4d
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/FestivalScene.unity
     guid: c5a405b1ed33c55458ec9fbe4eaa0643
   m_configObjects:
@@ -35,4 +35,5 @@ EditorBuildSettings:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
     com.unity.xr.arfoundation.simulation_settings: {fileID: 11400000, guid: 875302dc70de14f46a0b78dbead3d5f9, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: cec1ac6b9000c8142a5112207f8673ec, type: 2}
+    com.unity.xr.openxr.settings4: {fileID: 11400000, guid: efc3e5f3bf9a7a94098f02aefa69d3fd, type: 2}
   m_UseUCBPForAssetBundles: 0

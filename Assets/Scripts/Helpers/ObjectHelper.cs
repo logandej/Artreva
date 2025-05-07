@@ -1,4 +1,5 @@
 using Pico.Platform.Models;
+using System;
 using UnityEngine;
 
 public class ObjectHelper : MonoBehaviour
@@ -27,5 +28,24 @@ public class ObjectHelper : MonoBehaviour
     public static void ChangeLocalScale(GameObject obj, Vector3 scale)
     {
         obj.transform.localScale = scale;
+    }
+
+    public static Vector3 GetRotationFromTransform(Transform t)
+    {
+        return t.rotation.eulerAngles;
+    }
+
+    public static Vector3 GetLocalRotationFromTransform(Transform t)
+    {
+        return t.localRotation.eulerAngles;
+    }
+
+    public static Vector3 GetLocalRotationAbsoluteDifferenceFromTransform(Transform t)
+    {
+        var x = MathF.Abs(360 - t.localRotation.eulerAngles.x);
+        var y = MathF.Abs(360 - t.localRotation.eulerAngles.y);
+        var z = MathF.Abs(360 - t.localRotation.eulerAngles.z);
+
+        return new Vector3(x, y, z);
     }
 }

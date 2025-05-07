@@ -1,16 +1,18 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.XR.Hands;
 
 public class CustomObjectHelp : MonoBehaviour
 {
-    public void Active()
-    {
-        ObjectHelper.ChangeColor(this.gameObject, Color.green);
-    }
+    [SerializeField] TMP_Text lefttext;
+    [SerializeField] TMP_Text righttext;
+    [SerializeField] Transform leftHand;
+    [SerializeField] Transform rightHand;
 
-    public void Deactive()
+    private void Update()
     {
-        ObjectHelper.ChangeColor(this.gameObject, Color.red);
+        lefttext.text = ObjectHelper.GetLocalRotationAbsoluteDifferenceFromTransform(leftHand).ToString("0");
+        righttext.text = ObjectHelper.GetLocalRotationAbsoluteDifferenceFromTransform(rightHand).ToString("0"); 
     }
 
 

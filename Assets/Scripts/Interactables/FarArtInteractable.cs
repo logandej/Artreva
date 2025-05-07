@@ -4,23 +4,23 @@ using UnityEngine.Events;
 public class FarArtInteractable : MonoBehaviour
 {
     [Header("Activation Settings")]
-    [SerializeField] float activationDelay = 1f;
-    [SerializeField] bool canDeactivate = true;
-    [SerializeField] float deactivationDelay = 1f;
+    [SerializeField] private float activationDelay = 1f;
+    [SerializeField] private bool canDeactivate = true;
+    [SerializeField] private float deactivationDelay = 1f;
 
     private bool isFocusing = false;
-    private bool isActive = false;
+    protected bool isActive = false;
     private float focusTimer = 0f;
 
     public UnityEvent eventActivated = new();
-    void Update()
+    protected virtual void Update()
     {
         if (isFocusing)
         {
             if (!isActive)
             {
                 focusTimer += Time.deltaTime;
-                ObjectHelper.ChangeColorLerp(this.gameObject, Color.blue, Color.green, focusTimer/activationDelay);
+                ObjectHelper.ChangeColorLerp(this.gameObject, Color.blue, Color.yellow, focusTimer/activationDelay);
                 if (focusTimer >= activationDelay)
                 {
                     ActivateNow();
@@ -34,7 +34,7 @@ public class FarArtInteractable : MonoBehaviour
         isFocusing = true;
     }
 
-    public void Deactive()
+    public virtual void Deactive()
     {
         isFocusing = false;
         if (!isActive)
@@ -55,7 +55,7 @@ public class FarArtInteractable : MonoBehaviour
         eventActivated?.Invoke();
     }
 
-    public void DeactivateNow()
+    public virtual void DeactivateNow()
     {
         isActive = false;
         focusTimer = 0f;

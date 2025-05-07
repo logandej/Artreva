@@ -12,12 +12,17 @@ public class HandActionManager : MonoBehaviour
     private readonly HashSet<FarArtInteractable> previousHits = new();
     private readonly HashSet<FarArtInteractable> currentHits = new();
 
+    private bool leftRayActive = false;
+    private bool rightRayActive = false;
+
     void Update()
     {
         currentHits.Clear();
 
-        RaycastHand(leftHandAnchor, leftRayRenderer);
-        RaycastHand(rightHandAnchor, rightRayRenderer);
+        if(leftRayActive) RaycastHand(leftHandAnchor, leftRayRenderer);
+        else leftRayRenderer.enabled = false;
+        if(rightRayActive) RaycastHand(rightHandAnchor, rightRayRenderer);
+        else rightRayRenderer.enabled = false;
 
         // Active ceux actuellement touchés
         foreach (var obj in currentHits)
@@ -55,4 +60,9 @@ public class HandActionManager : MonoBehaviour
         rayRenderer.SetPosition(0, start);
         rayRenderer.SetPosition(1, end);
     }
+
+    public void ActiveRayLeftHand() => leftRayActive = true;
+    public void StopRayLeftHand() => leftRayActive = false;
+    public void ActiveRayRightHand() => rightRayActive = true;
+    public void StopRayRightHand() => rightRayActive = false;
 }

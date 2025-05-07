@@ -20,13 +20,13 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/VRAssets/Scenes/PicoHandSeeThrough.unity
     guid: 9635e9f5d92210c4b847dda015119c4e
-  - enabled: 0
+  - enabled: 1
     path: Assets/VRAssets/Scenes/PicoHandGesture.unity
     guid: be4b498c5f05c284f96ee018847524f2
   - enabled: 0
     path: Assets/Scenes/IntroScene.unity
     guid: 7883c6f9d871751488aa907161adae4d
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/FestivalScene.unity
     guid: c5a405b1ed33c55458ec9fbe4eaa0643
   m_configObjects:

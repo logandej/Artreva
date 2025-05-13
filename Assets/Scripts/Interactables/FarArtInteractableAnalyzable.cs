@@ -6,7 +6,6 @@ public class FarArtInteractableAnalyzable : FarArtInteractable
 {
     private bool isAnalyzing = false;
     private bool isAnalyzed = false;
-    private float rotationAmount = 0f;
     [SerializeField] private float rotationSpeed = 10f; // degrés/seconde
 
     [SerializeField] private bool canDeanalyze = true;
@@ -17,7 +16,7 @@ public class FarArtInteractableAnalyzable : FarArtInteractable
     [SerializeField] ArtAnalyzer analyzer;
     public void Analyze(Transform hand)
     {
-        if (isActive && !isAnalyzed)
+        if (isActive && !isAnalyzed && !isAnalyzing)
         {
             handAnalyzing = hand;
             isAnalyzing = true;
@@ -28,6 +27,9 @@ public class FarArtInteractableAnalyzable : FarArtInteractable
     private void StartAnalyzing()
     {
         ObjectHelper.ChangeColor(this.gameObject, Color.cyan);
+        analyzer.eventDone.AddListener(StopAnalyzing);
+        analyzer.GenerateMarkers();
+
     }
 
     private void StopAnalyzing()
@@ -40,6 +42,8 @@ public class FarArtInteractableAnalyzable : FarArtInteractable
         {
             Invoke(nameof(Deanalyze),deanalyzeDelay);
         }
+        analyzer.eventDone.RemoveListener(StopAnalyzing);
+
 
     }
 
@@ -49,7 +53,6 @@ public class FarArtInteractableAnalyzable : FarArtInteractable
         {
             isAnalyzed = false;
             DeactivateNow();
-            rotationAmount = 0f;
         }
     }
 
@@ -69,30 +72,17 @@ public class FarArtInteractableAnalyzable : FarArtInteractable
     {
         base.Update();
 
-        Debug.Log("1 : "+CalculRotationValue(1));
-        Debug.Log("179 : "+CalculRotationValue(179));
-        Debug.Log("181 : "+CalculRotationValue(181));
-        Debug.Log("270 : "+CalculRotationValue(270));
-        Debug.Log("359 : "+CalculRotationValue(359));
-
         if (isAnalyzing)
         {
-            float deltaRotation = rotationSpeed * Time.deltaTime;
-            //transform.Rotate(Vector3.up, deltaRotation);
-            //rotationAmount += deltaRotation;
             RotateWithHand(ObjectHelper.GetLocalRotationAbsoluteDifferenceFromTransform(handAnalyzing).z);
-
-            if (rotationAmount >= 360f)
-            {
-                StopAnalyzing();
-            }
         }
     }
 
     public void RotateWithHand(float ZhandRotate)
     {
         transform.Rotate(CalculRotationValue(ZhandRotate) * rotationSpeed * Time.deltaTime * Vector3.up);
-        analyzer.AnalyzeRotation(ZhandRotate);
+        //analyzer.AnalyzeRotation(ZhandRotate);
+        analyzer.AnalyzeFromProximity();
     }
 
     private float CalculRotationValue(float ZhandRotation)

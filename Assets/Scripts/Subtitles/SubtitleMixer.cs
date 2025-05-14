@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.Playables;
 
 
-public class MyMixerBehaviour : PlayableBehaviour
+public class SubtitleMixer : PlayableBehaviour
 {
     public MyCustomSubtitle subtitleTarget;
 
@@ -13,7 +13,7 @@ public class MyMixerBehaviour : PlayableBehaviour
 
         for (int i = 0; i < inputCount; i++)
         {
-            var inputPlayable = (ScriptPlayable<MyPlayableBehaviour>)playable.GetInput(i);
+            var inputPlayable = (ScriptPlayable<SubtitleBehaviour>)playable.GetInput(i);
             var behaviour = inputPlayable.GetBehaviour();
             behaviour.subtitleTarget = subtitleTarget;
         }

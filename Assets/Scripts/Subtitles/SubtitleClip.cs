@@ -1,15 +1,19 @@
 using UnityEngine;
 using UnityEngine.Playables;
+using UnityEngine.Timeline;
 
-public class SubtitleClip : PlayableAsset
+public class SubtitleClip : PlayableAsset, ITimelineClipAsset
 {
-    public string subtitleText;
-    public override Playable CreatePlayable(PlayableGraph graph, GameObject owner)
+    [TextArea(3,10)]
+    public string customText;
+
+    public ClipCaps clipCaps => ClipCaps.None;
+
+    public override Playable CreatePlayable(PlayableGraph graph, GameObject go)
     {
         var playable = ScriptPlayable<SubtitleBehaviour>.Create(graph);
-        SubtitleBehaviour subtitleBehaviour = playable.GetBehaviour();
-        subtitleBehaviour.sutbtitleText = subtitleText;
-
+        var behaviour = playable.GetBehaviour();
+        behaviour.customText = customText;
         return playable;
     }
 }

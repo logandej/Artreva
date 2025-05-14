@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
     public XROrigin Player;
+    public Transform cameraSubtitleTransform;
 
     private void Awake()
     {

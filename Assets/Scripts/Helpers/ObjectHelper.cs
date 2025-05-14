@@ -48,4 +48,15 @@ public class ObjectHelper : MonoBehaviour
 
         return new Vector3(x, y, z);
     }
+
+    public static bool IsInView(Camera cam, Transform target)
+    {
+        Vector3 viewportPos = cam.WorldToViewportPoint(target.position);
+
+        bool inFront = viewportPos.z > 0;
+        bool inViewport = viewportPos.x >= 0 && viewportPos.x <= 1 &&
+                          viewportPos.y >= 0 && viewportPos.y <= 1;
+
+        return inFront && inViewport;
+    }
 }

@@ -1,5 +1,7 @@
 using Unity.XR.CoreUtils;
 using UnityEngine;
+using UnityEngine.Localization;
+using UnityEngine.Localization.Settings;
 
 public class GameManager : MonoBehaviour
 {
@@ -13,6 +15,16 @@ public class GameManager : MonoBehaviour
             Instance = this;
         }
         else { Destroy(this.gameObject); }
+    }
+
+    public void SelectFrench()
+    {
+        LocalizationSettings.SelectedLocale = LocalizationSettings.AvailableLocales.Locales[1];
+    }
+
+    public void SelectEnglish()
+    {
+        LocalizationSettings.SelectedLocale = LocalizationSettings.AvailableLocales.Locales[0];
     }
 
 }

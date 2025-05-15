@@ -21,6 +21,7 @@ public class SubtitleBehaviour : PlayableBehaviour
         if (subtitleTarget != null)
         {
             subtitleTarget.SetText("");
+            subtitleTarget.HideSubtitle();
         }
     }
 }

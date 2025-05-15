@@ -1,7 +1,8 @@
-using UnityEngine;
+using System.Collections;
 using System.Collections.Generic;
+using UnityEngine;
 
-public static class TransitionManager
+public class TransitionManager : MonoBehaviour
 {
     private class TransitionHelper : MonoBehaviour
     {
@@ -44,14 +45,34 @@ public static class TransitionManager
         GetHelper().StartTransition(new ColorTransition(target, targetColor, duration));
     }
 
-    public static void ChangeSize(GameObject target, float targetSize, float duration)
+    public static void ChangeSize(GameObject target, Vector3 targetSize, float duration)
     {
         GetHelper().StartTransition(new SizeTransition(target, targetSize, duration));
     }
 
-    public static void ChangePosition(GameObject target, Vector3 targetPosition, float duration)
+    public static void ChangeRotation(GameObject target, Vector3 targetRotation, float duration)
     {
-        GetHelper().StartTransition(new PositionTransition(target, targetPosition, duration));
+        GetHelper().StartTransition(new RotationTransition(target, targetRotation, duration));
+    }
+
+    public static void ChangeLocalPosition(GameObject target, Vector3 targetPosition, float duration, Vector3? curveDirection = null, float curvedStrenght=0)
+    {
+        // Utiliser Vector3.zero si curveDirection n'est pas défini
+        Vector3 curveDir = curveDirection ?? Vector3.zero;
+        GetHelper().StartTransition(new PositionTransition(target, targetPosition, duration,true,curveDir,curvedStrenght));
+    }
+    public static void ChangePosition(GameObject target, Vector3 targetPosition, float duration, Vector3? curveDirection = null, float curvedStrenght=0)
+    {
+        // Utiliser Vector3.zero si curveDirection n'est pas défini
+        Vector3 curveDir = curveDirection ?? Vector3.zero;
+        GetHelper().StartTransition(new PositionTransition(target, targetPosition, duration,false, curveDir, curvedStrenght));
+    }
+
+    public static void ChangeTransform(GameObject target, Transform targetTransform, float duration)
+    {
+        ChangePosition(target, targetTransform.position, duration);
+        ChangeRotation(target, targetTransform.rotation.eulerAngles, duration);
+        ChangeSize(target, targetTransform.localScale, duration);
     }
 
     private abstract class Transition
@@ -111,11 +132,11 @@ public static class TransitionManager
         private Vector3 targetScale;
         private Transform targetTransform;
 
-        public SizeTransition(GameObject target, float targetSize, float duration) : base(target, "Size", duration)
+        public SizeTransition(GameObject target, Vector3 targetSize, float duration) : base(target, "Size", duration)
         {
             targetTransform = target.transform;
             startScale = targetTransform.localScale;
-            targetScale = Vector3.one * targetSize;
+            targetScale = targetSize;
         }
 
         protected override void ApplyTransition(float t)
@@ -127,25 +148,66 @@ public static class TransitionManager
         }
     }
 
-    private class PositionTransition : Transition
+    private class RotationTransition : Transition
     {
-        private Vector3 startPosition;
-        private Vector3 targetPosition;
+        private Vector3 startRotation;
+        private Vector3 targetRotation;
         private Transform targetTransform;
 
-        public PositionTransition(GameObject target, Vector3 targetPosition, float duration) : base(target, "Position", duration)
+        public RotationTransition(GameObject target, Vector3 targetRotation, float duration) : base(target, "Rotation", duration)
         {
             targetTransform = target.transform;
-            startPosition = targetTransform.position;
-            this.targetPosition = targetPosition;
+            startRotation = targetTransform.localEulerAngles;
+            this.targetRotation = targetRotation;
         }
 
         protected override void ApplyTransition(float t)
         {
             if (targetTransform != null)
             {
-                targetTransform.position = Vector3.Lerp(startPosition, targetPosition, t);
+                targetTransform.eulerAngles = Vector3.Lerp(startRotation, targetRotation, t);
             }
         }
     }
+
+    private class PositionTransition : Transition
+    {
+        private Vector3 startPosition;
+        private Vector3 targetPosition;
+        private Transform targetTransform;
+        private bool local;
+        private Vector3 controlPoint; // Point de contrôle pour la courbe
+
+        public PositionTransition(GameObject target, Vector3 targetPosition, float duration, bool local, Vector3 curveDirection, float curveStrength)
+            : base(target, "Position", duration)
+        {
+            this.local = local;
+            targetTransform = target.transform;
+            startPosition = local ? targetTransform.localPosition : targetTransform.position;
+            this.targetPosition = targetPosition;
+
+            
+
+            // Définition du point de contrôle (milieu du chemin + direction de courbure)
+            controlPoint = (startPosition + targetPosition) / 2 + curveDirection.normalized * curveStrength;
+        }
+
+        protected override void ApplyTransition(float t)
+        {
+            if (targetTransform != null)
+            {
+                // Interpolation quadratique de Bézier
+                Vector3 curvedPosition =
+                    Mathf.Pow(1 - t, 2) * startPosition +
+                    2 * (1 - t) * t * controlPoint +
+                    Mathf.Pow(t, 2) * targetPosition;
+
+                if (local)
+                    targetTransform.localPosition = curvedPosition;
+                else
+                    targetTransform.position = curvedPosition;
+            }
+        }
+    }
+
 }

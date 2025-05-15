@@ -14,14 +14,21 @@ public class MyCustomSubtitle : MonoBehaviour
 
     private void Start()
     {
+        HideSubtitle();
         GoToSpeakerTransform();
     }
 
     public void SetText(string text)
     {
+      
         speakerNameText.text = speakerName;
-        //this.text.text = text;
+        this.gameObject.SetActive(true);
         StartCoroutine(TypeText(text));
+    }
+
+    public void HideSubtitle()
+    {
+        this.gameObject.SetActive(false);
     }
 
 
@@ -50,9 +57,9 @@ public class MyCustomSubtitle : MonoBehaviour
     {
         if (!isAboveSpeaker)
         {
-            TransitionManager.ChangePosition(this.gameObject, speakerTransform.position + Vector3.up, 0.5f);
-            TransitionManager.ChangeSize(this.gameObject, 1, 0.5f);
             transform.SetParent(null);
+            TransitionManager.ChangeLocalPosition(this.gameObject, speakerTransform.position + Vector3.up, 0.5f);
+            TransitionManager.ChangeSize(this.gameObject, Vector3.one, 0.5f);
             isAboveSpeaker = true;
             
         }
@@ -62,9 +69,9 @@ public class MyCustomSubtitle : MonoBehaviour
     {
         if (isAboveSpeaker)
         {
-            TransitionManager.ChangePosition(this.gameObject, GameManager.Instance.cameraSubtitleTransform.position, 0.5f);
-            TransitionManager.ChangeSize(this.gameObject, .3f, 0.5f);
             transform.SetParent(GameManager.Instance.cameraSubtitleTransform);
+            TransitionManager.ChangeLocalPosition(this.gameObject, Vector3.zero, 0.5f);
+            TransitionManager.ChangeSize(this.gameObject, Vector3.one/4, 0.5f);
             isAboveSpeaker = false;
         }
     }

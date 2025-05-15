@@ -32,7 +32,9 @@ EditorBuildSettings:
   m_configObjects:
     Unity.XR.PICO.LivePreview.Settings: {fileID: 11400000, guid: 498920830a5e5ae4daaa8b485bd88b1b, type: 2}
     Unity.XR.PXR.Settings: {fileID: 11400000, guid: 5faf208111cfda54698690fcce7327f0, type: 2}
+    com.unity.addressableassets: {fileID: 11400000, guid: 8c18b525b2de50e4bbb3f9aa6ce09a20, type: 2}
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
+    com.unity.localization.settings: {fileID: 11400000, guid: e8eb8f67897920647ba99654941d7a5d, type: 2}
     com.unity.xr.arfoundation.simulation_settings: {fileID: 11400000, guid: 875302dc70de14f46a0b78dbead3d5f9, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: cec1ac6b9000c8142a5112207f8673ec, type: 2}
     com.unity.xr.openxr.settings4: {fileID: 11400000, guid: efc3e5f3bf9a7a94098f02aefa69d3fd, type: 2}

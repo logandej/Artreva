@@ -45,6 +45,11 @@ public class TransitionManager : MonoBehaviour
         GetHelper().StartTransition(new ColorTransition(target, targetColor, duration));
     }
 
+    public static void ChangeBaseColor(GameObject target, Color targetBaseColor, float duration)
+    {
+        GetHelper().StartTransition(new BaseColorTransition(target, targetBaseColor, duration));
+    }
+
     public static void ChangeSize(GameObject target, Vector3 targetSize, float duration)
     {
         GetHelper().StartTransition(new SizeTransition(target, targetSize, duration));
@@ -122,6 +127,35 @@ public class TransitionManager : MonoBehaviour
             if (spriteRenderer != null)
             {
                 spriteRenderer.color = Color.Lerp(startColor, targetColor, t);
+            }
+        }
+    }
+
+    private class BaseColorTransition : Transition
+    {
+        private Color startColor;
+        private Color targetColor;
+        private Material material;
+
+        public BaseColorTransition(GameObject target, Color targetColor, float duration)
+            : base(target, "_BaseColor", duration)
+        {
+            // Récupérer le Renderer pour accéder au Material
+            Renderer renderer = target.GetComponentInChildren<Renderer>();
+            if (renderer != null)
+            {
+                material = renderer.material; // Attention : instancie le material à runtime
+                startColor = material.GetColor("_BaseColor");
+                this.targetColor = targetColor;
+            }
+        }
+
+        protected override void ApplyTransition(float t)
+        {
+            if (material != null)
+            {
+                Color interpolatedColor = Color.Lerp(startColor, targetColor, t);
+                material.SetColor("_BaseColor", interpolatedColor);
             }
         }
     }

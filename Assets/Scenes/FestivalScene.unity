@@ -1428,6 +1428,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 657184242118504721, guid: d6878e1999eb4b44a9f5a263af86c185, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1712901914}
+    - targetCorrespondingSourceObject: {fileID: 657184242118504721, guid: d6878e1999eb4b44a9f5a263af86c185, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1735497034}
     - targetCorrespondingSourceObject: {fileID: 4399806423645351520, guid: d6878e1999eb4b44a9f5a263af86c185, type: 3}
       insertIndex: 2
       addedObject: {fileID: 498398804}
@@ -4633,6 +4636,93 @@ Transform:
   m_Children: []
   m_Father: {fileID: 307134906}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1735497033
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 307134906}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 84842307c4b09774c8f12cb233336d76, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 84842307c4b09774c8f12cb233336d76, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 84842307c4b09774c8f12cb233336d76, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 84842307c4b09774c8f12cb233336d76, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 84842307c4b09774c8f12cb233336d76, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 84842307c4b09774c8f12cb233336d76, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 84842307c4b09774c8f12cb233336d76, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 84842307c4b09774c8f12cb233336d76, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 84842307c4b09774c8f12cb233336d76, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 84842307c4b09774c8f12cb233336d76, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 84842307c4b09774c8f12cb233336d76, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 77873ffe1f30f3f479303b4ac0d0ae55, type: 2}
+    - target: {fileID: 919132149155446097, guid: 84842307c4b09774c8f12cb233336d76, type: 3}
+      propertyPath: m_Name
+      value: InsideSphere
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 84842307c4b09774c8f12cb233336d76, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1735497036}
+  m_SourcePrefab: {fileID: 100100000, guid: 84842307c4b09774c8f12cb233336d76, type: 3}
+--- !u!4 &1735497034 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 84842307c4b09774c8f12cb233336d76, type: 3}
+  m_PrefabInstance: {fileID: 1735497033}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1735497035 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 84842307c4b09774c8f12cb233336d76, type: 3}
+  m_PrefabInstance: {fileID: 1735497033}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1735497036
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1735497035}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47de66ba4f5a27b48bb0c77469a0982b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sphereFader: {fileID: 1735497035}
 --- !u!1 &1772115948
 GameObject:
   m_ObjectHideFlags: 0

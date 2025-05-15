@@ -14,8 +14,14 @@ public class GameManager : MonoBehaviour
         if(Instance == null)
         {
             Instance = this;
+            //DontDestroyOnLoad(this.gameObject);
         }
         else { Destroy(this.gameObject); }
+    }
+
+    public void LoadScene(string sceneName)
+    {
+        SceneLoaderManager.Instance.LoadScene(sceneName);
     }
 
     public void SelectFrench()

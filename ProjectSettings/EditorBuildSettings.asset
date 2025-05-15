@@ -29,6 +29,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/FestivalScene.unity
     guid: c5a405b1ed33c55458ec9fbe4eaa0643
+  - enabled: 1
+    path: Assets/Scenes/TestScene.unity
+    guid: 8c96214095188a14a9986d848014e301
   m_configObjects:
     Unity.XR.PICO.LivePreview.Settings: {fileID: 11400000, guid: 498920830a5e5ae4daaa8b485bd88b1b, type: 2}
     Unity.XR.PXR.Settings: {fileID: 11400000, guid: 5faf208111cfda54698690fcce7327f0, type: 2}

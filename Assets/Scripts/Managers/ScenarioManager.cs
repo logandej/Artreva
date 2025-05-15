@@ -9,10 +9,10 @@ public class ScenarioManager : MonoBehaviour
     [SerializeField] List<OrbEnigma> orbEnigma;
     void Start()
     {
-        foreach (var enigma in orbEnigma)
-        {
-            enigma.StartEnigma();
-        }
+        //foreach (var enigma in orbEnigma)
+        //{
+        //    enigma.StartEnigma();
+        //}
     }
 
     // Update is called once per frame

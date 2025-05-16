@@ -41,11 +41,17 @@ public class SceneFader : MonoBehaviour
     private void LoadFade(Color color)
     {
         TransitionManager.ChangeBaseColor(sphereFader, color, FadeTime);
+        Invoke(nameof(ChangementsWhileFadeFinished),FadeTime);
     }
 
     public void UnloadFade()
     {
         TransitionManager.ChangeBaseColor(sphereFader, new Color(0, 0, 0, 0), FadeTime);
+    }
+
+    private void ChangementsWhileFadeFinished()
+    {
+        GameManager.Instance.sensePackMR.ActiveMR(false);
     }
 
 }

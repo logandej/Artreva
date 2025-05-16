@@ -13,15 +13,9 @@ public class SensePackMR : MonoBehaviour
         if (!pause)
             PXR_Manager.EnableVideoSeeThrough = true;
     }
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    
+    public void ActiveMR(bool active)
     {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        PXR_Manager.EnableVideoSeeThrough = active;
     }
 }

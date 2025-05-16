@@ -1,19 +1,25 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 public class OrbEnigma : MonoBehaviour
 {
     [SerializeField] List<OrbSocket> orbSockets = new();
     [SerializeField] List<Orb> allowedOrbs = new();
-    [SerializeField] List<Orb> notAllowedOrbs = new();
-
-    [SerializeField] Button confirmButton;
+    [SerializeField] bool startEnigmaOnStart = false;
+    //[SerializeField] Button confirmButton;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    private int counterOrbInSocket;
+
+    public UnityEvent eventGoodAnswer = new();
+    private int counterOrbInSocket = 0;
     void Start()
     {
         HideConfirmButton();
+        if (startEnigmaOnStart)
+        {
+            StartEnigma();
+        }
     }
 
     // Update is called once per frame
@@ -30,7 +36,7 @@ public class OrbEnigma : MonoBehaviour
             orbSocket.eventOrbInSocket.AddListener(AddOrbInSocket);
             orbSocket.eventOrbOutSocket.AddListener(RemoveOrbInSocket);
         }
-        confirmButton.onClick.AddListener(CheckEachSocket);
+        //confirmButton.onClick.AddListener(CheckEachSocket);
     }
 
     private void AddOrbInSocket()
@@ -38,14 +44,15 @@ public class OrbEnigma : MonoBehaviour
         counterOrbInSocket++;
         if(counterOrbInSocket == orbSockets.Count)
         {
-            ShowConfirmButton();
+            //ShowConfirmButton();
+            CheckEachSocket();
         }
     }
     private void RemoveOrbInSocket()
     {
         counterOrbInSocket--;
         HideConfirmButton();
-        if(counterOrbInSocket <= 0)
+        if(counterOrbInSocket < 0)
         {
             Debug.LogError("Shouldn't happening");
         }
@@ -53,12 +60,12 @@ public class OrbEnigma : MonoBehaviour
 
     private void ShowConfirmButton()
     {
-        confirmButton.gameObject.SetActive(true);
+        //confirmButton.gameObject.SetActive(true);
     }
 
     private void HideConfirmButton()
     {
-        confirmButton.gameObject.SetActive(false);
+        //confirmButton.gameObject.SetActive(false);
     }
 
     private void CheckEachSocket()
@@ -81,8 +88,8 @@ public class OrbEnigma : MonoBehaviour
 
     private void GoodAnswer()
     {
-        confirmButton.onClick.RemoveAllListeners();
-        HideConfirmButton();
+        eventGoodAnswer?.Invoke();
+
     }
 
     private void BadAnswer()

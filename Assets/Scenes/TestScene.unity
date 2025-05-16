@@ -1777,7 +1777,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4525121334388698960, guid: 11928dd7f463ebc42aaed5a100dcec8c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
-      value: FestivalScene
+      value: IntroScene
       objectReference: {fileID: 0}
     - target: {fileID: 4525121334388698960, guid: 11928dd7f463ebc42aaed5a100dcec8c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName

@@ -501,7 +501,7 @@ GameObject:
   - component: {fileID: 147106493}
   - component: {fileID: 147106492}
   - component: {fileID: 147106497}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cube (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -797,7 +797,7 @@ GameObject:
   - component: {fileID: 204664501}
   - component: {fileID: 204664500}
   - component: {fileID: 204664504}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cube (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1773,7 +1773,7 @@ GameObject:
   - component: {fileID: 550501227}
   - component: {fileID: 550501226}
   - component: {fileID: 550501225}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cube (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2473,7 +2473,7 @@ GameObject:
   - component: {fileID: 1072816635}
   - component: {fileID: 1072816634}
   - component: {fileID: 1072816638}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2851,7 +2851,7 @@ GameObject:
   - component: {fileID: 1213280204}
   - component: {fileID: 1213280203}
   - component: {fileID: 1213280202}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cube (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3961,7 +3961,7 @@ GameObject:
   - component: {fileID: 1772115951}
   - component: {fileID: 1772115950}
   - component: {fileID: 1772115949}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cube (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4159,6 +4159,181 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8544109772897110591, guid: 8c810797204b70b40b9d64412f5d9136, type: 3}
   m_PrefabInstance: {fileID: 1819083968}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1872138923
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1872138926}
+  - component: {fileID: 1872138925}
+  - component: {fileID: 1872138924}
+  m_Layer: 0
+  m_Name: Splmine
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1872138924
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1872138923}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 525d6597b09856249a550344bdf073cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  handTransform: {fileID: 2128364281}
+  maxDistance: 10
+  aimantationRadius: 3
+  interactableLayer:
+    serializedVersion: 2
+    m_Bits: 256
+--- !u!114 &1872138925
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1872138923}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 598e68924c9f6324bbfd049d3bae754c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  editorDrawPivot: 1
+  editorPathColor: {r: 1, g: 1, b: 1, a: 1}
+  editorAlwaysDraw: 0
+  editorDrawThickness: 0
+  editorBillboardThickness: 1
+  isNewlyCreated: 0
+  editorUpdateMode: 0
+  multithreaded: 0
+  updateMode: 0
+  triggerGroups: []
+  _spline:
+    points:
+    - _type: 0
+      position: {x: -10.1331215, y: 4.875951, z: -12.816971}
+      color: {r: 1, g: 1, b: 1, a: 1}
+      normal: {x: 0, y: 0, z: -1}
+      size: 1
+      tangent: {x: -9.987507, y: 3.8009634, z: -12.816971}
+      tangent2: {x: -10.278736, y: 5.950938, z: -12.816971}
+    - _type: 0
+      position: {x: -10.569965, y: 8.100913, z: -12.816971}
+      color: {r: 1, g: 1, b: 1, a: 1}
+      normal: {x: 0, y: 0, z: -1}
+      size: 1
+      tangent: {x: -10.424351, y: 7.0259256, z: -12.816971}
+      tangent2: {x: -10.71558, y: 9.1759, z: -12.816971}
+    type: 2
+    linearAverageDirection: 1
+    customValueInterpolation:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    customNormalInterpolation:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    sampleRate: 10
+    closed: 0
+    _knotParametrization: 0
+  _originalSamplePercents: []
+  _is2D: 0
+  hasSamples: 1
+  _optimizeAngleThreshold: 0.5
+  _space: 1
+  _sampleMode: 0
+  _subscribers: []
+  _rawSamples:
+  - position: {x: -10.1331215, y: 4.875951, z: -12.816971}
+    up: {x: 0, y: 0, z: -1}
+    forward: {x: -0.13423121, y: 0.99095005, z: 0}
+    color: {r: 1, g: 1, b: 1, a: 1}
+    size: 1
+    percent: 0
+  - position: {x: -10.18166, y: 5.2342796, z: -12.816971}
+    up: {x: 0, y: 0, z: -1}
+    forward: {x: -0.1342314, y: 0.99095005, z: -0.000000082417564}
+    color: {r: 1, g: 1, b: 1, a: 1}
+    size: 1
+    percent: 0.1111111111111111
+  - position: {x: -10.230198, y: 5.5926094, z: -12.816972}
+    up: {x: 0, y: 0, z: -1}
+    forward: {x: -0.1342312, y: 0.99095005, z: -0.00000003663003}
+    color: {r: 1, g: 1, b: 1, a: 1}
+    size: 1
+    percent: 0.2222222222222222
+  - position: {x: -10.278736, y: 5.950938, z: -12.81697}
+    up: {x: 0, y: 0, z: -1}
+    forward: {x: -0.1342314, y: 0.99095005, z: 0}
+    color: {r: 1, g: 1, b: 1, a: 1}
+    size: 1
+    percent: 0.3333333333333333
+  - position: {x: -10.327275, y: 6.309268, z: -12.816973}
+    up: {x: 0, y: 0, z: -1}
+    forward: {x: -0.13423117, y: 0.99095005, z: -0.00000014652011}
+    color: {r: 1, g: 1, b: 1, a: 1}
+    size: 1
+    percent: 0.4444444444444444
+  - position: {x: -10.375813, y: 6.667597, z: -12.816971}
+    up: {x: 0, y: 0, z: -1}
+    forward: {x: -0.13423145, y: 0.99095005, z: 0}
+    color: {r: 1, g: 1, b: 1, a: 1}
+    size: 1
+    percent: 0.5555555555555556
+  - position: {x: -10.424351, y: 7.0259256, z: -12.816972}
+    up: {x: 0, y: 0, z: -1}
+    forward: {x: -0.13423151, y: 0.99095005, z: 0.0000005860806}
+    color: {r: 1, g: 1, b: 1, a: 1}
+    size: 1
+    percent: 0.6666666666666666
+  - position: {x: -10.472889, y: 7.3842545, z: -12.816971}
+    up: {x: 0, y: 0, z: -1}
+    forward: {x: -0.1342306, y: 0.9909501, z: 0}
+    color: {r: 1, g: 1, b: 1, a: 1}
+    size: 1
+    percent: 0.7777777777777778
+  - position: {x: -10.521427, y: 7.742584, z: -12.816971}
+    up: {x: 0, y: 0, z: -1}
+    forward: {x: -0.13423182, y: 0.99095, z: -0.0000005860807}
+    color: {r: 1, g: 1, b: 1, a: 1}
+    size: 1
+    percent: 0.8888888888888888
+  - position: {x: -10.569965, y: 8.100913, z: -12.816971}
+    up: {x: 0, y: 0, z: -1}
+    forward: {x: -0.13423109, y: 0.99095005, z: 0}
+    color: {r: 1, g: 1, b: 1, a: 1}
+    size: 1
+    percent: 1
+  _nodes: []
+--- !u!4 &1872138926
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1872138923}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 13.353783, y: -4.117665, z: 12.816971}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1881844789
 GameObject:
   m_ObjectHideFlags: 0
@@ -4172,7 +4347,7 @@ GameObject:
   - component: {fileID: 1881844792}
   - component: {fileID: 1881844791}
   - component: {fileID: 1881844790}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cube (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4785,3 +4960,4 @@ SceneRoots:
   - {fileID: 1080408718}
   - {fileID: 702380105184343765}
   - {fileID: 2561573904838747534}
+  - {fileID: 1872138926}

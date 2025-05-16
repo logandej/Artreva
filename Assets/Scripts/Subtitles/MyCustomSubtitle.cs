@@ -6,6 +6,7 @@ public class MyCustomSubtitle : MonoBehaviour
 {
     [SerializeField] string speakerName;
     [SerializeField] Transform speakerTransform;
+    [SerializeField] Canvas canvas;
     [Header("Settings")]
     [SerializeField] TMP_Text speakerNameText;
     [SerializeField] TMP_Text subtitleText;
@@ -22,13 +23,13 @@ public class MyCustomSubtitle : MonoBehaviour
     {
       
         speakerNameText.text = speakerName;
-        this.gameObject.SetActive(true);
+        canvas.gameObject.SetActive(true);
         StartCoroutine(TypeText(text));
     }
 
     public void HideSubtitle()
     {
-        this.gameObject.SetActive(false);
+        canvas.gameObject.SetActive(false);
     }
 
 

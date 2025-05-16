@@ -500,6 +500,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speakerName: Mira
+  speakerTransform: {fileID: 0}
+  canvas: {fileID: 5353919804337861620}
   speakerNameText: {fileID: 6978965712925667399}
   subtitleText: {fileID: 2044881549352064585}
   typingSpeed: 0.1

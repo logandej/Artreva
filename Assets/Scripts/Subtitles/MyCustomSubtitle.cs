@@ -11,7 +11,7 @@ public class MyCustomSubtitle : MonoBehaviour
     [SerializeField] TMP_Text speakerNameText;
     [SerializeField] TMP_Text subtitleText;
     [SerializeField] float typingSpeed = 0.1f;
-    private bool isAboveSpeaker=true;
+    private bool isAboveSpeaker=false;
 
     private void Start()
     {
@@ -58,8 +58,8 @@ public class MyCustomSubtitle : MonoBehaviour
     {
         if (!isAboveSpeaker)
         {
-            transform.SetParent(null);
-            TransitionManager.ChangeLocalPosition(this.gameObject, speakerTransform.position + Vector3.up, 0.5f);
+            transform.SetParent(speakerTransform);
+            TransitionManager.ChangeLocalPosition(this.gameObject, Vector3.up, 0.5f);
             TransitionManager.ChangeSize(this.gameObject, Vector3.one, 0.5f);
             isAboveSpeaker = true;
             

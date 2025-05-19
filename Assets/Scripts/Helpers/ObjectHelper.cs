@@ -59,4 +59,14 @@ public class ObjectHelper : MonoBehaviour
 
         return inFront && inViewport;
     }
+
+
+    /// <summary>
+    /// Retourne vrai si l’objet a trop bougé depuis sa position de départ
+    /// </summary>
+    public static bool HasMovedTooFar(Transform target, Vector3 initialPosition, float maxAllowedDistance)
+    {
+        float distance = Vector3.Distance(target.position, initialPosition);
+        return distance > maxAllowedDistance;
+    }
 }

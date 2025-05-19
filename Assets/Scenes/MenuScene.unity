@@ -10615,6 +10615,9 @@ MonoBehaviour:
           m_StringArgument: IntroScene
           m_BoolArgument: 0
         m_CallState: 2
+  eventBadAnswer:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &3553634840523638964
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -13,8 +13,8 @@ public class HandActionManager : MonoBehaviour
     [SerializeField] private Transform rightHandPalm;
 
     [Header("Rays")]
-    [SerializeField] LineRenderer leftRayRenderer;
-    [SerializeField] LineRenderer rightRayRenderer;
+    [SerializeField] GenerateSplineComputer leftRayRenderer;
+    [SerializeField] GenerateSplineComputer rightRayRenderer;
     [SerializeField] float rayLength = 10f;
 
     private readonly HashSet<FarArtInteractable> previousHits = new();
@@ -31,9 +31,10 @@ public class HandActionManager : MonoBehaviour
         currentHits.Clear();
 
         if(leftRayActive) RaycastHand(leftHandPalm, leftRayRenderer);
-        else leftRayRenderer.enabled = false;
+        else { leftRayRenderer.ActiveSpline = false; }
+
         if(rightRayActive) RaycastHand(rightHandPalm, rightRayRenderer);
-        else rightRayRenderer.enabled = false;
+        else {  rightRayRenderer.ActiveSpline = false; }
 
         // Active ceux actuellement touchés
         foreach (var obj in currentHits)
@@ -52,30 +53,38 @@ public class HandActionManager : MonoBehaviour
             previousHits.Add(obj);
     }
 
-    private void RaycastHand(Transform hand, LineRenderer rayRenderer)
+    private void RaycastHand(Transform hand, GenerateSplineComputer rayRenderer)
     {
-        Ray ray = new(hand.position, hand.forward);
-        Vector3 start = ray.origin;
-        Vector3 end = start + ray.direction * rayLength;
+        //Ray ray = new(hand.position, hand.forward);
+        //Vector3 start = ray.origin;
+        //Vector3 end = start + ray.direction * rayLength;
 
-        rayRenderer.enabled = true;
+        //rayRenderer.enabled = true;
+
+        if (!rayRenderer.ActiveSpline)
+        {
+            rayRenderer.ActiveSpline = true;
+        }
 
         FarArtInteractable hitTarget = null;
 
-        if (Physics.Raycast(ray, out RaycastHit hit, rayLength))
+        //if (Physics.Raycast(ray, out RaycastHit hit, rayLength))
+        //{
+        //    end = hit.point;
+
+        //    if (hit.collider.TryGetComponent(out FarArtInteractable fa))
+        //    {
+        //        currentHits.Add(fa);
+        //        hitTarget = fa;
+        //    }
+
+        //}
+        var target = rayRenderer.Target;
+        if (rayRenderer.Target!=null)
         {
-            end = hit.point;
-
-            if (hit.collider.TryGetComponent(out FarArtInteractable fa))
-            {
-                currentHits.Add(fa);
-                hitTarget = fa;
-            }
-
+            currentHits.Add(target);
+            hitTarget = target;
         }
-
-        rayRenderer.SetPosition(0, start);
-        rayRenderer.SetPosition(1, end);
 
         // Stock la cible en fonction de la main
         if (hand == leftHandPalm)

@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using Dreamteck.Splines;
+using UnityEngine.Rendering;
 
 public class GenerateSplineComputer : MonoBehaviour
 {
@@ -8,9 +9,13 @@ public class GenerateSplineComputer : MonoBehaviour
     public float maxDistance = 10f;
     public float aimantationRadius = 0.6f;
     public LayerMask interactableLayer;
+    [SerializeField] GameObject rayObjectVisual;
 
     private SplineComputer spline;
-    private Transform currentTarget;
+    private FarArtInteractable currentTarget;
+
+    public FarArtInteractable Target => currentTarget;
+    public bool ActiveSpline { get; set; } = true;
 
     void Start()
     {
@@ -19,10 +24,21 @@ public class GenerateSplineComputer : MonoBehaviour
 
     void Update()
     {
+        spline.enabled = ActiveSpline;
+        rayObjectVisual.SetActive(ActiveSpline);
+
+        if (!ActiveSpline)
+        {
+            return;
+        }
+
+
+
         Vector3 origin = handTransform.position;
         Vector3 direction = handTransform.forward;
 
         bool hasTarget = FindTarget(origin, direction, out currentTarget, out Vector3 targetPos);
+
 
         SplinePoint[] points = new SplinePoint[2];
 
@@ -56,7 +72,7 @@ public class GenerateSplineComputer : MonoBehaviour
     /// <summary>
     /// Détecte le FarArtInteractable le plus proche du rayon
     /// </summary>
-    private bool FindTarget(Vector3 origin, Vector3 direction, out Transform target, out Vector3 targetCenter)
+    private bool FindTarget(Vector3 origin, Vector3 direction, out FarArtInteractable target, out Vector3 targetCenter)
     {
         target = null;
         targetCenter = origin + direction * maxDistance;
@@ -70,8 +86,11 @@ public class GenerateSplineComputer : MonoBehaviour
             if (distance < closestDistance)
             {
                 closestDistance = distance;
-                target = hit.transform;
-                targetCenter = target.position; // 👈 SNAP sur le centre de l’objet
+                if(hit.transform.TryGetComponent(out FarArtInteractable farArtInteractable))
+                {
+                    target = farArtInteractable;
+                }
+                targetCenter = hit.transform.position; // 👈 SNAP sur le centre de l’objet
             }
         }
 

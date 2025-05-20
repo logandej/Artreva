@@ -14,7 +14,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &595823887346073798
 Transform:
@@ -42,15 +42,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: cbf8f6c8eb649054c8cba0eedb6778a7, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.5
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: cbf8f6c8eb649054c8cba0eedb6778a7, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.5
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: cbf8f6c8eb649054c8cba0eedb6778a7, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.5
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: cbf8f6c8eb649054c8cba0eedb6778a7, type: 3}
       propertyPath: m_LocalPosition.x
@@ -99,10 +99,18 @@ PrefabInstance:
     - target: {fileID: -7511558181221131132, guid: cbf8f6c8eb649054c8cba0eedb6778a7, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: c12fb0048842f014e82614fa5277369a, type: 2}
+      objectReference: {fileID: 2100000, guid: 4a51b7b2e6bf0da46b0d86a43c0884cc, type: 2}
+    - target: {fileID: -7511558181221131132, guid: cbf8f6c8eb649054c8cba0eedb6778a7, type: 3}
+      propertyPath: 'm_Materials.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 46c5dab1c21b0404aadbb6f8ab1e1b4d, type: 2}
     - target: {fileID: 919132149155446097, guid: cbf8f6c8eb649054c8cba0eedb6778a7, type: 3}
       propertyPath: m_Name
       value: Tree1
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: cbf8f6c8eb649054c8cba0eedb6778a7, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

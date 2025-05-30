@@ -90,7 +90,16 @@ public class GenerateSplineComputer : MonoBehaviour
                 {
                     target = farArtInteractable;
                 }
-                targetCenter = hit.transform.position; // 👈 SNAP sur le centre de l’objet
+                //targetCenter = hit.transform.position; // SNAP sur le centre de l’objet
+                Renderer renderer = hit.transform.GetComponentInChildren<Renderer>();
+                if (renderer != null)
+                {
+                    targetCenter = renderer.bounds.center;
+                }
+                else
+                {
+                   targetCenter = hit.transform.position; // fallback
+                }
             }
         }
 

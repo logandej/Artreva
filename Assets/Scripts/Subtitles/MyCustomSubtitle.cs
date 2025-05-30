@@ -21,10 +21,11 @@ public class MyCustomSubtitle : MonoBehaviour
 
     public void SetText(string text)
     {
-      
-        speakerNameText.text = speakerName;
-        canvas.gameObject.SetActive(true);
-        StartCoroutine(TypeText(text));
+        
+            speakerNameText.text = speakerName;
+            canvas.gameObject.SetActive(true);
+            StartCoroutine(TypeText(text));
+        
     }
 
     public void HideSubtitle()
@@ -59,8 +60,8 @@ public class MyCustomSubtitle : MonoBehaviour
         if (!isAboveSpeaker)
         {
             transform.SetParent(speakerTransform);
-            TransitionManager.ChangeLocalPosition(this.gameObject, Vector3.up, 0.5f);
-            TransitionManager.ChangeSize(this.gameObject, Vector3.one, 0.5f);
+            TransitionManager.ChangeLocalPosition(this.gameObject, Vector3.zero, 0.5f);
+            TransitionManager.ChangeSize(this.gameObject, Vector3.one/2, 0.5f);
             isAboveSpeaker = true;
             
         }

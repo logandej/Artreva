@@ -57,10 +57,10 @@ public class FarArtInteractableAnalyzable : FarArtInteractable
     }
 
 
-    public override void Deactive()
+    public override void OnHoverExit()
     {
         // IF the player is analyzing an art, then he can't deactive it until he finishes the analyze.
-        if(!isAnalyzing) { base.Deactive(); }
+        if(!isAnalyzing) { base.OnHoverExit(); }
     }
 
     public override void DeactivateNow()

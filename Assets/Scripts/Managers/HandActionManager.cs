@@ -26,25 +26,35 @@ public class HandActionManager : MonoBehaviour
     private FarArtInteractable leftCurrentTarget;
     private FarArtInteractable rightCurrentTarget;
 
+    public bool EnableHandRays { get; set; } = false;
+
+
     void Update()
     {
         currentHits.Clear();
+
+        if (!EnableHandRays)
+        {
+            rightRayRenderer.ActiveSpline = false;
+            leftRayRenderer.ActiveSpline = false;
+            return; 
+        }
 
         if(leftRayActive) RaycastHand(leftHandPalm, leftRayRenderer);
         else { leftRayRenderer.ActiveSpline = false; }
 
         if(rightRayActive) RaycastHand(rightHandPalm, rightRayRenderer);
-        else {  rightRayRenderer.ActiveSpline = false; }
+        else { rightRayRenderer.ActiveSpline = false; }
 
         // Active ceux actuellement touchés
         foreach (var obj in currentHits)
-            obj.Active();
+            obj.OnHoverEnter();
 
         // Désactive ceux qui ne sont plus touchés
         foreach (var obj in previousHits)
         {
             if (!currentHits.Contains(obj))
-                obj.Deactive();
+                obj.OnHoverExit();
         }
 
         // Préparer pour la frame suivante

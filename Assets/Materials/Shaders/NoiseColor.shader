@@ -44,6 +44,7 @@ Shader "Custom/NoiseColor"
             float _NoiseScale;
             float _BlendSpeed;
 
+
             Varyings vert(Attributes IN)
             {
                 Varyings OUT;

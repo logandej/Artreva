@@ -1,11 +1,14 @@
 using System.Collections.Generic;
 using Unity.VisualScripting.Dependencies.NCalc;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class AkamiEnigma : MonoBehaviour
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     [SerializeField] List<FarArtInteractable> pillars;
+
+    public UnityEvent eventDone = new();
 
     private int pillarCount = 0;
 
@@ -42,9 +45,10 @@ public class AkamiEnigma : MonoBehaviour
 
     public void Nice()
     {
-        foreach (var pillar in pillars)
-        {
-            ObjectHelper.ChangeColor(pillar.gameObject, Color.magenta);
-        }
+        //foreach (var pillar in pillars)
+        //{
+        //    ObjectHelper.ChangeColor(pillar.gameObject, Color.magenta);
+        //}
+        eventDone?.Invoke();
     }
 }

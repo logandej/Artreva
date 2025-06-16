@@ -1,6 +1,7 @@
 using Dreamteck.Splines;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.UI;
 
 public class FarArtInteractable : MonoBehaviour
 {
@@ -16,9 +17,23 @@ public class FarArtInteractable : MonoBehaviour
 
     public UnityEvent eventActivated = new();
 
+    [SerializeField] protected Slider slider;
+    public float ActivePercent => focusTimer/activationDelay;
+
     private void Awake()
     {
         feedbacks = GetComponentInChildren<IInteractableFeedbacks>();
+        slider.gameObject.SetActive(false);
+        Renderer renderer = transform.GetComponentInChildren<Renderer>();
+        if (renderer != null)
+        {
+            slider.transform.position = renderer.bounds.center;
+        }
+        else
+        {
+            slider.transform.position = transform.position; // fallback
+        }
+
     }
 
     protected virtual void Update()
@@ -28,6 +43,7 @@ public class FarArtInteractable : MonoBehaviour
             if (!isActive)
             {
                 focusTimer += Time.deltaTime;
+                slider.value = ActivePercent;
                 //ObjectHelper.ChangeColorLerp(this.gameObject, Color.blue, Color.yellow, focusTimer/activationDelay);
                 if (focusTimer >= activationDelay)
                 {
@@ -42,6 +58,7 @@ public class FarArtInteractable : MonoBehaviour
         if (!isActive && !isFocusing)
         {
             isFocusing = true;
+            slider.gameObject.SetActive(true);
             feedbacks?.OnHoverEnter();
         }
     }
@@ -57,7 +74,7 @@ public class FarArtInteractable : MonoBehaviour
         }
     }
 
-    protected void ActivateNow()
+    protected virtual void ActivateNow()
     {
         isActive = true;
         //ObjectHelper.ChangeColor(gameObject, Color.yellow);
@@ -66,6 +83,7 @@ public class FarArtInteractable : MonoBehaviour
             Invoke(nameof(DeactivateNow), deactivationDelay);
         }
         feedbacks?.OnActivateStart();
+        slider.gameObject.SetActive(false);
         eventActivated?.Invoke();
 
     }
@@ -77,6 +95,7 @@ public class FarArtInteractable : MonoBehaviour
         //ObjectHelper.ChangeColor(gameObject, Color.red);
         feedbacks?.OnActivateEnd();
         feedbacks?.OnHoverExit();
+        slider.gameObject.SetActive(false);
     }
     
     

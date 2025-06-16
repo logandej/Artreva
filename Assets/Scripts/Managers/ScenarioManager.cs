@@ -30,6 +30,17 @@ public class ScenarioManager : MonoBehaviour
         playableDirectors[directorIndex].Pause();
         waitingForPlayer = true;
         // Tu peux ici déclencher un événement, afficher un prompt, etc.
+        LockSubtitles();
+    }
+
+    private void LockSubtitles()
+    {
+        MyCustomSubtitle.eventLock?.Invoke();
+    }
+
+    private void UnlockSubtitles()
+    {
+        MyCustomSubtitle.eventUnlock?.Invoke();
     }
 
     public void ResumeTimeline()
@@ -40,6 +51,7 @@ public class ScenarioManager : MonoBehaviour
             waitingForPlayer = false;
            // playableDirectors[directorIndex].timeUpdateMode = DirectorUpdateMode.GameTime;
             playableDirectors[directorIndex].Play(); // ou Resume() selon ce que tu veux
+            UnlockSubtitles();
         }
     }
 
@@ -68,8 +80,6 @@ public class ScenarioManager : MonoBehaviour
         // Préparer la nouvelle Timeline
         playableDirectors[directorIndex].timeUpdateMode = DirectorUpdateMode.GameTime;
         playableDirectors[directorIndex].Play();
-
-        
     }
 
     public void ChangePlayerPosition(Transform transform)

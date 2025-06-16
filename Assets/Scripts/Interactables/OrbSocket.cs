@@ -3,6 +3,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.XR.Interaction.Toolkit;
 using UnityEngine.XR.Interaction.Toolkit.Interactables;
+using UnityEngine.XR.Interaction.Toolkit.Interactors;
 
 public class OrbSocket : MonoBehaviour
 {
@@ -90,6 +91,7 @@ public class OrbSocket : MonoBehaviour
     //Check if the orb is a good answer or not
     public bool CheckOrb()
     {
+        CanTakeOrb(false);
         return allowedOrbs.Contains(currentAttachedOrb);
     }
 
@@ -114,5 +116,14 @@ public class OrbSocket : MonoBehaviour
     private bool IsOrb(IXRInteractable interactable, out Orb orb)
     {
         return interactable.transform.gameObject.TryGetComponent(out orb);
+    }
+
+    public void CanTakeOrb(bool canTake)
+    {
+        if (currentAttachedOrb != null)
+        {
+            //currentAttachedOrb.GetComponent<XRGrabInteractable>().select
+            GetComponent<XRSocketInteractor>().allowSelect = canTake;
+        }
     }
 }

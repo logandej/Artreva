@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -130,6 +131,15 @@ public class OrbEnigma : MonoBehaviour
         foreach (var orbSocket in orbSockets)
         {
             orbSocket.ShowIfGood();
+        }
+    }
+
+    IEnumerator BadAnswerCoroutine()
+    {
+        yield return new WaitForSeconds(1);
+        foreach (var orbSocket in orbSockets)
+        {
+            orbSocket.CanTakeOrb(true);
         }
     }
 }

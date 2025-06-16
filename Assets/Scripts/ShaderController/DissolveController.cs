@@ -56,4 +56,9 @@ public class DissolveReplaceMaterial : MonoBehaviour
             running = false;
         }
     }
+
+    private void OnEnable()
+    {
+        StartDissolve();
+    }
 }

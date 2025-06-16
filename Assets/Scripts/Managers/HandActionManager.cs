@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class HandActionManager : MonoBehaviour
 {
+    public static HandActionManager Instance;
 
     [Header("Hand Anchors")]
     [SerializeField] private Transform leftHandAnchor;
@@ -23,10 +24,22 @@ public class HandActionManager : MonoBehaviour
     private bool leftRayActive = false;
     private bool rightRayActive = false;
 
+    private bool isAnalysingRight = false;
+    private bool isAnalysingLeft = false;
+
     private FarArtInteractable leftCurrentTarget;
     private FarArtInteractable rightCurrentTarget;
 
     public bool EnableHandRays { get; set; } = false;
+
+    private void Awake()
+    {
+        if(Instance == null)
+        {
+            Instance = this;
+        }
+        else { Destroy(this.gameObject);}
+    }
 
 
     void Update()
@@ -40,11 +53,19 @@ public class HandActionManager : MonoBehaviour
             return; 
         }
 
-        if(leftRayActive) RaycastHand(leftHandPalm, leftRayRenderer);
-        else { leftRayRenderer.ActiveSpline = false; }
+        if (!isAnalysingRight)
+        {
+            if (rightRayActive) RaycastHand(rightHandPalm, rightRayRenderer);
+            else rightRayRenderer.ActiveSpline = false;
+        }
 
-        if(rightRayActive) RaycastHand(rightHandPalm, rightRayRenderer);
-        else { rightRayRenderer.ActiveSpline = false; }
+        if (!isAnalysingLeft)
+        {
+            if (leftRayActive) RaycastHand(leftHandPalm, leftRayRenderer);
+            else leftRayRenderer.ActiveSpline = false;
+        }
+
+
 
         // Active ceux actuellement touchés
         foreach (var obj in currentHits)
@@ -65,11 +86,6 @@ public class HandActionManager : MonoBehaviour
 
     private void RaycastHand(Transform hand, GenerateSplineComputer rayRenderer)
     {
-        //Ray ray = new(hand.position, hand.forward);
-        //Vector3 start = ray.origin;
-        //Vector3 end = start + ray.direction * rayLength;
-
-        //rayRenderer.enabled = true;
 
         if (!rayRenderer.ActiveSpline)
         {
@@ -78,17 +94,6 @@ public class HandActionManager : MonoBehaviour
 
         FarArtInteractable hitTarget = null;
 
-        //if (Physics.Raycast(ray, out RaycastHit hit, rayLength))
-        //{
-        //    end = hit.point;
-
-        //    if (hit.collider.TryGetComponent(out FarArtInteractable fa))
-        //    {
-        //        currentHits.Add(fa);
-        //        hitTarget = fa;
-        //    }
-
-        //}
         var target = rayRenderer.Target;
         if (rayRenderer.Target!=null)
         {
@@ -103,16 +108,60 @@ public class HandActionManager : MonoBehaviour
             rightCurrentTarget = hitTarget;
     }
 
+    public void LockAnalyzable(FarArtInteractableAnalyzable farArtInteractableAnalyzable)
+    {
+        if(leftCurrentTarget == farArtInteractableAnalyzable)
+        {
+            isAnalysingLeft = true;
+            leftRayRenderer.ForceTarget(farArtInteractableAnalyzable);
+            leftRayRenderer.ActiveSpline = true;
+            VRDebug.Instance.Log("left target");
+
+
+        }
+        else if(rightCurrentTarget == farArtInteractableAnalyzable)
+        {
+            isAnalysingRight = true;
+            rightRayRenderer.ForceTarget(farArtInteractableAnalyzable);
+            rightRayRenderer.ActiveSpline = true;
+            VRDebug.Instance.Log("right target");
+
+        }
+        else
+        {
+            //Debug.Log("Not an analyzable");
+            VRDebug.Instance.Log("not an analyzable");
+        }
+    }
+
     public void AnalyzeLeftTarget()
     {
         if (leftCurrentTarget is FarArtInteractableAnalyzable analyzable)
+        {
             analyzable.Analyze(leftHandAnchor);
+         
+
+            analyzable.eventAnalyzed.AddListener(() => {
+                isAnalysingLeft = false;
+                analyzable.eventAnalyzed.RemoveAllListeners(); 
+                leftRayRenderer.StopForcingTarget();
+            });
+        }
     }
 
     public void AnalyzeRightTarget()
     {
         if (rightCurrentTarget is FarArtInteractableAnalyzable analyzable)
+        {
             analyzable.Analyze(rightHandAnchor);
+           
+            analyzable.eventAnalyzed.AddListener(() => {
+                isAnalysingRight = false;
+                analyzable.eventAnalyzed.RemoveAllListeners();
+                rightRayRenderer.StopForcingTarget();
+
+            });
+        }
     }
 
     public void ActiveRayLeftHand() => leftRayActive = true;

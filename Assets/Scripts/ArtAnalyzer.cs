@@ -41,7 +41,7 @@ public class ArtAnalyzer : MonoBehaviour
             if (!observedAngles[closestIndex]) // Check if already observed
             {
                 observedAngles[closestIndex] = true;
-                ObjectHelper.ChangeColor(angleMarkers[closestIndex], Color.green);
+                ObjectHelper.ChangeColor(angleMarkers[closestIndex].GetComponentInChildren<MeshRenderer>().gameObject, Color.green);
                 Debug.Log($"Marker #{closestIndex} observé par proximité !");
                 CheckAllAnalyzed();
             }
@@ -67,13 +67,14 @@ public class ArtAnalyzer : MonoBehaviour
             float angle = i * step;
             Vector3 dir = Quaternion.Euler(0, angle, 0) * Vector3.forward;
             Vector3 pos = transform.position + dir * radius;
+            
 
-            GameObject marker = Instantiate(markerPrefab, pos, Quaternion.identity, transform);
+            GameObject marker = Instantiate(markerPrefab, pos, Quaternion.Euler(0,angle,0), transform);
             marker.name = "AngleMarker_" + angle;
             angleMarkers.Add(marker);
             observedAngles.Add(false);
 
-            ObjectHelper.ChangeColor(marker, Color.red);
+            ObjectHelper.ChangeColor(marker.GetComponentInChildren<MeshRenderer>().gameObject, Color.red);
         }
     }
 

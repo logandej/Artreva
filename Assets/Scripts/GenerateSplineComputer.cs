@@ -15,6 +15,7 @@ public class GenerateSplineComputer : MonoBehaviour
     private FarArtInteractable currentTarget;
 
     public FarArtInteractable Target => currentTarget;
+    private bool isForcingTarget = false;
     public bool ActiveSpline { get; set; } = true;
 
     void Start()
@@ -37,7 +38,17 @@ public class GenerateSplineComputer : MonoBehaviour
         Vector3 origin = handTransform.position;
         Vector3 direction = handTransform.forward;
 
-        bool hasTarget = FindTarget(origin, direction, out currentTarget, out Vector3 targetPos);
+        bool hasTarget = true;
+        Vector3 targetPos;
+
+        if (!isForcingTarget)
+        {
+            hasTarget = FindTarget(origin, direction, out currentTarget, out targetPos);
+        }
+        else
+        {
+           targetPos = GetTargetPos(currentTarget.transform);
+        }
 
 
         SplinePoint[] points = new SplinePoint[2];
@@ -91,19 +102,37 @@ public class GenerateSplineComputer : MonoBehaviour
                     target = farArtInteractable;
                 }
                 //targetCenter = hit.transform.position; // SNAP sur le centre de l’objet
-                Renderer renderer = hit.transform.GetComponentInChildren<Renderer>();
-                if (renderer != null)
-                {
-                    targetCenter = renderer.bounds.center;
-                }
-                else
-                {
-                   targetCenter = hit.transform.position; // fallback
-                }
+                targetCenter = GetTargetPos(hit.transform);
             }
         }
 
         return target != null;
+    }
+
+    private Vector3 GetTargetPos(Transform transform)
+    {
+        Renderer renderer = transform.GetComponentInChildren<Renderer>();
+        if (renderer != null)
+        {
+           return renderer.bounds.center;
+        }
+        else
+        {
+           return transform.position; // fallback
+        }
+    }
+
+    public void ForceTarget(FarArtInteractable target)
+    {
+        isForcingTarget = true;
+        currentTarget = target;
+    }
+
+    public void StopForcingTarget()
+    {
+        currentTarget = null;
+        isForcingTarget = false;
+
     }
 
     // Debug visuel de la zone d'aimantation

@@ -13,6 +13,7 @@ public class SubtitleBehaviour : PlayableBehaviour
     {
         if (subtitleTarget != null && customText != lastSubtitleText)
         {
+          
             subtitleTarget.SetText(customText);
             lastSubtitleText = customText;
             Debug.Log("Subtitle started: " + customText);
@@ -26,8 +27,10 @@ public class SubtitleBehaviour : PlayableBehaviour
         {
             subtitleTarget.SetText("");
             subtitleTarget.HideSubtitle();
+          
             Debug.Log("Subtitle ended.");
             //lastSubtitleText = "";
         }
     }
 }
+

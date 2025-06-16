@@ -184,6 +184,22 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -7879286356463362175, guid: 1954952ae5c033c4e8c012a4f9494e98, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 27897f87c221969479587be3c10647d8, type: 2}
+    - target: {fileID: -7879286356463362175, guid: 1954952ae5c033c4e8c012a4f9494e98, type: 3}
+      propertyPath: 'm_Materials.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 8ead6c9fc58b4964facc06df42ae226f, type: 2}
+    - target: {fileID: -7879286356463362175, guid: 1954952ae5c033c4e8c012a4f9494e98, type: 3}
+      propertyPath: 'm_Materials.Array.data[2]'
+      value: 
+      objectReference: {fileID: 2100000, guid: b67da07dbeb9351489a8aa4461bf2e4c, type: 2}
+    - target: {fileID: -7879286356463362175, guid: 1954952ae5c033c4e8c012a4f9494e98, type: 3}
+      propertyPath: 'm_Materials.Array.data[3]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 8ead6c9fc58b4964facc06df42ae226f, type: 2}
     - target: {fileID: 919132149155446097, guid: 1954952ae5c033c4e8c012a4f9494e98, type: 3}
       propertyPath: m_Name
       value: AkamiSub

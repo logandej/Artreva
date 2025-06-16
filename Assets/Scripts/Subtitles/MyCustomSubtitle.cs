@@ -1,6 +1,7 @@
 using System.Collections;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class MyCustomSubtitle : MonoBehaviour
 {
@@ -13,19 +14,24 @@ public class MyCustomSubtitle : MonoBehaviour
     [SerializeField] float typingSpeed = 0.1f;
     private bool isAboveSpeaker=false;
 
+    public static UnityEvent eventLock = new();
+    public static UnityEvent eventUnlock = new();
+
+    private bool changeWithView = true;
+
     private void Start()
     {
+        eventLock.AddListener(Lock);
+        eventUnlock.AddListener(Unlock);
         HideSubtitle();
         GoToSpeakerTransform();
     }
 
     public void SetText(string text)
-    {
-        
-            speakerNameText.text = speakerName;
-            canvas.gameObject.SetActive(true);
-            StartCoroutine(TypeText(text));
-        
+    {   
+        speakerNameText.text = speakerName;
+        canvas.gameObject.SetActive(true);
+        StartCoroutine(TypeText(text));     
     }
 
     public void HideSubtitle()
@@ -46,13 +52,23 @@ public class MyCustomSubtitle : MonoBehaviour
 
     private void Update()
     {
-        if(ObjectHelper.IsInView(Camera.main,speakerTransform))
+        if(ObjectHelper.IsInView(Camera.main,speakerTransform) && changeWithView)
         {
             GoToSpeakerTransform();
         }
         else{
             GoToCameraTransform();
         }
+    }
+
+    public void Lock()
+    {
+        changeWithView = false;
+        GoToSpeakerTransform();
+    }
+    public void Unlock()
+    {
+        changeWithView = true;
     }
 
     public void GoToSpeakerTransform()

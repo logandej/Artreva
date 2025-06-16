@@ -16,10 +16,11 @@ MonoBehaviour:
   m_GUID: 6bcec24a678ac494e901771d368fb941
   m_SerializeEntries:
   - m_GUID: 92eca8ca5ca8b9d4dbd6b8546e5123ee
-    m_Address: Main_fr
+    m_Address: Subtitles_fr
     m_ReadOnly: 1
     m_SerializedLabels:
     - Locale-fr
+    - Preload
     FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 1
   m_Settings: {fileID: 11400000, guid: 090a319d96a52d843b88965fa5e1add2, type: 2}

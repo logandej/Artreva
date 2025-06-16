@@ -1,0 +1,149 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: Subtitles_fr
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: fr
+  m_SharedData: {fileID: 11400000, guid: 3bbb7e06d827525469beb19381f99cc8, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 73426100015
+    m_Localized: "Seiez-vous interess\xE9 pour d\xE9couvrir ma nouvelle oeuvre qui
+      se trouve \xE0 quelques m\xE8tres d'ici ?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 73426100001
+    m_Localized: Bonjour ! Je suis Mira, gardienne des portails d'art de Artreva.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 73426100002
+    m_Localized: "Vous \xEAtes venu d\xE9couvrir l'art contemporain ?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 73426100003
+    m_Localized: "Cela tombe bien, aujourd'hui se tient une exposition universelle
+      o\xF9 les artistes contemporains viennent exposer leurs cr\xE9ations !"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 73426100004
+    m_Localized: "C\u2019est le Festival des Artmorphoses !"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 73426100005
+    m_Localized: "Cependant, il y a un l\xE9ger contretemps."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 73426100006
+    m_Localized: "La cl\xE9 permettant d'ouvrir le portail de l'art contemporain
+      a \xE9t\xE9 perdue."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 73426100007
+    m_Localized: "Mais ne vous inqui\xE9tez pas, vous pouvez nous aider \xE0 la retrouver."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 73426100008
+    m_Localized: "Ces orbes repr\xE9sentent diff\xE9rentes dates."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 73426100009
+    m_Localized: "Pour ouvrir le portail de l'art contemporain, vous devez choisir
+      celle qui marque son d\xE9but."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 73426100010
+    m_Localized: "Observez la frise, explorez les mouvements artistiques pass\xE9s,
+      et faites votre choix."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 73426100011
+    m_Localized: "R\xE9fl\xE9chissez bien. La bonne date ouvrira le portail et vous
+      permettra de rejoindre l'exposition universelle."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 73426100012
+    m_Localized: Une fois votre choix fait, placez l'orbe sur la frise.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 73426100013
+    m_Localized: Si c'est la bonne date, le portail s'ouvrira, et vous pourrez entrer
+      dans le monde fascinant de l'art contemporain.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 73426100014
+    m_Localized: Bonjour ! Je suis Akami, jeune artiste contemporain.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 73426100016
+    m_Localized: "Tr\xE8s bien, venez avec moi !"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 73426100017
+    m_Localized: "Merci d'avoir accept\xE9 l'invitation !"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 73426100018
+    m_Localized: 'Te voici au milieu de mon oeuvre : Evolution ! '
+    m_Metadata:
+      m_Items: []
+  - m_Id: 73426100019
+    m_Localized: "Ces barres autour de toi r\xE9agissent avec un pouvoir particulier..."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 73426100020
+    m_Localized: "Voici des tout nouveaux gants, ils permettront de faire r\xE9agir
+      les colonnes,  essaye les !"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 73426100021
+    m_Localized: "Wow ! Ils vous vont \xE0 merveille !"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 73426100022
+    m_Localized: "Tendez votre main et activez toutes les colonnes ! Il y a cependant
+      un ordre \xE0 respecter... Amusez-vous avec mon oeuvre \"Evolution\" !"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 73426100023
+    m_Localized: "Bien jou\xE9 ! Je vois que vous avez analys\xE9 mon oeuvre parfaitement
+      et je vous en remercie. Qu'en avez vous pens\xE9 ?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 73426100024
+    m_Localized: "Bonjour, je me pr\xE9nomme Hurst, critique d'art de ce festival"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 73426100025
+    m_Localized: "Votre oeuvre ici pr\xE9sente, Akami, ne semble pas figurer dans
+      la liste des expositions..."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 73426100026
+    m_Localized: "Je vais devoir en informer l'organisateur. D'autres artistes ont
+      fait de m\xEAme..."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 73426100027
+    m_Localized: "Qu'avez vous en t\xEAte en pr\xE9sentant ces oeuvres d\xE9nu\xE9es
+      de sens !"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 73426100028
+    m_Localized: "C'est trop \xE0 pr\xE9sent, personne ne respecte les r\xE9gles,
+      je vais devoir tout saisir ! "
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

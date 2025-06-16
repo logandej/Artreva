@@ -1,0 +1,147 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: Subtitles_en
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: en
+  m_SharedData: {fileID: 11400000, guid: 3bbb7e06d827525469beb19381f99cc8, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 73426100016
+    m_Localized: All right, come with me!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 73426100015
+    m_Localized: Would you be interested in discovering my new work which is located
+      a few meters from here?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 73426100001
+    m_Localized: Hello! I'm Mira, guardian of the Artreva art portals.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 73426100002
+    m_Localized: Have you come to discover contemporary art?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 73426100003
+    m_Localized: This is a good thing, because today there is a universal exhibition,
+      where contemporary artists come to exhibit their creations!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 73426100004
+    m_Localized: "It\u2019s the Festival of Artmorphoses!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 73426100005
+    m_Localized: However, there is a slight setback.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 73426100006
+    m_Localized: The key to open the portal of contemporary art has been lost.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 73426100007
+    m_Localized: But don't worry, you can help us find her.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 73426100008
+    m_Localized: 'These orbs represent different dates.
+
+'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 73426100009
+    m_Localized: To open the portal of contemporary art, you must choose the one
+      that marks its beginning.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 73426100010
+    m_Localized: Look at the timeline, explore past art movements, and make your
+      choice.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 73426100011
+    m_Localized: Think carefully. The correct date will open the gate and allow you
+      to enter the World's Fair.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 73426100012
+    m_Localized: Once you have made your choice, place the orb on the frieze.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 73426100013
+    m_Localized: If it's the right date, the portal will open, and you can enter
+      the fascinating world of contemporary art.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 73426100014
+    m_Localized: Hello! I am Akami, a young contemporary artist.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 73426100017
+    m_Localized: Thank you for accepting the invitation!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 73426100018
+    m_Localized: 'Here you are in the middle of my work: Evolution!'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 73426100019
+    m_Localized: These bars around you react with a special power...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 73426100020
+    m_Localized: Here are some brand new gloves, they will make the columns react,
+      try them!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 73426100021
+    m_Localized: Wow! They look great on you!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 73426100022
+    m_Localized: Reach out and activate all the columns! There's a certain order
+      to follow, though... Have fun with my "Evolution" artwork!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 73426100023
+    m_Localized: Well done! I see you've analyzed my work perfectly, and I thank
+      you for that. What did you think?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 73426100024
+    m_Localized: Hello, my name is Hurst, art critic for this festival.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 73426100025
+    m_Localized: Your work here, Akami, does not seem to be on the list of exhibitions...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 73426100026
+    m_Localized: I'll have to inform the organizer. Other artists have done the same...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 73426100027
+    m_Localized: What do you have in mind when you present these meaningless works?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 73426100028
+    m_Localized: It's too much now, no one is respecting the rules, I'm going to
+      have to enter everything!
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

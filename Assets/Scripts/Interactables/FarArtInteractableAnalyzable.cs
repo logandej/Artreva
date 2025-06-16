@@ -1,5 +1,6 @@
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UIElements;
 
 public class FarArtInteractableAnalyzable : FarArtInteractable
@@ -14,6 +15,8 @@ public class FarArtInteractableAnalyzable : FarArtInteractable
     private Transform handAnalyzing;
 
     [SerializeField] ArtAnalyzer analyzer;
+
+    public UnityEvent eventAnalyzed = new();
     public void Analyze(Transform hand)
     {
         if (isActive && !isAnalyzed && !isAnalyzing)
@@ -43,6 +46,7 @@ public class FarArtInteractableAnalyzable : FarArtInteractable
             Invoke(nameof(Deanalyze),deanalyzeDelay);
         }
         analyzer.eventDone.RemoveListener(StopAnalyzing);
+        eventAnalyzed?.Invoke();
 
 
     }
@@ -61,6 +65,13 @@ public class FarArtInteractableAnalyzable : FarArtInteractable
     {
         // IF the player is analyzing an art, then he can't deactive it until he finishes the analyze.
         if(!isAnalyzing) { base.OnHoverExit(); }
+    }
+
+    protected override void ActivateNow()
+    {
+        base.ActivateNow();
+        slider.gameObject.SetActive(true);
+        HandActionManager.Instance.LockAnalyzable(this);
     }
 
     public override void DeactivateNow()

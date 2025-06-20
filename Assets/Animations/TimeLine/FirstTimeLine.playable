@@ -77,7 +77,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0111e49a4ec57a44ea76ccf40e0ad69c, type: 3}
   m_Name: SubtitleClip
   m_EditorClassIdentifier: 
-  customText: Bonjour ! Je suis Akami, jeune artiste contemporain.
+  customText: sub.akami.2_01
 --- !u!114 &-4071491276399228428
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -164,7 +164,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0111e49a4ec57a44ea76ccf40e0ad69c, type: 3}
   m_Name: SubtitleClip(Clone)(Clone)
   m_EditorClassIdentifier: 
-  customText: "Tr\xE8s bien, venez avec moi !"
+  customText: sub.akami.2_03
 --- !u!114 &-2412898905564569028
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -949,8 +949,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0111e49a4ec57a44ea76ccf40e0ad69c, type: 3}
   m_Name: SubtitleClip(Clone)(Clone)
   m_EditorClassIdentifier: 
-  customText: "Seiez-vous interess\xE9 pour d\xE9couvrir ma nouvelle oeuvre qui se
-    trouve \xE0 quelques m\xE8tres d'ici ?"
+  customText: sub.akami.2_02
 --- !u!114 &5289961381279729947
 MonoBehaviour:
   m_ObjectHideFlags: 1

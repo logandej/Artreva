@@ -244,4 +244,31 @@ public class TransitionManager : MonoBehaviour
         }
     }
 
+    public static void InterpolateFloat(float from, float to, float duration, System.Action<float> onValue)
+    {
+        GetHelper().StartTransition(new FloatValueTransition(from, to, duration, onValue));
+    }
+
+    private class FloatValueTransition : Transition
+    {
+        private float from;
+        private float to;
+        private System.Action<float> callback;
+
+        public FloatValueTransition(float from, float to, float duration, System.Action<float> callback)
+            : base(new GameObject(), "FloatValue", duration) // dummy GameObject
+        {
+            this.from = from;
+            this.to = to;
+            this.callback = callback;
+            Object.Destroy(Target); // on détruit l'objet bidon dès création
+        }
+
+        protected override void ApplyTransition(float t)
+        {
+            float value = Mathf.Lerp(from, to, t);
+            callback?.Invoke(value);
+        }
+    }
+
 }

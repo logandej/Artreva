@@ -7,21 +7,10 @@ public class ScenarioManager : MonoBehaviour
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
 
-    [Header("FirstEnigma")]
-    [SerializeField] List<OrbEnigma> orbEnigma;
-
     public List<PlayableDirector> playableDirectors = new();
     private int directorIndex = 0;
 
     private bool waitingForPlayer = false;
-
-    void Update()
-    {
-        //if (waitingForPlayer)
-        //{
-        //    playableDirectors[directorIndex].Evaluate(); // maintient la pose
-        //}
-    }
 
     public void PauseTimeline()
     {
@@ -69,6 +58,17 @@ public class ScenarioManager : MonoBehaviour
         // Fais ce que tu veux ici (effets, dialogues, autre Timeline…)
     }
 
+    public void PlayDirector(PlayableDirector playableDirector)
+    {
+        if (!playableDirectors.Contains(playableDirector)){
+            Debug.LogWarning("The playable " + playableDirector.name + "is not in the Scenario Manager Sequence");
+            return;
+        }
+        playableDirector.Play();
+        directorIndex=playableDirectors.IndexOf(playableDirector);
+        GetComponent<EventSequence>().SetGroupIndex(directorIndex);
+    }
+
     public void NextTimeline()
     {
         // Bien figer l'état de la précédente Timeline (optionnel)
@@ -79,7 +79,7 @@ public class ScenarioManager : MonoBehaviour
 
         // Préparer la nouvelle Timeline
         playableDirectors[directorIndex].timeUpdateMode = DirectorUpdateMode.GameTime;
-        playableDirectors[directorIndex].Play();
+        PlayDirector(playableDirectors[directorIndex]);
     }
 
     public void ChangePlayerPosition(Transform transform)
@@ -91,6 +91,7 @@ public class ScenarioManager : MonoBehaviour
         SceneFader.Instance.LoadWhiteFade();
         yield return new WaitForSeconds(SceneFader.Instance.FadeTime);
         GameManager.Instance.Player.transform.position = transform.position;
+        GameManager.Instance.Player.transform.rotation = transform.rotation;
         yield return new WaitForSeconds(1);
         SceneFader.Instance.UnloadFade();
     }

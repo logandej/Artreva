@@ -1,6 +1,8 @@
 using System.Collections.Generic;
+using System.Net.Sockets;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.Rendering;
 using UnityEngine.XR.Interaction.Toolkit;
 using UnityEngine.XR.Interaction.Toolkit.Interactables;
 using UnityEngine.XR.Interaction.Toolkit.Interactors;
@@ -46,20 +48,24 @@ public class OrbSocket : MonoBehaviour
 
     public void SelectEntered(SelectEnterEventArgs args)
     {
-        if (IsOrb(args.interactableObject, out Orb orb))
+        if (IsOrb(args.interactableObject, out Orb orb) && currentAttachedOrb==null)
         {
             //OnSelectOrb();
+            //ForceSelectExit(args.interactableObject.GetOldestInteractorSelecting(), args.interactableObject);
+
             currentAttachedOrb = orb;
             eventOrbInSocket?.Invoke();
         }
     }
 
+
     public void SelectExited(SelectExitEventArgs args)
     {
-        if (IsOrb(args.interactableObject, out Orb orb))
+        if (IsOrb(args.interactableObject, out Orb orb) && currentAttachedOrb != null)
         {
+
             currentAttachedOrb = null;
-            ObjectHelper.ChangeColor(mesh.gameObject, defaultMeshColor);
+            //ObjectHelper.ChangeColor(mesh.gameObject, defaultMeshColor);
             eventOrbOutSocket?.Invoke();
         }
     }
@@ -99,7 +105,7 @@ public class OrbSocket : MonoBehaviour
     private void ValidateOrb()
     {
         eventValidate?.Invoke();
-        ObjectHelper.ChangeColor(mesh.gameObject, Color.green);
+        //ObjectHelper.ChangeColor(mesh.gameObject, Color.green);
     }
 
     //Refuse the Orb, which means it wasn't a good answer
@@ -107,10 +113,18 @@ public class OrbSocket : MonoBehaviour
     {
         eventRefuse?.Invoke();
         //ChangeColor(Color.red);
-        ObjectHelper.ChangeColor(mesh.gameObject, Color.red);
+        //ObjectHelper.ChangeColor(mesh.gameObject, Color.red);
     }
 
+    public void StopEnigma()
+    {
+        Invoke(nameof(Hide),1);
+    }
 
+    private void Hide()
+    {
+        gameObject.SetActive(false);
+    }
 
     //Does the interactable is an Orb ?
     private bool IsOrb(IXRInteractable interactable, out Orb orb)
@@ -120,10 +134,35 @@ public class OrbSocket : MonoBehaviour
 
     public void CanTakeOrb(bool canTake)
     {
-        if (currentAttachedOrb != null)
+        if (true)//currentAttachedOrb != null)
         {
             //currentAttachedOrb.GetComponent<XRGrabInteractable>().select
-            GetComponent<XRSocketInteractor>().allowSelect = canTake;
+            //GetComponent<XRSocketInteractor>().socketActive = canTake;
+            VRDebug.Instance.Log("CAN TAKE = "+canTake);
         }
+    }
+
+
+
+    public void ForceSelectExit(IXRSelectInteractor interactor, IXRSelectInteractable interactable)
+    {
+        if (interactor == null || interactor.interactablesSelected.Count == 0)
+            return;
+
+        // Construction des arguments de l'événement
+        var args = new SelectExitEventArgs
+        {
+            interactorObject = interactor,
+            interactableObject = interactable,
+            manager = null, // Tu n’as pas d’InteractionManager ici
+            isCanceled = true // Tu peux mettre true ou false selon le contexte
+        };
+
+        // Appelle les méthodes internes pour simuler l'événement
+        interactable.OnSelectExiting(args);
+        interactor.OnSelectExiting(args);
+
+        interactable.OnSelectExited(args);
+        interactor.OnSelectExited(args);
     }
 }

@@ -36,8 +36,8 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 73426100003
-    m_Localized: This is a good thing, because today there is a universal exhibition,
-      where contemporary artists come to exhibit their creations!
+    m_Localized: This is good news, as today there is a world exhibition where contemporary
+      artists come to exhibit their creations!
     m_Metadata:
       m_Items: []
   - m_Id: 73426100004
@@ -57,9 +57,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 73426100008
-    m_Localized: 'These orbs represent different dates.
-
-'
+    m_Localized: These orbs represent different dates.
     m_Metadata:
       m_Items: []
   - m_Id: 73426100009
@@ -140,6 +138,297 @@ MonoBehaviour:
   - m_Id: 73426100028
     m_Localized: It's too much now, no one is respecting the rules, I'm going to
       have to enter everything!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 73426100029
+    m_Localized: What's going on? It's a disaster!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 73426100030
+    m_Localized: Akami, my creator, has disappeared...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 73426100031
+    m_Localized: But where did he go? The gloves you wear have freed my soul from
+      my sculpture, and as long as eyes are cast upon me, I can exist.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 73426100032
+    m_Localized: We absolutely must find Akami! Only he can improve these gloves
+      and perhaps free the souls of the other works locked away by this critic.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 73426100033
+    m_Localized: To find Akami, you must find his here. For him, she represents the
+      one who most embodies freedom.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 73426100034
+    m_Localized: Yes, that's it! She was hidden behind you, but you were able to
+      free your gaze and your vision.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 73426100035
+    m_Localized: Another one of your meaningless works, Akami...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 73426100036
+    m_Localized: This is not art, it is a fraud!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 73426100037
+    m_Localized: It's time to clean up this nonsense
+    m_Metadata:
+      m_Items: []
+  - m_Id: 73426100038
+    m_Localized: and keep only what is worth it.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 73426100039
+    m_Localized: Don't you understand anything?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 73426100040
+    m_Localized: It's not up to you to decide what has value or not!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 73426100041
+    m_Localized: Every work tells a story, even the ones you despise!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 73426100042
+    m_Localized: Leave this work alone!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 73426100043
+    m_Localized: You can't just erase what you don't understand!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 73426100044
+    m_Localized: "Oh\u2026 interesting."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 73426100045
+    m_Localized: These gloves... So they would be able to understand contemporary
+      art better than me?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 73426100046
+    m_Localized: All right, let's see what they're worth.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 73426100047
+    m_Localized: My Gloves!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 73426100048
+    m_Localized: Well... that settles it.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 73426100049
+    m_Localized: If you really want to defend these works, then prove their worth!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 73426100050
+    m_Localized: Tomorrow we will have a stand at the festival, facing the public
+      and the artists.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 73426100051
+    m_Localized: It will be up to you to convince people that these creations deserve
+      to exist.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 73426100052
+    m_Localized: I hope you're prepared to fail.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 73426100053
+    m_Localized: "Without gloves\u2026 how will I manage?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 73426100054
+    m_Localized: These gloves never had any power.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 73426100082
+    m_Localized: This is a rather disturbing speech... Your vision seems too subjective
+      to me...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 73426100081
+    m_Localized: The work explores the relationship between time, memory, and forgetting,
+      highlighting the fragility of memories and the possibility of renewal.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 73426100055
+    m_Localized: They only helped the wearer convince himself that he could understand
+      art.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 73426100056
+    m_Localized: You see, you've always been able to understand what artists want
+      to express.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 73426100057
+    m_Localized: It's your perception that matters. Not a magic tool.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 73426100058
+    m_Localized: Tomorrow you won't have gloves to help you.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 73426100059
+    m_Localized: Just you, your gaze, and your ability to convey what you feel.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 73426100060
+    m_Localized: And that's quite enough.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 73426100061
+    m_Localized: My thanks to the critics present here, who were able to identify
+      such a blatant and scandalous anomaly in our event.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 73426100062
+    m_Localized: I'm Koonsa, the organizer of this Biennale. Just yesterday, we intercepted
+      several works that weren't on any official list.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 73426100063
+    m_Localized: These... creations... have no place here. They are out of control,
+      deformed, almost profane. They are not valid representations of contemporary
+      art, but aberrations.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 73426100064
+    m_Localized: Every illegitimate work will be examined. If their presence cannot
+      be rigorously justified, then they will be destroyed immediately.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 73426100065
+    m_Localized: "Here is just one of them. A work by a certain\u2026 Warhul."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 73426100066
+    m_Localized: I'm not going to question its creator. That would be granting them
+      legitimacy they don't have.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 73426100067
+    m_Localized: It is up to you, close to Akami, who seems to find meaning in the
+      delusions of these crazy artists, to convince me.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 73426100068
+    m_Localized: Explain to me. Why does this work deserve its place here?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 73426100069
+    m_Localized: The work highlights the struggle for women's rights and the importance
+      of equality in society. It recalls past and present struggles for freedom and
+      justice.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 73426100070
+    m_Localized: I see... there may be more to understand than I thought...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 73426100071
+    m_Localized: I'm not convinced... This is your own interpretation, not insignificant
+      certainly, but I'm going to need more.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 73426100072
+    m_Localized: All right. My turn. Here's another monstrosity.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 73426100073
+    m_Localized: Look at her. Incoherent. Indecent. A pastiche of what art used to
+      be.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 73426100074
+    m_Localized: The work denounces the impact of social media and technology on
+      our relationship with nature. It highlights the growing addiction to these
+      tools and the ways in which they distance us from our natural environment,
+      emphasizing the importance of finding balance and reconnecting with nature.
+      Isolation is also a relevant theme, showing how we often find ourselves alone
+      in front of our screens, cut off from direct human interaction.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 73426100075
+    m_Localized: Explain it, too. Unless you'd rather stay silent and see this deception
+      disappear...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 73426100076
+    m_Localized: You can say you're doing well... But the next work will be indefensible
+    m_Metadata:
+      m_Items: []
+  - m_Id: 73426100077
+    m_Localized: I'm not sure I follow your personal interpretation. I think I see
+      something a little different...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 73426100078
+    m_Localized: I am Dachamp, an independent critic.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 73426100079
+    m_Localized: "What I see here\u2026 is a fraud. A work lacking coherence, lacking
+      mastery.\nAnd yet, it's there."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 73426100080
+    m_Localized: So you, who seem to understand her... explain to me why she should
+      stay.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 73426100083
+    m_Localized: Well, it seems that... we've missed the point.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 73426100084
+    m_Localized: We judged too quickly. Without seeking to understand, to feel.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 73426100085
+    m_Localized: We looked at these works without really seeing them.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 73426100086
+    m_Localized: Contemporary art is not there to please the eye, but to question.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 73426100087
+    m_Localized: He disturbs, he shakes things up... and that is his strength.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 73426100088
+    m_Localized: We have been prisoners of our old standards.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 73426100089
+    m_Localized: But today's art is no longer content with pleasing.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 73426100090
+    m_Localized: He provokes, he denounces, he challenges.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 73426100091
+    m_Localized: We acknowledge our mistake.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 73426100092
+    m_Localized: These works belong here.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 73426100093
+    m_Localized: "They deserve to be seen\u2026 and understood."
     m_Metadata:
       m_Items: []
   references:

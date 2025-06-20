@@ -51,6 +51,7 @@ public class ObjectHelper : MonoBehaviour
 
     public static bool IsInView(Camera cam, Transform target)
     {
+        if (target == null) return false;
         Vector3 viewportPos = cam.WorldToViewportPoint(target.position);
 
         bool inFront = viewportPos.z > 0;

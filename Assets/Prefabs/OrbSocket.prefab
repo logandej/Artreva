@@ -243,7 +243,7 @@ MonoBehaviour:
   m_SocketActive: 1
   m_InteractableHoverScale: 1
   m_RecycleDelayTime: 1
-  m_HoverSocketSnapping: 1
+  m_HoverSocketSnapping: 0
   m_SocketSnappingRadius: 0.1
   m_SocketScaleMode: 0
   m_FixedScale: {x: 1, y: 1, z: 1}
@@ -286,6 +286,12 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   eventRefuse:
+    m_PersistentCalls:
+      m_Calls: []
+  eventOrbInSocket:
+    m_PersistentCalls:
+      m_Calls: []
+  eventOrbOutSocket:
     m_PersistentCalls:
       m_Calls: []
 --- !u!1 &7922245128325958475

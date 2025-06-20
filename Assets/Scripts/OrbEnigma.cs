@@ -17,6 +17,8 @@ public class OrbEnigma : MonoBehaviour
     public UnityEvent eventGoodAnswer = new();
     public UnityEvent eventBadAnswer = new();
     private int counterOrbInSocket = 0;
+
+    private bool enigmaActive = false;
     void Start()
     {
         HideConfirmButton();
@@ -41,6 +43,7 @@ public class OrbEnigma : MonoBehaviour
 
     public void StartEnigma()
     {
+        if (enigmaActive) return;
         foreach (var orb in goodOrbs)
         {
             orb.StartOrbForEnigma();
@@ -57,6 +60,8 @@ public class OrbEnigma : MonoBehaviour
             orbSocket.eventOrbInSocket.AddListener(AddOrbInSocket);
             orbSocket.eventOrbOutSocket.AddListener(RemoveOrbInSocket);
         }
+
+        enigmaActive = true;
 
 
         //confirmButton.onClick.AddListener(CheckEachSocket);
@@ -115,8 +120,15 @@ public class OrbEnigma : MonoBehaviour
 
         foreach (var orb in GetAllOrbs())
         {
-            orb.Invoke(nameof(orb.StopEnigma),5);
+            orb.Invoke(nameof(orb.StopEnigma),2);
         }
+
+        foreach (var orb in orbSockets)
+        {
+            orb.StopEnigma();
+        }
+
+        enigmaActive = false;
 
     }
 
@@ -128,10 +140,8 @@ public class OrbEnigma : MonoBehaviour
     private void BadAnswer()
     {
         eventBadAnswer?.Invoke();
-        foreach (var orbSocket in orbSockets)
-        {
-            orbSocket.ShowIfGood();
-        }
+
+        StartCoroutine(BadAnswerCoroutine());
     }
 
     IEnumerator BadAnswerCoroutine()

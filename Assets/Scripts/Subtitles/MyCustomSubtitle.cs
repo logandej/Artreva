@@ -19,6 +19,8 @@ public class MyCustomSubtitle : MonoBehaviour
 
     private bool changeWithView = true;
 
+    private string lastKey = "";
+
     private void Start()
     {
         eventLock.AddListener(Lock);
@@ -27,11 +29,46 @@ public class MyCustomSubtitle : MonoBehaviour
         GoToSpeakerTransform();
     }
 
-    public void SetText(string text)
-    {   
+    public void SetText(string key)
+    {
         speakerNameText.text = speakerName;
         canvas.gameObject.SetActive(true);
-        StartCoroutine(TypeText(text));     
+
+        //if (key.Equals("") || key.Equals(" "))
+        //{
+        //    key = IncrementKeySuffix(lastKey);
+        //    print("OLALALLALALAL");
+        //}
+        //print("key  "+ key);
+        subtitleText.text = GameManager.Instance.PrintLocalizedString(key);
+        lastKey = key;
+    }
+
+    public void SetTextWithDuration(string key)
+    {
+        SetText(key);
+        Invoke("HideSubtitle",2);
+
+    }
+
+    private string IncrementKeySuffix(string key)
+    {
+        int underscoreIndex = key.LastIndexOf('_');
+        if (underscoreIndex == -1 || underscoreIndex == key.Length - 1)
+            return key;
+
+        string prefix = key.Substring(0, underscoreIndex + 1); // garde "sub.koonsa.4_"
+        string numberStr = key.Substring(underscoreIndex + 1); // garde "03"
+
+        if (!int.TryParse(numberStr, out int number))
+            return key;
+
+        number++; // incrémente
+
+        // Si l'incrément donne un nombre à 2 chiffres ou plus plus de padding
+        string result = (number >= 10) ? number.ToString() : number.ToString("D" + numberStr.Length);
+
+        return prefix + result;
     }
 
     public void HideSubtitle()
@@ -75,6 +112,7 @@ public class MyCustomSubtitle : MonoBehaviour
     {
         if (!isAboveSpeaker)
         {
+            if (speakerTransform == null) GoToCameraTransform();
             transform.SetParent(speakerTransform);
             TransitionManager.ChangeLocalPosition(this.gameObject, Vector3.zero, 0.5f);
             TransitionManager.ChangeSize(this.gameObject, Vector3.one/2, 0.5f);
@@ -87,7 +125,7 @@ public class MyCustomSubtitle : MonoBehaviour
     {
         if (isAboveSpeaker)
         {
-            transform.SetParent(GameManager.Instance.cameraSubtitleTransform);
+            transform.SetParent(GameManager.Instance.CameraSubtitleTransform);
             TransitionManager.ChangeLocalPosition(this.gameObject, Vector3.zero, 0.5f);
             TransitionManager.ChangeSize(this.gameObject, Vector3.one/4, 0.5f);
             isAboveSpeaker = false;

@@ -10,6 +10,7 @@ public class UIManager : MonoBehaviour
     public Canvas canvas;
     public Image image;
 
+    public int TimeShowInfo { get; set; } = 5;
 
     private void Awake()
     {

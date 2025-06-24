@@ -68,7 +68,8 @@ Shader "Custom/ToonURP"
                 stepValue = saturate(stepValue);
 
                 // Shadow modulation
-                float3 shadowColor = _BaseColor.rgb * lerp(1.0, _ShadowStrength, 1.0 - stepValue);
+                float3 lightIntensity = _MainLightColor.rgb; // couleur + intensité de la lumière principale
+                float3 shadowColor = _BaseColor.rgb * lerp(1.0, _ShadowStrength, 1.0 - stepValue) * lightIntensity;
 
                 float4 tex = SAMPLE_TEXTURE2D(_MainTex, sampler_MainTex, IN.uv);
                 return float4(shadowColor, 1.0) * tex;

@@ -30,18 +30,23 @@ public class SceneFader : MonoBehaviour
 
     // Exemple de méthode pour changer la couleur via script
 
-    public void LoadWhiteFade()
+    public void LoadWhiteFade(float alpha = 1)
     {
-        LoadFade(new Color(1, 1, 1, 1));
+        LoadFade(new Color(1, 1, 1, alpha));
     }
-    public void LoadBlackFade()
+    public void LoadBlackFade(float alpha = 1)
     {
-        LoadFade(new Color(0, 0, 0, 1));
+        LoadFade(new Color(0, 0, 0, alpha));
     }
     private void LoadFade(Color color)
     {
         TransitionManager.ChangeBaseColor(sphereFader, color, FadeTime);
         Invoke(nameof(ChangementsWhileFadeFinished),FadeTime);
+    }
+
+    public void UnloadFadeIn(float time)
+    {
+        Invoke(nameof(UnloadFade),time);
     }
 
     public void UnloadFade()

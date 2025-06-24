@@ -25,6 +25,9 @@ public class DissolveReplaceMaterial : MonoBehaviour
 
         originalMaterial = rend.sharedMaterial;
 
+        dissolveInstance = new Material(dissolveMaterialBase);
+        rend.material = dissolveInstance;
+
         if (autoStart)
             StartDissolve();
     }
@@ -32,8 +35,8 @@ public class DissolveReplaceMaterial : MonoBehaviour
     public void StartDissolve()
     {
         // Instance du shader de dissolve
-        dissolveInstance = new Material(dissolveMaterialBase);
-        rend.material = dissolveInstance;
+        //dissolveInstance = new Material(dissolveMaterialBase);
+        //rend.material = dissolveInstance;
 
         progress = 0f;
         running = true;

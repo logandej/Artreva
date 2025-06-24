@@ -123,9 +123,10 @@ Material:
     - _GlossyReflections: 0
     - _GlowIntensity: 5.41
     - _Metallic: 0
-    - _NoiseStrength: 0.092
+    - _NoiseStrength: 0.255
     - _OcclusionStrength: 1
     - _Parallax: 0.005
+    - _ProjectionScale: 60
     - _QueueOffset: 0
     - _ReceiveShadows: 1
     - _Smoothness: 0.5
@@ -139,13 +140,13 @@ Material:
     m_Colors:
     - _BaseColor: {r: 1, g: 0.731424, b: 0, a: 1}
     - _Color: {r: 1, g: 0.731424, b: 0, a: 1}
-    - _Direction: {r: 1, g: 0, b: 0, a: 0}
+    - _Direction: {r: 0, g: 1, b: 0, a: 0}
     - _DissolveDirection: {r: 0, g: 1, b: 0, a: 0}
     - _EdgeColor: {r: 1, g: 1, b: 0, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _FillColor: {r: 1, g: 0.5176471, b: 0, a: 1}
     - _GlowColor: {r: 1, g: 0.97048855, b: 0, a: 1}
-    - _MainColor: {r: 0.8207547, g: 0.46085465, b: 0, a: 1}
+    - _MainColor: {r: 1, g: 1, b: 1, a: 1}
     - _SpecColor: {r: 0.2, g: 0.2, b: 0.2, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1

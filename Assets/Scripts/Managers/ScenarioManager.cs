@@ -9,9 +9,7 @@ public class ScenarioManager : MonoBehaviour
 
     public List<PlayableDirector> playableDirectors = new();
     private int directorIndex = 0;
-
     private bool waitingForPlayer = false;
-
     public void PauseTimeline()
     {
         Debug.Log("[ScenarioManager] Timeline paused.");
@@ -30,6 +28,11 @@ public class ScenarioManager : MonoBehaviour
     private void UnlockSubtitles()
     {
         MyCustomSubtitle.eventUnlock?.Invoke();
+    }
+
+    public void ResumeTimelineIn(float time)
+    {
+        Invoke(nameof(ResumeTimeline), time);
     }
 
     public void ResumeTimeline()
@@ -101,5 +104,11 @@ public class ScenarioManager : MonoBehaviour
         TransitionManager.ChangeTransform(obj, transform, duration);
     }
 
-    
+    public void ShowInfo(Sprite sprite)
+    {
+        SceneFader.Instance.LoadBlackFade(.8f);
+        UIManager.Instance.ShowInfo(sprite);
+        SceneFader.Instance.UnloadFadeIn(5);
+        ResumeTimelineIn(10);
+    }
 }

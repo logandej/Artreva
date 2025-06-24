@@ -11,6 +11,7 @@ Shader "Custom/DirectionalDissolve"
         _EdgeSmooth ("Edge Smoothness", Range(0.001, 0.2)) = 0.05
         _GlowColor ("Glow Color", Color) = (1, 0.5, 0, 1)
         _GlowIntensity ("Glow Intensity", Range(0, 10)) = 2
+        _ProjectionScale ("Projection Scale", Float) = 1
     }
 
     SubShader
@@ -53,6 +54,7 @@ Shader "Custom/DirectionalDissolve"
                 float _EdgeSmooth;
                 float4 _GlowColor;
                 float _GlowIntensity;
+                float _ProjectionScale;
             CBUFFER_END
 
             TEXTURE2D(_MainTex);        SAMPLER(sampler_MainTex);
@@ -69,7 +71,7 @@ Shader "Custom/DirectionalDissolve"
 
             half4 frag(Varyings IN) : SV_Target
             {
-                float projection = dot(IN.localPos, normalize(_Direction.xyz));
+                float projection = dot(IN.localPos, normalize(_Direction.xyz)) / _ProjectionScale;
                 float fillThreshold = lerp(-1, 1, _FillAmount);
                 float noise = SAMPLE_TEXTURE2D(_NoiseTex, sampler_NoiseTex, IN.uv).r;
                 float offset = noise * _NoiseStrength;

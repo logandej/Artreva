@@ -144,8 +144,8 @@ Material:
     - _EdgeColor: {r: 1, g: 1, b: 0, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _FillColor: {r: 1, g: 0.5176471, b: 0, a: 1}
-    - _GlowColor: {r: 0.19339621, g: 0.8677456, b: 1, a: 1}
-    - _MainColor: {r: 0.7924528, g: 0.56870145, b: 0, a: 1}
+    - _GlowColor: {r: 0.19215685, g: 0.34221256, b: 1, a: 1}
+    - _MainColor: {r: 0.745283, g: 0.5736681, b: 0.13710396, a: 1}
     - _SpecColor: {r: 0.2, g: 0.2, b: 0.2, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1

@@ -8,6 +8,7 @@ public class SceneInfo : MonoBehaviour
 {
     public XROrigin Player;
     public Transform cameraSubtitleTransform;
+    public LightSwitcher lightSwitcher;
     public SensePackMR sensePackMR;
 
     public List<SceneDatas> sceneDatas;

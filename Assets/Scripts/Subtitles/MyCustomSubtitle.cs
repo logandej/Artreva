@@ -21,6 +21,8 @@ public class MyCustomSubtitle : MonoBehaviour
 
     private string lastKey = "";
 
+    public static float subtitle_size = .2f;
+
     private void Start()
     {
         eventLock.AddListener(Lock);
@@ -96,6 +98,15 @@ public class MyCustomSubtitle : MonoBehaviour
         else{
             GoToCameraTransform();
         }
+
+        SetSizeDependingCameraDistance();
+
+    }
+
+    private void SetSizeDependingCameraDistance()
+    {
+        float distance = (this.transform.position - Camera.main.transform.position).magnitude;
+        transform.localScale = distance * subtitle_size * Vector3.one;
     }
 
     public void Lock()
@@ -115,7 +126,7 @@ public class MyCustomSubtitle : MonoBehaviour
             if (speakerTransform == null) GoToCameraTransform();
             transform.SetParent(speakerTransform);
             TransitionManager.ChangeLocalPosition(this.gameObject, Vector3.zero, 0.5f);
-            TransitionManager.ChangeSize(this.gameObject, Vector3.one/2, 0.5f);
+            //TransitionManager.ChangeSize(this.gameObject, Vector3.one/2, 0.5f);
             isAboveSpeaker = true;
             
         }
@@ -127,7 +138,7 @@ public class MyCustomSubtitle : MonoBehaviour
         {
             transform.SetParent(GameManager.Instance.CameraSubtitleTransform);
             TransitionManager.ChangeLocalPosition(this.gameObject, Vector3.zero, 0.5f);
-            TransitionManager.ChangeSize(this.gameObject, Vector3.one/4, 0.5f);
+            //TransitionManager.ChangeSize(this.gameObject, Vector3.one/4, 0.5f);
             isAboveSpeaker = false;
         }
     }

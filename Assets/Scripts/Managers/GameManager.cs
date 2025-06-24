@@ -13,6 +13,8 @@ public class GameManager : MonoBehaviour
     public Transform CameraSubtitleTransform { get; private set; }
     public SensePackMR SensePackMR { get; private set; }
 
+    public LightSwitcher LightSwitcher { get; private set; }
+
     private StringTable _cachedTable;
 
     public GameStates GameStatus;
@@ -98,7 +100,7 @@ public class GameManager : MonoBehaviour
 
     public void ResetGame()
     {
-        GameStatus = GameStates.Warning;
+        Instance.GameStatus = GameStates.Warning;
         //TODO
     }
 
@@ -107,6 +109,17 @@ public class GameManager : MonoBehaviour
         Player = sceneInfo.Player;
         CameraSubtitleTransform = sceneInfo.cameraSubtitleTransform;
         SensePackMR = sceneInfo.sensePackMR;
+        LightSwitcher = sceneInfo.lightSwitcher;
+    }
+
+    public void SwitchToDay()
+    {
+        Instance.LightSwitcher.SwitchToDay();
+    }
+
+    public void SwitchToNight()
+    {
+        Instance.LightSwitcher.SwitchToNight();
     }
 
 }

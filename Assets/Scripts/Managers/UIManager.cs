@@ -1,4 +1,5 @@
 using System.Collections;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
@@ -8,7 +9,11 @@ public class UIManager : MonoBehaviour
     public static UIManager Instance;
 
     public Canvas canvas;
-    public Image image;
+
+    [Header("Info")]
+    public Image infoImage;
+    public Image bgInfoImage;
+    public TMP_Text infoText;
 
     public int TimeShowInfo { get; set; } = 5;
 
@@ -24,20 +29,29 @@ public class UIManager : MonoBehaviour
 
     private void Start()
     {
-        image.gameObject.SetActive(false);
+        infoImage.gameObject.SetActive(false);
+        infoText.gameObject.SetActive(false);
+    }
+
+    public void SetText(string text)
+    {
+        infoText.text = text;
     }
 
     public void ShowInfo(Sprite sprite)
     {
-        image.sprite = sprite;
-        image.color = new Color(1, 1, 1, 0);
-        image.gameObject.SetActive(true);
+        infoImage.sprite = sprite;
+        infoImage.color = new Color(1, 1, 1, 0);
+        infoImage.gameObject.SetActive(true);
+        infoText.gameObject.SetActive(true);
 
         TransitionManager.InterpolateFloat(0f, 1f, 0.5f, alpha =>
         {
-            Color c = image.color;
+            Color c = infoImage.color;
             c.a = alpha;
-            image.color = c;
+            infoImage.color = c;
+            bgInfoImage.color = c;
+            infoText.color = c;
         });
 
         Invoke(nameof(HideInfo), 5f);
@@ -48,9 +62,11 @@ public class UIManager : MonoBehaviour
     {
         TransitionManager.InterpolateFloat(1f, 0f, 0.5f, alpha =>
         {
-            Color c = image.color;
+            Color c = infoImage.color;
             c.a = alpha;
-            image.color = c;
+            infoImage.color = c;
+            bgInfoImage.color = c;
+            infoText.color = c;
         });
 
         StartCoroutine(DisableAfter(0.5f));
@@ -59,7 +75,8 @@ public class UIManager : MonoBehaviour
     private IEnumerator DisableAfter(float delay)
     {
         yield return new WaitForSeconds(delay);
-        image.gameObject.SetActive(false);
+        infoImage.gameObject.SetActive(false);
+        infoText.gameObject.SetActive(false);
     }
 
 }

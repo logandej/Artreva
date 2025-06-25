@@ -6,7 +6,7 @@ public class GenerateSplineComputer : MonoBehaviour
 {
     [Header("Main Parameters")]
     public Transform handTransform;
-    public float maxDistance = 10f;
+    public float MaxDistance { get; set; } = 10f;
     public float aimantationRadius = 0.6f;
     public LayerMask interactableLayer;
     [SerializeField] GameObject rayObjectVisual;
@@ -86,9 +86,9 @@ public class GenerateSplineComputer : MonoBehaviour
     private bool FindTarget(Vector3 origin, Vector3 direction, out FarArtInteractable target, out Vector3 targetCenter)
     {
         target = null;
-        targetCenter = origin + direction * maxDistance;
+        targetCenter = origin + direction * MaxDistance;
 
-        RaycastHit[] hits = Physics.SphereCastAll(origin, aimantationRadius, direction, maxDistance, interactableLayer);
+        RaycastHit[] hits = Physics.SphereCastAll(origin, aimantationRadius, direction, MaxDistance, interactableLayer);
         float closestDistance = float.MaxValue;
 
         foreach (RaycastHit hit in hits)
@@ -141,7 +141,7 @@ public class GenerateSplineComputer : MonoBehaviour
         if (handTransform != null)
         {
             Gizmos.color = Color.cyan;
-            Gizmos.DrawWireSphere(handTransform.position + handTransform.forward * (maxDistance / 2f), aimantationRadius);
+            Gizmos.DrawWireSphere(handTransform.position + handTransform.forward * (MaxDistance / 2f), aimantationRadius);
         }
     }
 

@@ -41,6 +41,11 @@ public class HandActionManager : MonoBehaviour
         else { Destroy(this.gameObject);}
     }
 
+    private void Start()
+    {
+        rightRayRenderer.MaxDistance = rayLength;
+        leftRayRenderer.MaxDistance = rayLength;
+    }
 
     void Update()
     {

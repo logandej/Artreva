@@ -16,6 +16,7 @@ public class GameManager : MonoBehaviour
     public LightSwitcher LightSwitcher { get; private set; }
 
     private StringTable _cachedTable;
+    private StringTable _cachedTable2;
 
     public GameStates GameStatus;
     public enum GameStates
@@ -53,7 +54,10 @@ public class GameManager : MonoBehaviour
         var tableOp = LocalizationSettings.StringDatabase.GetTableAsync("Subtitles");
         yield return tableOp;
         _cachedTable = tableOp.Result;
-     
+
+        var tableOp2 = LocalizationSettings.StringDatabase.GetTableAsync("OtherTexts");
+        yield return tableOp2;
+        _cachedTable2 = tableOp2.Result;
 
     }
 
@@ -65,6 +69,20 @@ public class GameManager : MonoBehaviour
         }
 
         var entry = _cachedTable.GetEntry(key);
+        if (entry == null)
+            return $"Key not found: {key}";
+
+        return entry.LocalizedValue;
+    }
+
+    public string PrintLocalizedString2(string key)
+    {
+        if (_cachedTable2 == null)
+        {
+            return "Localization table not yet loaded.";
+        }
+
+        var entry = _cachedTable2.GetEntry(key);
         if (entry == null)
             return $"Key not found: {key}";
 

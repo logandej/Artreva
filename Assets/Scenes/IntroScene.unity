@@ -9292,6 +9292,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Player: {fileID: 741553193}
   cameraSubtitleTransform: {fileID: 741553192}
+  lightSwitcher: {fileID: 0}
   sensePackMR: {fileID: 1270939823}
   sceneDatas:
   - gameState: 2
@@ -14194,6 +14195,10 @@ PrefabInstance:
       propertyPath: m_HoverSocketSnapping
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3014504803314788309, guid: ea63a65a4fc8dc9409ad321edc9a88f7, type: 3}
+      propertyPath: m_text
+      value: 1970
+      objectReference: {fileID: 0}
     - target: {fileID: 3312063253482305885, guid: ea63a65a4fc8dc9409ad321edc9a88f7, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
@@ -14250,6 +14255,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 0.1098
       objectReference: {fileID: 0}
+    - target: {fileID: 7162020715104266600, guid: ea63a65a4fc8dc9409ad321edc9a88f7, type: 3}
+      propertyPath: m_text
+      value: 1945
+      objectReference: {fileID: 0}
     - target: {fileID: 7380387416168943785, guid: ea63a65a4fc8dc9409ad321edc9a88f7, type: 3}
       propertyPath: m_Name
       value: OrbEnigma
@@ -14258,6 +14267,10 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: e6ace0fe7737c4d41ab71847bbf1f6dc, type: 2}
+    - target: {fileID: 7948254403399799716, guid: ea63a65a4fc8dc9409ad321edc9a88f7, type: 3}
+      propertyPath: m_text
+      value: 1920
+      objectReference: {fileID: 0}
     - target: {fileID: 8140080122035820843, guid: ea63a65a4fc8dc9409ad321edc9a88f7, type: 3}
       propertyPath: badOrbs.Array.size
       value: 2
@@ -14273,7 +14286,7 @@ PrefabInstance:
     - target: {fileID: 8140080122035820843, guid: ea63a65a4fc8dc9409ad321edc9a88f7, type: 3}
       propertyPath: 'badOrbs.Array.data[0]'
       value: 
-      objectReference: {fileID: 805248562635256118}
+      objectReference: {fileID: 293248344}
     - target: {fileID: 8140080122035820843, guid: ea63a65a4fc8dc9409ad321edc9a88f7, type: 3}
       propertyPath: 'badOrbs.Array.data[1]'
       value: 
@@ -14281,7 +14294,7 @@ PrefabInstance:
     - target: {fileID: 8140080122035820843, guid: ea63a65a4fc8dc9409ad321edc9a88f7, type: 3}
       propertyPath: 'goodOrbs.Array.data[0]'
       value: 
-      objectReference: {fileID: 293248344}
+      objectReference: {fileID: 805248562635256118}
     - target: {fileID: 8140080122035820843, guid: ea63a65a4fc8dc9409ad321edc9a88f7, type: 3}
       propertyPath: 'goodOrbs.Array.data[1]'
       value: 

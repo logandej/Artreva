@@ -111,4 +111,9 @@ public class ScenarioManager : MonoBehaviour
         SceneFader.Instance.UnloadFadeIn(5);
         ResumeTimelineIn(10);
     }
+
+    public void SetTextShowInfo(string key)
+    {
+        UIManager.Instance.SetText(GameManager.Instance.PrintLocalizedString2(key));
+    }
 }

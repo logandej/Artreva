@@ -97,13 +97,13 @@ public class GameManager : MonoBehaviour
     public void SelectFrench()
     {
         LocalizationSettings.SelectedLocale = LocalizationSettings.AvailableLocales.Locales[1];
-        StartCoroutine(StartTable());
+        //StartCoroutine(StartTable());
     }
 
     public void SelectEnglish()
     {
         LocalizationSettings.SelectedLocale = LocalizationSettings.AvailableLocales.Locales[0];
-        StartCoroutine(StartTable()); // recharge bien la table pour la nouvelle langue
+        //StartCoroutine(StartTable()); // recharge bien la table pour la nouvelle langue
 
     }
 
@@ -138,6 +138,15 @@ public class GameManager : MonoBehaviour
     public void SwitchToNight()
     {
         Instance.LightSwitcher.SwitchToNight();
+    }
+
+    public void PauseGame()
+    {
+        ScenarioManager.Instance.PauseTimeline();
+    }
+     public void ResumeGame()
+    {
+        ScenarioManager.Instance.ResumeTimeline();
     }
 
 }

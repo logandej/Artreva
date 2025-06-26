@@ -6,6 +6,19 @@ using UnityEngine.Playables;
 public class ScenarioManager : MonoBehaviour
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
+    public static ScenarioManager Instance;
+
+    private void Awake()
+    {
+        if(Instance == null)
+        {
+            Instance = this;
+        }
+        else
+        {
+            Destroy(this.gameObject);
+        }
+    }
 
     public List<PlayableDirector> playableDirectors = new();
     private int directorIndex = 0;

@@ -2,6 +2,7 @@ using System.Collections;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.Localization.Components;
 
 public class MyCustomSubtitle : MonoBehaviour
 {
@@ -36,13 +37,10 @@ public class MyCustomSubtitle : MonoBehaviour
         speakerNameText.text = speakerName;
         canvas.gameObject.SetActive(true);
 
-        //if (key.Equals("") || key.Equals(" "))
-        //{
-        //    key = IncrementKeySuffix(lastKey);
-        //    print("OLALALLALALAL");
-        //}
-        //print("key  "+ key);
-        subtitleText.text = GameManager.Instance.PrintLocalizedString(key);
+        var lse = GetComponent<LocalizeStringEvent>();
+        lse.StringReference.TableEntryReference = key;
+        lse.RefreshString(); // Ceci déclenche la mise à jour du TMP Text
+
         lastKey = key;
     }
 

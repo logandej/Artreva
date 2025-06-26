@@ -27,6 +27,10 @@ MonoBehaviour:
       to control the speed
     m_Metadata:
       m_Items: []
+  - m_Id: 316241726763008
+    m_Localized: Settings
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

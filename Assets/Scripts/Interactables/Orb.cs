@@ -2,16 +2,22 @@ using UnityEngine;
 
 public class Orb: MonoBehaviour
 {
+    [SerializeField] bool isPArtOfEnigma = true;
+
     private Vector3 initialPosition;
     private static float maxFar = 1f;
     private bool isReturningToInitialPosition = false;
     private float initialSize;
     private void Awake()
     {
+        
         initialPosition = transform.position;
         initialSize = transform.localScale.x;
-        transform.localScale = Vector3.zero;
-        Hide();        
+        if (isPArtOfEnigma)
+        {
+            transform.localScale = Vector3.zero;
+            Hide();
+        }
     }
     private void Update()
     {

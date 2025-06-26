@@ -27,6 +27,10 @@ MonoBehaviour:
       votre poignet pour controler la vitesse."
     m_Metadata:
       m_Items: []
+  - m_Id: 316241726763008
+    m_Localized: "Param\xE8tres"
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

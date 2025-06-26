@@ -8,12 +8,15 @@ public class UIManager : MonoBehaviour
 {
     public static UIManager Instance;
 
-    public Canvas canvas;
 
     [Header("Info")]
+    public Canvas canvasInfo;
     public Image infoImage;
     public Image bgInfoImage;
     public TMP_Text infoText;
+
+    [Header("Settings")]
+    public Canvas canvasSettings;
 
     public int TimeShowInfo { get; set; } = 5;
 
@@ -31,6 +34,7 @@ public class UIManager : MonoBehaviour
     {
         infoImage.gameObject.SetActive(false);
         infoText.gameObject.SetActive(false);
+        canvasSettings.gameObject.SetActive(false);
     }
 
     public void SetText(string text)
@@ -77,6 +81,23 @@ public class UIManager : MonoBehaviour
         yield return new WaitForSeconds(delay);
         infoImage.gameObject.SetActive(false);
         infoText.gameObject.SetActive(false);
+    }
+
+    public void ShowSettings()
+    {
+        canvasInfo.gameObject.SetActive(false);
+        canvasSettings.gameObject.SetActive(true);
+
+        GameManager.Instance.PauseGame();
+    }
+
+    public void HideSettings()
+    {
+        canvasInfo.gameObject.SetActive(true);
+        canvasSettings.gameObject.SetActive(false);
+
+        GameManager.Instance.ResumeGame();
+
     }
 
 }

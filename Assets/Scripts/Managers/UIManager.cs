@@ -2,6 +2,7 @@ using System.Collections;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Localization.Components;
 using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
@@ -37,9 +38,11 @@ public class UIManager : MonoBehaviour
         canvasSettings.gameObject.SetActive(false);
     }
 
-    public void SetText(string text)
+    public void SetText(string key)
     {
-        infoText.text = text;
+        var lse = infoText.GetComponent<LocalizeStringEvent>();
+        lse.StringReference.TableEntryReference = key;
+        lse.RefreshString(); // Ceci déclenche la mise à jour du TMP Text
     }
 
     public void ShowInfo(Sprite sprite)
@@ -83,12 +86,19 @@ public class UIManager : MonoBehaviour
         infoText.gameObject.SetActive(false);
     }
 
+    private bool showWhileWaitingForPlayer = false;
+
     public void ShowSettings()
     {
         canvasInfo.gameObject.SetActive(false);
         canvasSettings.gameObject.SetActive(true);
 
-        GameManager.Instance.PauseGame();
+        showWhileWaitingForPlayer = ScenarioManager.Instance.WaitingForPlayer;
+
+        if (!showWhileWaitingForPlayer)
+            GameManager.Instance.PauseGame();
+        
+
     }
 
     public void HideSettings()
@@ -96,7 +106,8 @@ public class UIManager : MonoBehaviour
         canvasInfo.gameObject.SetActive(true);
         canvasSettings.gameObject.SetActive(false);
 
-        GameManager.Instance.ResumeGame();
+        if(!showWhileWaitingForPlayer)
+            GameManager.Instance.ResumeGame();
 
     }
 

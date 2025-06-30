@@ -22,15 +22,18 @@ public class ScenarioManager : MonoBehaviour
 
     public List<PlayableDirector> playableDirectors = new();
     private int directorIndex = 0;
-    private bool waitingForPlayer = false;
+    public bool WaitingForPlayer { get; private set; } = false;
     public void PauseTimeline()
     {
-        Debug.Log("[ScenarioManager] Timeline paused.");
-       // playableDirectors[directorIndex].timeUpdateMode = DirectorUpdateMode.Manual;
-        playableDirectors[directorIndex].Pause();
-        waitingForPlayer = true;
-        // Tu peux ici déclencher un événement, afficher un prompt, etc.
-        LockSubtitles();
+        if (!WaitingForPlayer)
+        {
+            Debug.Log("[ScenarioManager] Timeline paused.");
+            // playableDirectors[directorIndex].timeUpdateMode = DirectorUpdateMode.Manual;
+            playableDirectors[directorIndex].Pause();
+            WaitingForPlayer = true;
+            // Tu peux ici déclencher un événement, afficher un prompt, etc.
+            LockSubtitles();
+        }
     }
 
     private void LockSubtitles()
@@ -50,10 +53,10 @@ public class ScenarioManager : MonoBehaviour
 
     public void ResumeTimeline()
     {
-        if (waitingForPlayer)
+        if (WaitingForPlayer)
         {
             Debug.Log("[ScenarioManager] Timeline resumed.");
-            waitingForPlayer = false;
+            WaitingForPlayer = false;
            // playableDirectors[directorIndex].timeUpdateMode = DirectorUpdateMode.GameTime;
             playableDirectors[directorIndex].Play(); // ou Resume() selon ce que tu veux
             UnlockSubtitles();
@@ -87,6 +90,7 @@ public class ScenarioManager : MonoBehaviour
 
     public void NextTimeline()
     {
+        UIManager.Instance.HideSettings();
         // Bien figer l'état de la précédente Timeline (optionnel)
         playableDirectors[directorIndex].Pause();
         playableDirectors[directorIndex].timeUpdateMode = DirectorUpdateMode.GameTime;
@@ -104,6 +108,8 @@ public class ScenarioManager : MonoBehaviour
     }
     IEnumerator ChangePlayerPositionCoroutine(Transform transform)
     {
+        UIManager.Instance.HideSettings();
+
         SceneFader.Instance.LoadWhiteFade();
         yield return new WaitForSeconds(SceneFader.Instance.FadeTime);
         GameManager.Instance.Player.transform.position = transform.position;

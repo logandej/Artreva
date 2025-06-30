@@ -226,63 +226,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b8638bf63fdd4241a6b6e494c4bf3f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  steps:
-  - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: OrbEnigma, Assembly-CSharp
-        m_MethodName: StartEnigma
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-  - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-  - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1386683563}
-        m_TargetAssemblyTypeName: HandActionManager, Assembly-CSharp
-        m_MethodName: set_EnableHandRays
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-  - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: TransitionCaller, Assembly-CSharp
-        m_MethodName: TriggerTransition
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
+  unityEventGroups: []
 --- !u!114 &215666279
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5857,17 +5801,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4d6ddb69800abd04ca0d09bdc8259b83, type: 3}
---- !u!114 &1386683563 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 9131672452651728422, guid: 4d6ddb69800abd04ca0d09bdc8259b83, type: 3}
-  m_PrefabInstance: {fileID: 1386683562}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2fe12f70484f0054bb44f1002c67d011, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1401690072
 GameObject:
   m_ObjectHideFlags: 0
@@ -5899,7 +5832,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   handTransform: {fileID: 1023167465}
-  maxDistance: 10
   aimantationRadius: 0.5
   interactableLayer:
     serializedVersion: 2
@@ -11332,7 +11264,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   handTransform: {fileID: 1023167468}
-  maxDistance: 10
   aimantationRadius: 0.5
   interactableLayer:
     serializedVersion: 2
@@ -11453,7 +11384,7 @@ Transform:
   m_GameObject: {fileID: 2040909783}
   serializedVersion: 2
   m_LocalRotation: {x: 0.3095727, y: -0.1707769, z: -0.19464165, w: 0.9149397}
-  m_LocalPosition: {x: 0, y: 3, z: 0}
+  m_LocalPosition: {x: -0.000000014901161, y: 3, z: 0.000000022351742}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

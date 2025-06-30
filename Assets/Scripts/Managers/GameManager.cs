@@ -91,6 +91,7 @@ public class GameManager : MonoBehaviour
 
     public void LoadScene(string sceneName)
     {
+        UIManager.Instance.HideSettings();
         SceneLoaderManager.Instance.LoadScene(sceneName);
     }
 
@@ -142,11 +143,12 @@ public class GameManager : MonoBehaviour
 
     public void PauseGame()
     {
-        ScenarioManager.Instance.PauseTimeline();
+      
+            //ScenarioManager.Instance.PauseTimeline();
     }
-     public void ResumeGame()
+    public void ResumeGame()
     {
-        ScenarioManager.Instance.ResumeTimeline();
+            //ScenarioManager.Instance.ResumeTimeline();
     }
 
 }

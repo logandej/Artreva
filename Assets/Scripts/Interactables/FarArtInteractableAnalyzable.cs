@@ -29,7 +29,7 @@ public class FarArtInteractableAnalyzable : FarArtInteractable
 
     private void StartAnalyzing()
     {
-        ObjectHelper.ChangeColor(this.gameObject, Color.cyan);
+        //ObjectHelper.ChangeColor(this.gameObject, Color.cyan);
         analyzer.eventDone.AddListener(StopAnalyzing);
         analyzer.GenerateMarkers();
 
@@ -40,7 +40,7 @@ public class FarArtInteractableAnalyzable : FarArtInteractable
         isAnalyzing = false;
         isAnalyzed = true;
         handAnalyzing = null;
-        ObjectHelper.ChangeColor(this.gameObject, Color.green);
+        //ObjectHelper.ChangeColor(this.gameObject, Color.green);
         if (canDeanalyze)
         {
             Invoke(nameof(Deanalyze),deanalyzeDelay);

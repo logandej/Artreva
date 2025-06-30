@@ -23,10 +23,10 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/VRAssets/Scenes/PicoHandGesture.unity
     guid: be4b498c5f05c284f96ee018847524f2
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/MenuScene.unity
     guid: 4f5de1fe0ac04ee4eb778af8c3c08278
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/IntroScene.unity
     guid: 7883c6f9d871751488aa907161adae4d
   - enabled: 1

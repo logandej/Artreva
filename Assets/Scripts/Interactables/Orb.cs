@@ -2,31 +2,41 @@ using UnityEngine;
 
 public class Orb: MonoBehaviour
 {
-    [SerializeField] bool isPArtOfEnigma = true;
+    [SerializeField] bool isPartOfEnigma = true;
 
     private Vector3 initialPosition;
     private static float maxFar = 1f;
     private bool isReturningToInitialPosition = false;
     private float initialSize;
+
+    private Transform originalParent;
     private void Awake()
     {
         
         initialPosition = transform.position;
         initialSize = transform.localScale.x;
-        if (isPArtOfEnigma)
+        if (isPartOfEnigma)
         {
             transform.localScale = Vector3.zero;
             Hide();
         }
+
+        originalParent = transform.parent;
     }
+
     private void Update()
     {
-        if(ObjectHelper.HasMovedTooFar(transform, initialPosition, maxFar) && !isReturningToInitialPosition)
+        if(ObjectHelper.HasMovedTooFar(transform, initialPosition, maxFar) && !isReturningToInitialPosition && isPartOfEnigma)
         {
             isReturningToInitialPosition=true;
-            TransitionManager.ChangePosition(gameObject, initialPosition, 1f, Vector3.up, .2f);
+            TransitionManager.ChangeLocalPosition(gameObject, initialPosition, 1f, Vector3.up, .2f);
             Invoke(nameof(DoneTransition),1f);
         }
+
+        //if (!isPartOfEnigma && transform.parent != originalParent)
+        //{
+        //    transform.SetParent(originalParent);
+        //}
     }
 
     public void StartOrbForEnigma()

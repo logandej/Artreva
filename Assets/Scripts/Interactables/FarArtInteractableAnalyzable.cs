@@ -17,6 +17,12 @@ public class FarArtInteractableAnalyzable : FarArtInteractable
     [SerializeField] ArtAnalyzer analyzer;
 
     public UnityEvent eventAnalyzed = new();
+
+    private void Start()
+    {
+        GetComponentInChildren<CurvedSpawner>();
+        eventAnalyzed.AddListener(GetComponentInChildren<CurvedSpawner>().LaunchAnimations);
+    }
     public void Analyze(Transform hand)
     {
         if (isActive && !isAnalyzed && !isAnalyzing)

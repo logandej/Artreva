@@ -1091,7 +1091,7 @@
                 {
                     "name": "",
                     "id": "6bd83eca-7a49-4ff2-ac08-4f8e86b56fc3",
-                    "path": "<PicoAimHand>/indexPressed",
+                    "path": "<PicoAimHand>{LeftHand}/indexPressed",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -2229,6 +2229,17 @@
                     "name": "",
                     "id": "82f232f1-6246-4d1e-aacc-a7ccc16c76d9",
                     "path": "<HoloLensHand>{RightHand}/squeezePressed",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Select",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "14d73d35-a015-4a82-8a71-0dadeb1afbfe",
+                    "path": "<PicoAimHand>{RightHand}/indexPressed",
                     "interactions": "",
                     "processors": "",
                     "groups": "",

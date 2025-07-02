@@ -30,6 +30,13 @@ public class HandActionManager : MonoBehaviour
     private FarArtInteractable leftCurrentTarget;
     private FarArtInteractable rightCurrentTarget;
 
+    [SerializeField] Material gloveMaterial;
+    [SerializeField] SkinnedMeshRenderer handLeftSkin;
+    [SerializeField] SkinnedMeshRenderer handRightSkin;
+
+    private Material handMaterialLeft;
+    private Material handMaterialRight;
+
     public bool EnableHandRays { get; set; } = false;
 
     private void Awake()
@@ -45,6 +52,9 @@ public class HandActionManager : MonoBehaviour
     {
         rightRayRenderer.MaxDistance = rayLength;
         leftRayRenderer.MaxDistance = rayLength;
+
+        handMaterialLeft = handLeftSkin.material;
+        handMaterialRight = handRightSkin.material;
     }
 
     void Update()
@@ -166,6 +176,20 @@ public class HandActionManager : MonoBehaviour
                 rightRayRenderer.StopForcingTarget();
 
             });
+        }
+    }
+
+    public void ShowGloves(bool show)
+    {
+        if (show)
+        {
+            handLeftSkin.material = gloveMaterial;
+            handRightSkin.material = gloveMaterial;
+        }
+        else
+        {
+            handRightSkin.material = handMaterialRight;
+            handLeftSkin.material = handMaterialLeft;
         }
     }
 

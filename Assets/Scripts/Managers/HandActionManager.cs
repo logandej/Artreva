@@ -154,14 +154,22 @@ public class HandActionManager : MonoBehaviour
         if (leftCurrentTarget is FarArtInteractableAnalyzable analyzable)
         {
             analyzable.Analyze(leftHandAnchor);
-         
-
-            analyzable.eventAnalyzed.AddListener(() => {
-                isAnalysingLeft = false;
-                analyzable.eventAnalyzed.RemoveAllListeners(); 
-                leftRayRenderer.StopForcingTarget();
-            });
+            analyzable.eventAnalyzed.AddListener(()=>OnAnalyzedLeft(analyzable));
         }
+    }
+
+    void OnAnalyzedLeft(FarArtInteractableAnalyzable analyzable)
+    {
+        isAnalysingLeft = false;
+        analyzable.eventAnalyzed.RemoveListener(() =>OnAnalyzedLeft(analyzable));
+        leftRayRenderer.StopForcingTarget();
+    }
+
+    void OnAnalyzedRight(FarArtInteractableAnalyzable analyzable)
+    {
+        isAnalysingRight = false;
+        analyzable.eventAnalyzed.RemoveListener(() => OnAnalyzedRight(analyzable));
+        rightRayRenderer.StopForcingTarget();
     }
 
     public void AnalyzeRightTarget()
@@ -169,13 +177,8 @@ public class HandActionManager : MonoBehaviour
         if (rightCurrentTarget is FarArtInteractableAnalyzable analyzable)
         {
             analyzable.Analyze(rightHandAnchor);
-           
-            analyzable.eventAnalyzed.AddListener(() => {
-                isAnalysingRight = false;
-                analyzable.eventAnalyzed.RemoveAllListeners();
-                rightRayRenderer.StopForcingTarget();
 
-            });
+            analyzable.eventAnalyzed.AddListener(() => OnAnalyzedRight(analyzable));
         }
     }
 

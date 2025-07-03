@@ -136,6 +136,10 @@ PrefabInstance:
       value: Akami
       objectReference: {fileID: 0}
     - target: {fileID: 3219860367656791013, guid: df931f196c14c5c40867463cfb2a13e4, type: 3}
+      propertyPath: speakerSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: bbba36315c78c9444a872c108a06fc21, type: 3}
+    - target: {fileID: 3219860367656791013, guid: df931f196c14c5c40867463cfb2a13e4, type: 3}
       propertyPath: speakerTransform
       value: 
       objectReference: {fileID: 1124428109}
@@ -12025,6 +12029,10 @@ PrefabInstance:
       value: Koonsa
       objectReference: {fileID: 0}
     - target: {fileID: 3219860367656791013, guid: df931f196c14c5c40867463cfb2a13e4, type: 3}
+      propertyPath: speakerSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 76a1c0c7f8b417344b560917ded63869, type: 3}
+    - target: {fileID: 3219860367656791013, guid: df931f196c14c5c40867463cfb2a13e4, type: 3}
       propertyPath: speakerTransform
       value: 
       objectReference: {fileID: 1933729134}
@@ -12200,6 +12208,10 @@ PrefabInstance:
       propertyPath: speakerName
       value: Moi
       objectReference: {fileID: 0}
+    - target: {fileID: 3219860367656791013, guid: df931f196c14c5c40867463cfb2a13e4, type: 3}
+      propertyPath: speakerSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: cc39c192440c8432582befdd623cb4db, type: 3}
     - target: {fileID: 3219860367656791013, guid: df931f196c14c5c40867463cfb2a13e4, type: 3}
       propertyPath: speakerTransform
       value: 

@@ -75,19 +75,19 @@ public class GameManager : MonoBehaviour
         return entry.LocalizedValue;
     }
 
-    public string PrintLocalizedString2(string key)
-    {
-        if (_cachedTable2 == null)
-        {
-            return "Localization table not yet loaded.";
-        }
+    //public string PrintLocalizedString2(string key)
+    //{
+    //    if (_cachedTable2 == null)
+    //    {
+    //        return "Localization table not yet loaded.";
+    //    }
 
-        var entry = _cachedTable2.GetEntry(key);
-        if (entry == null)
-            return $"Key not found: {key}";
+    //    var entry = _cachedTable2.GetEntry(key);
+    //    if (entry == null)
+    //        return $"Key not found: {key}";
 
-        return entry.LocalizedValue;
-    }
+    //    return entry.LocalizedValue;
+    //}
 
     public void LoadScene(string sceneName)
     {

@@ -9,7 +9,7 @@ public class GenerateSplineComputer : MonoBehaviour
     public float MaxDistance { get; set; } = 10f;
     public float aimantationRadius = 0.6f;
     public LayerMask interactableLayer;
-    [SerializeField] GameObject rayObjectVisual;
+    [SerializeField] ParticleController rayObjectVisual;
 
     private SplineComputer spline;
     private FarArtInteractable currentTarget;
@@ -25,8 +25,15 @@ public class GenerateSplineComputer : MonoBehaviour
 
     void Update()
     {
+
+
+        if (!handTransform.gameObject.activeSelf)
+        {
+            ActiveSpline = false;
+        }
+
         spline.enabled = ActiveSpline;
-        rayObjectVisual.SetActive(ActiveSpline);
+        rayObjectVisual.gameObject.SetActive(ActiveSpline);
 
         if (!ActiveSpline)
         {
@@ -51,6 +58,17 @@ public class GenerateSplineComputer : MonoBehaviour
         }
 
 
+        //SetDistanceParticule;
+        float targetDistance = hasTarget ? 1f : 0.05f;
+
+        if (Mathf.Abs(targetDistance - lastTargetDistance) > transitionThreshold)
+        {
+            ChangeRayParticleDistance(targetDistance);
+            lastTargetDistance = targetDistance;
+        }
+
+
+
         SplinePoint[] points = new SplinePoint[2];
 
         // POINT MAIN
@@ -63,6 +81,7 @@ public class GenerateSplineComputer : MonoBehaviour
 
         if (hasTarget)
         {
+
             // Tangente de la main : toujours dans le sens du hand.forward
             points[0].tangent2 = origin + direction * 0.5f;
 
@@ -72,12 +91,28 @@ public class GenerateSplineComputer : MonoBehaviour
         }
         else
         {
+
             // Droite tendue : tangentes nulles
             points[0].tangent2 = origin;
             points[1].tangent = targetPos;
+
+         
         }
 
         spline.SetPoints(points);
+    }
+
+    private float lastTargetDistance = -1f; // Valeur de référence pour éviter les appels inutiles
+    private float transitionThreshold = 0.01f;
+    private void ChangeRayParticleDistance(float distance)
+    {
+        
+        float startClip = (float)rayObjectVisual.clipTo;
+
+        TransitionManager.InterpolateFloat(startClip, distance, .5f, t =>
+        {
+            rayObjectVisual.clipTo = t;
+        });
     }
 
     /// <summary>

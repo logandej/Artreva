@@ -38,7 +38,7 @@ public class UIManager : MonoBehaviour
         canvasSettings.gameObject.SetActive(false);
     }
 
-    public void SetText(string key)
+    public void SetTextByKey(string key)
     {
         var lse = infoText.GetComponent<LocalizeStringEvent>();
         lse.StringReference.TableEntryReference = key;

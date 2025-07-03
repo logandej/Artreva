@@ -1,12 +1,15 @@
 using System.Collections;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.Events;
 using UnityEngine.Localization.Components;
 
 public class MyCustomSubtitle : MonoBehaviour
 {
     [SerializeField] string speakerName;
+    [SerializeField] Sprite speakerSprite;
+    [SerializeField] Image speakerImage;
     [SerializeField] Transform speakerTransform;
     [SerializeField] Canvas canvas;
     [Header("Settings")]
@@ -35,6 +38,7 @@ public class MyCustomSubtitle : MonoBehaviour
     public void SetText(string key)
     {
         speakerNameText.text = speakerName;
+        speakerImage.sprite = speakerSprite;
         canvas.gameObject.SetActive(true);
 
         var lse = GetComponent<LocalizeStringEvent>();

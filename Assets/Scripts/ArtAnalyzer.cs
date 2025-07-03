@@ -10,10 +10,15 @@ public class ArtAnalyzer : MonoBehaviour
     [SerializeField] private float radius = 2f;
     [SerializeField] private GameObject markerPrefab; // Le prefab à instancier
 
+    [SerializeField] Material redShieldMat;
+    [SerializeField] Material greenShieldMat;
+
     private List<GameObject> angleMarkers = new();
     private List<bool> observedAngles = new();
 
     public UnityEvent eventDone = new();
+
+    
 
 
 
@@ -41,7 +46,7 @@ public class ArtAnalyzer : MonoBehaviour
             if (!observedAngles[closestIndex]) // Check if already observed
             {
                 observedAngles[closestIndex] = true;
-                ObjectHelper.ChangeColor(angleMarkers[closestIndex].GetComponentInChildren<MeshRenderer>().gameObject, Color.green);
+                angleMarkers[closestIndex].GetComponentInChildren<MeshRenderer>().material = greenShieldMat;
                 Debug.Log($"Marker #{closestIndex} observé par proximité !");
                 CheckAllAnalyzed();
             }
@@ -74,7 +79,8 @@ public class ArtAnalyzer : MonoBehaviour
             angleMarkers.Add(marker);
             observedAngles.Add(false);
 
-            ObjectHelper.ChangeColor(marker.GetComponentInChildren<MeshRenderer>().gameObject, Color.red);
+            marker.GetComponentInChildren<MeshRenderer>().material = redShieldMat;
+
         }
     }
 

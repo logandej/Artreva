@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 [RequireComponent(typeof(Renderer))]
@@ -5,17 +6,30 @@ public class DissolveReplaceMaterial : MonoBehaviour
 {
     public Material dissolveMaterialBase;
     public float duration = 1f;
-    public bool autoStart = true;
+    public bool solveOnEnable = true;
 
     private Renderer rend;
     private Material originalMaterial;
     private Material dissolveInstance;
-    private float progress = 0f;
-    private bool running = false;
+    private Coroutine dissolveRoutine;
 
-    void Start()
+    public float Progress
+    {
+        get => dissolveInstance != null ? dissolveInstance.GetFloat("_FillAmount") : 0f;
+        set
+        {
+            if (dissolveInstance != null)
+            {
+                dissolveInstance.SetFloat("_FillAmount", value);
+                rend.material = dissolveInstance;
+            }
+        }
+    }
+
+    private void Awake()
     {
         rend = GetComponent<Renderer>();
+
         if (dissolveMaterialBase == null || rend == null)
         {
             Debug.LogWarning("Missing components.");
@@ -24,44 +38,49 @@ public class DissolveReplaceMaterial : MonoBehaviour
         }
 
         originalMaterial = rend.sharedMaterial;
-
         dissolveInstance = new Material(dissolveMaterialBase);
-        rend.material = dissolveInstance;
-
-        if (autoStart)
-            StartDissolve();
-    }
-
-    public void StartDissolve()
-    {
-        // Instance du shader de dissolve
-        //dissolveInstance = new Material(dissolveMaterialBase);
-        //rend.material = dissolveInstance;
-
-        progress = 0f;
-        running = true;
-    }
-
-    void Update()
-    {
-        if (!running || dissolveInstance == null) return;
-
-        progress += Time.deltaTime / duration;
-        float t = Mathf.Clamp01(progress);
-
-        dissolveInstance.SetFloat("_FillAmount", t);
-
-        if (t >= 1f)
-        {
-            // On remet le matériau d'origine
-            rend.material = originalMaterial;
-            Destroy(dissolveInstance);
-            running = false;
-        }
     }
 
     private void OnEnable()
     {
-        StartDissolve();
+        if (solveOnEnable)
+            Solve(duration); // durée par défaut
     }
+
+    public void Dissolve(float duration)
+    {
+        if (dissolveRoutine != null) StopCoroutine(dissolveRoutine);
+        dissolveRoutine = StartCoroutine(DissolveRoutine(1f, 0f, duration));
+    }
+
+    public void Solve(float duration)
+    {
+        if (dissolveRoutine != null) StopCoroutine(dissolveRoutine);
+        dissolveRoutine = StartCoroutine(DissolveRoutine(0f, 1f, duration));
+    }
+
+    private IEnumerator DissolveRoutine(float startValue, float endValue, float duration)
+    {
+        rend.material = dissolveInstance;
+
+        float timer = 0f;
+        while (timer < duration)
+        {
+            float t = timer / duration;
+            Progress = Mathf.Lerp(startValue, endValue, t);
+            timer += Time.deltaTime;
+            yield return null;
+        }
+
+        Progress = endValue;
+
+        if (endValue >= 1f)
+        {
+            // Rétablir le matériau d'origine après un solve complet
+            rend.material = originalMaterial;
+        }
+
+        dissolveRoutine = null;
+    }
+
 }

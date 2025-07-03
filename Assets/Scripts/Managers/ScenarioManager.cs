@@ -133,6 +133,6 @@ public class ScenarioManager : MonoBehaviour
 
     public void SetTextShowInfo(string key)
     {
-        UIManager.Instance.SetText(GameManager.Instance.PrintLocalizedString2(key));
+        UIManager.Instance.SetTextByKey(key);
     }
 }

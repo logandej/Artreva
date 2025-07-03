@@ -11,6 +11,7 @@ public class CurvedSpawner : MonoBehaviour
     [SerializeField] private float transitionDuration = 1.5f;
     [SerializeField] private float curveStrength = 1f;
 
+    private int finishedCount = 0;
     private void Start()
     {
         // Cacher tous les objets au départ
@@ -20,12 +21,12 @@ public class CurvedSpawner : MonoBehaviour
             obj.SetActive(false);
             TransitionManager.ChangeSize(obj, Vector3.zero, 0);
         }
-
-        LaunchAnimations();
     }
+
 
     public void LaunchAnimations()
     {
+        finishedCount = 0; // reset
         foreach (var obj in objectsToAnimate)
         {
             StartCoroutine(AnimateObject(obj));
@@ -35,24 +36,19 @@ public class CurvedSpawner : MonoBehaviour
     private IEnumerator AnimateObject(GameObject obj)
     {
         obj.SetActive(true);
-
         Vector3 startPos = obj.transform.position;
         List<Vector3> points = new List<Vector3>();
 
-        // Générer un premier point dans un rayon max
-        Vector3 firstPoint = startPos + Random.insideUnitSphere * maxDistance/2;
-        firstPoint.y = Mathf.Abs(firstPoint.y); // rester sur le même plan si besoin
+        Vector3 firstPoint = startPos + Random.insideUnitSphere * maxDistance / 2;
+        firstPoint.y = Mathf.Abs(firstPoint.y);
         points.Add(firstPoint);
 
-        float distance = Vector3.Distance(startPos, firstPoint);
-
-        // Ajouter d'autres points si le premier est proche
-        if (distance < maxDistance / 2f)
+        if (Vector3.Distance(startPos, firstPoint) < maxDistance / 2f)
         {
-            int extraPoints = Random.Range(1, maxPoints); // 1 ou 2
+            int extraPoints = Random.Range(1, maxPoints);
             for (int i = 0; i < extraPoints; i++)
             {
-                Vector3 next = points[points.Count - 1] + Random.insideUnitSphere * maxDistance / 2f;
+                Vector3 next = points[^1] + Random.insideUnitSphere * maxDistance / 2;
                 next.y = Mathf.Abs(next.y);
                 points.Add(next);
             }
@@ -69,8 +65,13 @@ public class CurvedSpawner : MonoBehaviour
             currentPos = point;
         }
 
-        yield return new WaitForSeconds(5);
-        HideObjects();
+        yield return new WaitForSeconds(5f);
+
+        finishedCount++;
+        if (finishedCount == objectsToAnimate.Count)
+        {
+            HideObjects();
+        }
     }
 
     private void HideObjects()
@@ -79,6 +80,7 @@ public class CurvedSpawner : MonoBehaviour
         {
            
             TransitionManager.ChangeSize(obj, Vector3.zero, transitionDuration);
+            TransitionManager.ChangeLocalPosition(obj, Vector3.zero, transitionDuration);
         }
     }
 }

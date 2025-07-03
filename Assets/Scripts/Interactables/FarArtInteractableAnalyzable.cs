@@ -20,8 +20,8 @@ public class FarArtInteractableAnalyzable : FarArtInteractable
 
     private void Start()
     {
-        GetComponentInChildren<CurvedSpawner>();
-        eventAnalyzed.AddListener(GetComponentInChildren<CurvedSpawner>().LaunchAnimations);
+        if(GetComponentInChildren<CurvedSpawner>() != null)
+            eventAnalyzed.AddListener(GetComponentInChildren<CurvedSpawner>().LaunchAnimations);
     }
     public void Analyze(Transform hand)
     {

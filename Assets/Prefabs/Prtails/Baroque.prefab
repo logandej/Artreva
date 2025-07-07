@@ -102,7 +102,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Art Barroque
+  m_text: "Art Barroque \n&\n Classique"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -129,8 +129,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 40.03
-  m_fontSizeBase: 40.03
+  m_fontSize: 26.7
+  m_fontSizeBase: 26.7
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -254,6 +254,76 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 5a744e1a607ed4e4199cfae1aa5d0ea9, type: 3}
   m_PrefabInstance: {fileID: 483220929137703658}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1777166479592808642
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 6486126960359386405}
+    m_Modifications:
+    - target: {fileID: 1326633667255147914, guid: 66f00190617e16c4fab049f8b26b2141, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 0beb0dd5f2243174eba692727c00ac2e, type: 2}
+    - target: {fileID: 4547872343864929404, guid: 66f00190617e16c4fab049f8b26b2141, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.301
+      objectReference: {fileID: 0}
+    - target: {fileID: 4547872343864929404, guid: 66f00190617e16c4fab049f8b26b2141, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 4.269
+      objectReference: {fileID: 0}
+    - target: {fileID: 4547872343864929404, guid: 66f00190617e16c4fab049f8b26b2141, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 3.685
+      objectReference: {fileID: 0}
+    - target: {fileID: 4547872343864929404, guid: 66f00190617e16c4fab049f8b26b2141, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.45451948
+      objectReference: {fileID: 0}
+    - target: {fileID: 4547872343864929404, guid: 66f00190617e16c4fab049f8b26b2141, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.45451948
+      objectReference: {fileID: 0}
+    - target: {fileID: 4547872343864929404, guid: 66f00190617e16c4fab049f8b26b2141, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.54167527
+      objectReference: {fileID: 0}
+    - target: {fileID: 4547872343864929404, guid: 66f00190617e16c4fab049f8b26b2141, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.54167527
+      objectReference: {fileID: 0}
+    - target: {fileID: 4547872343864929404, guid: 66f00190617e16c4fab049f8b26b2141, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4547872343864929404, guid: 66f00190617e16c4fab049f8b26b2141, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 4547872343864929404, guid: 66f00190617e16c4fab049f8b26b2141, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 5895835288775341939, guid: 66f00190617e16c4fab049f8b26b2141, type: 3}
+      propertyPath: m_text
+      value: 1750
+      objectReference: {fileID: 0}
+    - target: {fileID: 9165380872908847629, guid: 66f00190617e16c4fab049f8b26b2141, type: 3}
+      propertyPath: m_Name
+      value: StaticOrb
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 66f00190617e16c4fab049f8b26b2141, type: 3}
+--- !u!4 &2861064161490111678 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4547872343864929404, guid: 66f00190617e16c4fab049f8b26b2141, type: 3}
+  m_PrefabInstance: {fileID: 1777166479592808642}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &6740168346692700878
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -333,6 +403,9 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: aef445f7b472b404faffe6f512cf82ca, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2861064161490111678}
     - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: aef445f7b472b404faffe6f512cf82ca, type: 3}
       insertIndex: -1
       addedObject: {fileID: 5253328241865481495}

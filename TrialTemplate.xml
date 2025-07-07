@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Trial xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <scene meshName="Kerlann">
+    <Position x="0" y="0" z="0" t="0" />
+    <Rotation x="0" y="0" z="0" t="0" />
+    <recordingFile>Output_{USER}_{ITT}.csv</recordingFile>
+    <endingConditions>
+      <condition parameter="time" test="greater" value="60" />
+    </endingConditions>
+  </scene>
+  <player>
+    <TrialRegularPlayer mesh="RegPlayer" radius="0.33" killable="false" startLife="0" endLife="3.40282347E+38">
+      <Position x="0" y="0" z="0" t="0" />
+      <Rotation x="0" y="0" z="0" t="0" />
+      <controlLaw>
+        <LawControllerSpeedAngle speedCurrent="0" speedDefault="1.33" speedVariation="0.5" angularSpeed="30" accelerationMax="0.8" timeBeforeControl="0" />
+      </controlLaw>
+    </TrialRegularPlayer>
+  </player>
+  <screenRecorder record="false" timeToStart="0" timeToStop="0" framerate="25">
+    <saveDir>./Output/</saveDir>
+  </screenRecorder>
+  <SavedDataList>
+    <data>
+      <DataUnitySpatial />
+    </data>
+    <data>
+      <DataDeviceState />
+    </data>
+  </SavedDataList>
+  <agents>
+    <agent>
+      <TrialRegularAgent mesh="m002" radius="0.33" killable="false" startLife="0" endLife="3.40282347E+38" visualVariation="0" animationOffset="0" heightOffset="0">
+        <Position x="0" y="0" z="0" t="0" />
+        <Rotation x="0" y="0" z="0" t="0" />
+        <controlLaw>
+          <LawStanding animationType="0">
+            <LookAt x="0" y="0" z="0" t="0" />
+          </LawStanding>
+        </controlLaw>
+        <controlSim>
+          <UmansConfig SimulationID="0" policy="ORCA" radius="0.33" prefVel="1.33" maxVel="2" maxAcc="5" />
+        </controlSim>
+      </TrialRegularAgent>
+    </agent>
+    <agent>
+      <TrialRegularAgent mesh="m002" radius="0.33" killable="false" startLife="0" endLife="3.40282347E+38" visualVariation="0" animationOffset="0" heightOffset="0">
+        <Position x="0" y="0" z="0" t="0" />
+        <Rotation x="0" y="0" z="0" t="0" />
+        <controlLaw>
+          <LawFileData timeColumn="1" xColumn="0" yColumn="0" zColumn="0">
+            <dataFile>file.dat</dataFile>
+          </LawFileData>
+        </controlLaw>
+      </TrialRegularAgent>
+    </agent>
+  </agents>
+</Trial>

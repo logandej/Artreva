@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Config xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <experience currentUser="0" startingTrial="0">
+    <sourceFileExperiment>./Scenario/Test/FileOrder{USER}.csv</sourceFileExperiment>
+    <userHeight>1.7</userHeight>
+  </experience>
+  <Recording dataSeparator="," decimalSeparator="." useHeaders="true">
+    <folder>./Output/</folder>
+  </Recording>
+  <log debugLvl="0" />
+  <AddOns />
+</Config>

@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Trial xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <scene meshName="Plane">
+    <Position x="-0" y="0" z="0" t="0" />
+    <Rotation x="0" y="0" z="0" t="0" />
+    <recordingFile>Output_{USER}_{ITT}.csv</recordingFile>
+    <endingConditions />
+  </scene>
+  <player>
+    <TrialRegularPlayer mesh="plasticMan" radius="0.33" killable="false" startLife="0" endLife="3.40282347E+38">
+      <Position x="-0" y="0" z="0" t="0" />
+      <Rotation x="0" y="0" z="0" t="0" />
+      <controlLaw>
+        <LawControllerSpeedAngle speedCurrent="0" speedDefault="0" speedVariation="1.33" angularSpeed="30" accelerationMax="0.8" timeBeforeControl="0" />
+      </controlLaw>
+    </TrialRegularPlayer>
+  </player>
+  <agents />
+</Trial>

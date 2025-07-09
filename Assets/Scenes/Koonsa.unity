@@ -6714,7 +6714,7 @@ MonoBehaviour:
   interactableLayer:
     serializedVersion: 2
     m_Bits: 256
-  rayObjectVisual: {fileID: 1559573135}
+  rayObjectVisual: {fileID: 1559573136}
 --- !u!114 &1401690074
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17484,7 +17484,7 @@ MonoBehaviour:
   interactableLayer:
     serializedVersion: 2
     m_Bits: 256
-  rayObjectVisual: {fileID: 920467447}
+  rayObjectVisual: {fileID: 920467449}
 --- !u!1001 &1933729133
 PrefabInstance:
   m_ObjectHideFlags: 0

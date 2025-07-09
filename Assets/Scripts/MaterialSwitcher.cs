@@ -35,7 +35,7 @@ public class MaterialSwitcher : MonoBehaviour
         ChangeColors(true,timeToChange);
     }
 
-    private void ChangeColors(bool ToEnd, float duration = 0)
+    public void ChangeColors(bool ToEnd, float duration = 0)
     {
         TransitionManager.InterpolateFloat(0, 1, duration, t =>
         {

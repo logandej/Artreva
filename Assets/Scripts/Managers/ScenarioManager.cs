@@ -128,7 +128,7 @@ public class ScenarioManager : MonoBehaviour
         SceneFader.Instance.LoadBlackFade(.8f);
         UIManager.Instance.ShowInfo(sprite);
         SceneFader.Instance.UnloadFadeIn(5);
-        ResumeTimelineIn(10);
+        //ResumeTimelineIn(10);
     }
 
     public void SetTextShowInfo(string key)

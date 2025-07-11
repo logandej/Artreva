@@ -823,6 +823,7 @@ PlayerSettings:
   webWasm2023: 0
   scriptingDefineSymbols:
     Android: AutoLocalization;DREAMTECK_SPLINES
+    Standalone: DREAMTECK_SPLINES
     iPhone: AutoLocalization
   additionalCompilerArguments: {}
   platformArchitecture: {}

@@ -324,6 +324,22 @@ MonoBehaviour:
   m_Name: SubtitleClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)
   m_EditorClassIdentifier: 
   customText: sub.hurst.5_06
+--- !u!114 &-7369629472374784717
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15c38f6fa1940124db1ab7f6fe7268d1, type: 3}
+  m_Name: Signal Emitter
+  m_EditorClassIdentifier: 
+  m_Time: 45.18333333333333
+  m_Retroactive: 0
+  m_EmitOnce: 0
+  m_Asset: {fileID: 11400000, guid: 7a1f647481308cb49bccff1e0e062e2e, type: 2}
 --- !u!114 &-7298273872859845432
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -429,6 +445,22 @@ MonoBehaviour:
   m_Name: SubtitleClip(Clone)(Clone)(Clone)(Clone)
   m_EditorClassIdentifier: 
   customText: sub.critique 2.5_06
+--- !u!114 &-4987315405718090567
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15c38f6fa1940124db1ab7f6fe7268d1, type: 3}
+  m_Name: Signal Emitter
+  m_EditorClassIdentifier: 
+  m_Time: 81.56666666666666
+  m_Retroactive: 0
+  m_EmitOnce: 0
+  m_Asset: {fileID: 11400000, guid: 7a1f647481308cb49bccff1e0e062e2e, type: 2}
 --- !u!114 &-4685043411284922752
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -466,6 +498,8 @@ MonoBehaviour:
     m_Objects:
     - {fileID: -2768525655386849554}
     - {fileID: 810904580000571181}
+    - {fileID: -7369629472374784717}
+    - {fileID: -4987315405718090567}
 --- !u!114 &-4576353611162442397
 MonoBehaviour:
   m_ObjectHideFlags: 1

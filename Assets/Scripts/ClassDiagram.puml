@@ -1,0 +1,670 @@
+﻿@startuml
+class AkamiEnigma {
+    - Start() : void
+    - StartEnigma() : void
+    - CheckIfGoodPillar(pillar : FarArtInteractable) : void
+    + Nice() : void
+}
+class ArtAnalyzer {
+    - markerPrefab : GameObject
+    + AnalyzeFromProximity() : void
+    - CheckAllAnalyzed() : void
+    + GenerateMarkers() : void
+    - DestroyMarkers() : void
+}
+class CageArtToAnalyze {
+    + OnAction() : void
+}
+class CurvedSpawner {
+    - objectsToAnimate : List<GameObject>
+    - Start() : void
+    + LaunchAnimations() : void
+    - AnimateObject(obj : GameObject) : IEnumerator
+    - HideObjects() : void
+}
+class CustomPoseGrab {
+    + handInteractor : XRDirectInteractor
+    + interactableToGrab : XRBaseInteractable
+    + gestureDetector : XRHandPose
+    + TryGrab() : void
+    + TryRelease() : void
+}
+class DragonFractal {
+    - lineRenderer : LineRenderer
+    - buildStartTime : float
+    - totalSegments : int
+    + Draw() : void
+    - GenerateFractalPoints() : List<Vector3>
+}
+class FaceCamera {
+}
+class GenerateSplineComputer {
+    + handTransform : Transform
+    + interactableLayer : LayerMask
+    - spline : SplineComputer
+    - currentTarget : FarArtInteractable
+    + MaxDistance : float { get; set; }
+    + ActiveSpline : bool { get; set; }
+    - ChangeRayParticleDistance(distance : float) : void
+    - FindTarget(origin : Vector3, direction : Vector3) : bool
+    - GetTargetPos(transform : Transform) : Vector3
+    + ForceTarget(target : FarArtInteractable) : void
+    + StopForcingTarget() : void
+}
+class LightSwitcher {
+    + sunLight : Light
+    + SwitchToNight() : void
+    + SwitchToDay() : void
+}
+class MaterialSwitcher {
+    + name : string
+    + colorStart : Color
+    + colorEnd : Color
+    + materialNameColorList : List<MaterialNameColor>
+    + material : Material
+    - Start() : void
+    + ChangeToStart() : void
+    + ChangeToEnd() : void
+    + ChangeColors(ToEnd : bool) : void
+}
+class MaterialNameColor {
+    + name : string
+    + colorStart : Color
+    + colorEnd : Color
+    + materialNameColorList : List<MaterialNameColor>
+    + material : Material
+    - Start() : void
+    + ChangeToStart() : void
+    + ChangeToEnd() : void
+    + ChangeColors(ToEnd : bool) : void
+}
+class OrbEnigma {
+    + StartEnigma() : void
+    - AddOrbInSocket() : void
+    - RemoveOrbInSocket() : void
+    - ShowConfirmButton() : void
+    - HideConfirmButton() : void
+    - CheckEachSocket() : void
+    - GoodAnswer() : void
+    - GetAllOrbs() : List<Orb>
+    - BadAnswer() : void
+}
+class SensePackMR {
+    - Awake() : void
+    - OnApplicationPause(pause : bool) : void
+    + ActiveMR(active : bool) : void
+}
+class VRDebug {
+    + debugText : TMP_Text
+    + Log(str : string) : void
+}
+class CustomObjectHelp {
+    + ChangeColor(col : string) : void
+    + StringToColor(name : string) : Color
+}
+class GizmoCircleDrawer {
+    + name : string
+    - OnDrawGizmos() : void
+    - DrawCircle(center : Vector3, radius : float) : void
+}
+class GizmoCircle {
+    + name : string
+    - OnDrawGizmos() : void
+    - DrawCircle(center : Vector3, radius : float) : void
+}
+class GizmoSphereDrawer {
+    + name : string
+    - OnDrawGizmos() : void
+}
+class GizmoSphere {
+    + name : string
+    - OnDrawGizmos() : void
+}
+class ObjectHelper {
+}
+class OutlineEffect {
+}
+class OverrideSortingCanvas {
+}
+class FarArtInteractable {
+    - feedbacks : IInteractableFeedbacks
+    # slider : Slider
+    - Awake() : void
+    + OnHoverEnter() : void
+}
+class FarArtInteractableAnalyzable {
+    - handAnalyzing : Transform
+    - Start() : void
+    + Analyze(hand : Transform) : void
+    - StartAnalyzing() : void
+    - StopAnalyzing() : void
+    - Deanalyze() : void
+    + RotateWithHand(ZhandRotate : float) : void
+    - CalculRotationValue(ZhandRotation : float) : float
+}
+class Orb {
+    - initialPosition : Vector3
+    - initialSize : float
+    - originalParent : Transform
+    - Awake() : void
+    - Update() : void
+    + StartOrbForEnigma() : void
+    + StopEnigma() : void
+    + Hide() : void
+    - DoneTransition() : void
+}
+class OrbSocket {
+    - currentAttachedOrb : Orb
+    - defaultMeshColor : Color
+    - Start() : void
+    + HoverEntered(args : HoverEnterEventArgs) : void
+    + HoverExited(args : HoverExitEventArgs) : void
+    + SelectEntered(args : SelectEnterEventArgs) : void
+    + SelectExited(args : SelectExitEventArgs) : void
+    + SetAllowedOrb(orb : Orb) : void
+    + SetAllowedOrbs(allowedOrbs : List<Orb>) : void
+    + ShowIfGood() : void
+    + CheckOrb() : bool
+    - ValidateOrb() : void
+    - RefuseOrb() : void
+    + StopEnigma() : void
+    - Hide() : void
+    - IsOrb(interactable : IXRInteractable) : bool
+    + CanTakeOrb(canTake : bool) : void
+    + ForceSelectExit(interactor : IXRSelectInteractor, interactable : IXRSelectInteractable) : void
+}
+class XRSimpleNoParent {
+    - originalParent : Transform
+}
+class GameManager {
+    - _cachedTable : StringTable
+    - _cachedTable2 : StringTable
+    + GameStatus : GameStates
+    - Awake() : void
+    - Start() : void
+    + PrintLocalizedString(key : string) : string
+    + PrintLocalizedString2(key : string) : string
+    + LoadScene(sceneName : string) : void
+    + SelectFrench() : void
+    + SelectEnglish() : void
+    + SetGameStatus(status : int) : void
+    + ResetGame() : void
+    + RegisterSceneReferences(sceneInfo : SceneInfo) : void
+    + SwitchToDay() : void
+    + SwitchToNight() : void
+    + PauseGame() : void
+    + ResumeGame() : void
+}
+class HandActionManager {
+    - leftHandAnchor : Transform
+    - rightHandAnchor : Transform
+    - leftHandPalm : Transform
+    - rightHandPalm : Transform
+    - leftCurrentTarget : FarArtInteractable
+    - rightCurrentTarget : FarArtInteractable
+    - handMaterialLeft : Material
+    - handMaterialRight : Material
+    + EnableHandRays : bool { get; set; }
+    - Awake() : void
+    - Start() : void
+    - RaycastHand(hand : Transform, rayRenderer : GenerateSplineComputer) : void
+    + LockAnalyzable(farArtInteractableAnalyzable : FarArtInteractableAnalyzable) : void
+    + AnalyzeLeftTarget() : void
+    + AnalyzeRightTarget() : void
+    + ShowGloves(show : bool) : void
+    + ActiveRayLeftHand() : void
+    + StopRayLeftHand() : void
+    + ActiveRayRightHand() : void
+    + StopRayRightHand() : void
+}
+class ScenarioManager {
+    - Awake() : void
+    + PauseTimeline() : void
+    - LockSubtitles() : void
+    - UnlockSubtitles() : void
+    + ResumeTimelineIn(time : float) : void
+    + ResumeTimeline() : void
+    + OnPlayerDidAction() : void
+    + TriggerSomething() : void
+    + PlayDirector(playableDirector : PlayableDirector) : void
+    + NextTimeline() : void
+    + ChangePlayerPosition(transform : Transform) : void
+    + Transition(obj : GameObject, transform : Transform, duration : float) : void
+    + ShowInfo(sprite : Sprite) : void
+    + SetTextShowInfo(key : string) : void
+}
+class SceneInfo {
+    + Player : XROrigin
+    + cameraSubtitleTransform : Transform
+    + lightSwitcher : LightSwitcher
+    + sensePackMR : SensePackMR
+    + sceneDatas : List<SceneDatas>
+    + objectsToShow : List<GameObject>
+    + Begin() : void
+    - CheckSceneDatas() : void
+}
+class SceneDatas {
+    + Player : XROrigin
+    + cameraSubtitleTransform : Transform
+    + lightSwitcher : LightSwitcher
+    + sensePackMR : SensePackMR
+    + sceneDatas : List<SceneDatas>
+    + objectsToShow : List<GameObject>
+    + Begin() : void
+    - CheckSceneDatas() : void
+}
+class SceneLoaderManager {
+    - loadingOperation : AsyncOperation
+    - Awake() : void
+    + LoadScene(sceneName : string) : void
+    - LoadSceneAsync(sceneName : string) : IEnumerator
+    + IsLoading() : bool
+}
+class UIManager {
+    + canvasInfo : Canvas
+    + infoImage : Image
+    + bgInfoImage : Image
+    + infoText : TMP_Text
+    + canvasSettings : Canvas
+    + TimeShowInfo : int { get; set; }
+    - Awake() : void
+    - Start() : void
+    + SetTextByKey(key : string) : void
+    + ShowInfo(sprite : Sprite) : void
+    - HideInfo() : void
+    - DisableAfter(delay : float) : IEnumerator
+    + ShowSettings() : void
+    + HideSettings() : void
+}
+class UnityEventGroup {
+    + events : List<UnityEvent>
+    + NextEvent() : void
+    + SetGroupIndex(index : int) : void
+}
+class EventSequence {
+    + events : List<UnityEvent>
+    + NextEvent() : void
+    + SetGroupIndex(index : int) : void
+}
+class DissolveReplaceMaterial {
+    + dissolveMaterialBase : Material
+    - rend : Renderer
+    - originalMaterial : Material
+    - dissolveInstance : Material
+    - dissolveRoutine : Coroutine
+    - Awake() : void
+    - OnEnable() : void
+    + Dissolve(duration : float) : void
+    + Solve(duration : float) : void
+    - DissolveRoutine(startValue : float, endValue : float, duration : float) : IEnumerator
+}
+class MyCustomSubtitle {
+    - Start() : void
+    + SetText(key : string) : void
+    + SetTextWithDuration(key : string) : void
+    - IncrementKeySuffix(key : string) : string
+    + HideSubtitle() : void
+    - TypeText(text : string) : IEnumerator
+    - Update() : void
+    - SetSizeDependingCameraDistance() : void
+    + Lock() : void
+    + Unlock() : void
+    + GoToSpeakerTransform() : void
+    + GoToCameraTransform() : void
+}
+class SubtitleBehaviour {
+    + customText : string
+    + subtitleTarget : MyCustomSubtitle
+}
+class SubtitleClip {
+    + customText : string
+}
+class SubtitleMixer {
+    + subtitleTarget : MyCustomSubtitle
+}
+class SubtitleTrack {
+}
+class SubtitleTyper {
+    - subtitleText : TMP_Text
+    - TypeText(text : string) : IEnumerator
+}
+class CallMethodBehaviour {
+    + targetObject : GameObject
+    + methodName : string
+}
+class CallMethodClip {
+    + targetObject : ExposedReference<GameObject>
+    + methodName : string
+}
+class CallMethodTrack {
+}
+class SceneFader {
+    + sphereFader : GameObject
+    - Awake() : void
+    - Start() : void
+    + LoadWhiteFade() : void
+    + LoadBlackFade() : void
+    - LoadFade(color : Color) : void
+    + UnloadFadeIn(time : float) : void
+    + UnloadFade() : void
+    - ChangementsWhileFadeFinished() : void
+}
+class TransitionCaller {
+    + targetObject : GameObject
+    + targetTransform : Transform
+    + TriggerTransition() : void
+    + Transition(obj : GameObject, transform : Transform, duration : float) : void
+}
+class TransitionManager {
+    - startColor : Color
+    - targetColor : Color
+    - spriteRenderer : SpriteRenderer
+    - startColor : Color
+    - targetColor : Color
+    - material : Material
+    - startScale : Vector3
+    - targetScale : Vector3
+    - targetTransform : Transform
+    - startRotation : Vector3
+    - targetRotation : Vector3
+    - targetTransform : Transform
+    - startPosition : Vector3
+    - targetPosition : Vector3
+    - targetTransform : Transform
+    - local : bool
+    - controlPoint : Vector3
+    - from : float
+    - to : float
+    - Update() : void
+    + StartTransition(transition : Transition) : void
+    + UpdateTransition(deltaTime : float) : bool
+}
+class TransitionHelper {
+    - startColor : Color
+    - targetColor : Color
+    - spriteRenderer : SpriteRenderer
+    - startColor : Color
+    - targetColor : Color
+    - material : Material
+    - startScale : Vector3
+    - targetScale : Vector3
+    - targetTransform : Transform
+    - startRotation : Vector3
+    - targetRotation : Vector3
+    - targetTransform : Transform
+    - startPosition : Vector3
+    - targetPosition : Vector3
+    - targetTransform : Transform
+    - local : bool
+    - controlPoint : Vector3
+    - from : float
+    - to : float
+    - Update() : void
+    + StartTransition(transition : Transition) : void
+    + UpdateTransition(deltaTime : float) : bool
+}
+class Transition <<abstract>> {
+    - startColor : Color
+    - targetColor : Color
+    - spriteRenderer : SpriteRenderer
+    - startColor : Color
+    - targetColor : Color
+    - material : Material
+    - startScale : Vector3
+    - targetScale : Vector3
+    - targetTransform : Transform
+    - startRotation : Vector3
+    - targetRotation : Vector3
+    - targetTransform : Transform
+    - startPosition : Vector3
+    - targetPosition : Vector3
+    - targetTransform : Transform
+    - local : bool
+    - controlPoint : Vector3
+    - from : float
+    - to : float
+    - Update() : void
+    + StartTransition(transition : Transition) : void
+    + UpdateTransition(deltaTime : float) : bool
+}
+class ColorTransition {
+    - startColor : Color
+    - targetColor : Color
+    - spriteRenderer : SpriteRenderer
+    - startColor : Color
+    - targetColor : Color
+    - material : Material
+    - startScale : Vector3
+    - targetScale : Vector3
+    - targetTransform : Transform
+    - startRotation : Vector3
+    - targetRotation : Vector3
+    - targetTransform : Transform
+    - startPosition : Vector3
+    - targetPosition : Vector3
+    - targetTransform : Transform
+    - local : bool
+    - controlPoint : Vector3
+    - from : float
+    - to : float
+    - Update() : void
+    + StartTransition(transition : Transition) : void
+    + UpdateTransition(deltaTime : float) : bool
+}
+class BaseColorTransition {
+    - startColor : Color
+    - targetColor : Color
+    - spriteRenderer : SpriteRenderer
+    - startColor : Color
+    - targetColor : Color
+    - material : Material
+    - startScale : Vector3
+    - targetScale : Vector3
+    - targetTransform : Transform
+    - startRotation : Vector3
+    - targetRotation : Vector3
+    - targetTransform : Transform
+    - startPosition : Vector3
+    - targetPosition : Vector3
+    - targetTransform : Transform
+    - local : bool
+    - controlPoint : Vector3
+    - from : float
+    - to : float
+    - Update() : void
+    + StartTransition(transition : Transition) : void
+    + UpdateTransition(deltaTime : float) : bool
+}
+class SizeTransition {
+    - startColor : Color
+    - targetColor : Color
+    - spriteRenderer : SpriteRenderer
+    - startColor : Color
+    - targetColor : Color
+    - material : Material
+    - startScale : Vector3
+    - targetScale : Vector3
+    - targetTransform : Transform
+    - startRotation : Vector3
+    - targetRotation : Vector3
+    - targetTransform : Transform
+    - startPosition : Vector3
+    - targetPosition : Vector3
+    - targetTransform : Transform
+    - local : bool
+    - controlPoint : Vector3
+    - from : float
+    - to : float
+    - Update() : void
+    + StartTransition(transition : Transition) : void
+    + UpdateTransition(deltaTime : float) : bool
+}
+class RotationTransition {
+    - startColor : Color
+    - targetColor : Color
+    - spriteRenderer : SpriteRenderer
+    - startColor : Color
+    - targetColor : Color
+    - material : Material
+    - startScale : Vector3
+    - targetScale : Vector3
+    - targetTransform : Transform
+    - startRotation : Vector3
+    - targetRotation : Vector3
+    - targetTransform : Transform
+    - startPosition : Vector3
+    - targetPosition : Vector3
+    - targetTransform : Transform
+    - local : bool
+    - controlPoint : Vector3
+    - from : float
+    - to : float
+    - Update() : void
+    + StartTransition(transition : Transition) : void
+    + UpdateTransition(deltaTime : float) : bool
+}
+class PositionTransition {
+    - startColor : Color
+    - targetColor : Color
+    - spriteRenderer : SpriteRenderer
+    - startColor : Color
+    - targetColor : Color
+    - material : Material
+    - startScale : Vector3
+    - targetScale : Vector3
+    - targetTransform : Transform
+    - startRotation : Vector3
+    - targetRotation : Vector3
+    - targetTransform : Transform
+    - startPosition : Vector3
+    - targetPosition : Vector3
+    - targetTransform : Transform
+    - local : bool
+    - controlPoint : Vector3
+    - from : float
+    - to : float
+    - Update() : void
+    + StartTransition(transition : Transition) : void
+    + UpdateTransition(deltaTime : float) : bool
+}
+class FloatValueTransition {
+    - startColor : Color
+    - targetColor : Color
+    - spriteRenderer : SpriteRenderer
+    - startColor : Color
+    - targetColor : Color
+    - material : Material
+    - startScale : Vector3
+    - targetScale : Vector3
+    - targetTransform : Transform
+    - startRotation : Vector3
+    - targetRotation : Vector3
+    - targetTransform : Transform
+    - startPosition : Vector3
+    - targetPosition : Vector3
+    - targetTransform : Transform
+    - local : bool
+    - controlPoint : Vector3
+    - from : float
+    - to : float
+    - Update() : void
+    + StartTransition(transition : Transition) : void
+    + UpdateTransition(deltaTime : float) : bool
+}
+class IInteractableFeedbacks <<interface>> {
+}
+class InteractableFeedbacks {
+    + onHoverEnter : UnityEvent
+    + onHoverExit : UnityEvent
+    + onActivateStart : UnityEvent
+    + onActivateEnd : UnityEvent
+    + OnHoverEnter() : void
+    + OnHoverExit() : void
+    + OnActivateStart() : void
+    + OnActivateEnd() : void
+}
+class Gloves {
+    + Show() : void
+    + Hide() : void
+    + OnTriggerEnter(other : Collider) : void
+}
+MonoBehaviour <|-- AkamiEnigma
+MonoBehaviour <|-- ArtAnalyzer
+MonoBehaviour <|-- CageArtToAnalyze
+MonoBehaviour <|-- CurvedSpawner
+MonoBehaviour <|-- CustomPoseGrab
+MonoBehaviour <|-- DragonFractal
+MonoBehaviour <|-- FaceCamera
+MonoBehaviour <|-- GenerateSplineComputer
+MonoBehaviour <|-- LightSwitcher
+MonoBehaviour <|-- MaterialSwitcher
+MonoBehaviour <|-- OrbEnigma
+MonoBehaviour <|-- SensePackMR
+MonoBehaviour <|-- VRDebug
+MonoBehaviour <|-- CustomObjectHelp
+MonoBehaviour <|-- GizmoCircleDrawer
+MonoBehaviour <|-- GizmoSphereDrawer
+MonoBehaviour <|-- ObjectHelper
+MonoBehaviour <|-- OutlineEffect
+MonoBehaviour <|-- OverrideSortingCanvas
+MonoBehaviour <|-- FarArtInteractable
+FarArtInteractable <|-- FarArtInteractableAnalyzable
+MonoBehaviour <|-- Orb
+MonoBehaviour <|-- OrbSocket
+MonoBehaviour <|-- XRSimpleNoParent
+MonoBehaviour <|-- GameManager
+MonoBehaviour <|-- HandActionManager
+MonoBehaviour <|-- ScenarioManager
+MonoBehaviour <|-- SceneInfo
+MonoBehaviour <|-- SceneLoaderManager
+MonoBehaviour <|-- UIManager
+MonoBehaviour <|-- EventSequence
+MonoBehaviour <|-- DissolveReplaceMaterial
+MonoBehaviour <|-- MyCustomSubtitle
+PlayableBehaviour <|-- SubtitleBehaviour
+PlayableAsset <|-- SubtitleClip
+ITimelineClipAsset <|.. SubtitleClip
+PlayableBehaviour <|-- SubtitleMixer
+TrackAsset <|-- SubtitleTrack
+MonoBehaviour <|-- SubtitleTyper
+PlayableBehaviour <|-- CallMethodBehaviour
+PlayableAsset <|-- CallMethodClip
+TrackAsset <|-- CallMethodTrack
+MonoBehaviour <|-- SceneFader
+MonoBehaviour <|-- TransitionCaller
+MonoBehaviour <|-- TransitionManager
+MonoBehaviour <|-- TransitionHelper
+Transition <|-- ColorTransition
+Transition <|-- BaseColorTransition
+Transition <|-- SizeTransition
+Transition <|-- RotationTransition
+Transition <|-- PositionTransition
+Transition <|-- FloatValueTransition
+MonoBehaviour <|-- InteractableFeedbacks
+IInteractableFeedbacks <|.. InteractableFeedbacks
+MonoBehaviour <|-- Gloves
+AkamiEnigma --> FarArtInteractable : parameter
+GenerateSplineComputer --> FarArtInteractable : field
+GenerateSplineComputer --> FarArtInteractable : parameter
+FarArtInteractable --> IInteractableFeedbacks : field
+OrbSocket --> Orb : field
+OrbSocket --> Orb : parameter
+GameManager --> SceneInfo : parameter
+HandActionManager --> FarArtInteractable : field
+HandActionManager --> GenerateSplineComputer : parameter
+HandActionManager --> FarArtInteractableAnalyzable : parameter
+SceneInfo --> LightSwitcher : field
+SceneInfo --> SensePackMR : field
+SceneDatas --> LightSwitcher : field
+SceneDatas --> SensePackMR : field
+SubtitleBehaviour --> MyCustomSubtitle : field
+SubtitleMixer --> MyCustomSubtitle : field
+TransitionManager --> Transition : parameter
+TransitionHelper --> Transition : parameter
+ColorTransition --> Transition : parameter
+BaseColorTransition --> Transition : parameter
+SizeTransition --> Transition : parameter
+RotationTransition --> Transition : parameter
+PositionTransition --> Transition : parameter
+FloatValueTransition --> Transition : parameter
+@enduml

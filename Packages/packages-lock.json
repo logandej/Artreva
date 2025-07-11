@@ -425,7 +425,7 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.xr.picoxr": {
-      "version": "file:C:/Users/Logan/Documents/ManiFestEtSDKArtreva/PICO Unity Integration SDK_3.1.0_20250109",
+      "version": "file:F:/PROJETS/PFE/SDK Pico/PICO Unity Integration SDK_3.1.0_20250109",
       "depth": 0,
       "source": "local",
       "dependencies": {

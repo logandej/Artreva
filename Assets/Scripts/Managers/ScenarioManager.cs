@@ -22,18 +22,13 @@ public class ScenarioManager : MonoBehaviour
 
     public List<PlayableDirector> playableDirectors = new();
     private int directorIndex = 0;
-    public bool WaitingForPlayer { get; private set; } = false;
     public void PauseTimeline()
     {
-        if (!WaitingForPlayer)
-        {
-            Debug.Log("[ScenarioManager] Timeline paused.");
-            // playableDirectors[directorIndex].timeUpdateMode = DirectorUpdateMode.Manual;
-            playableDirectors[directorIndex].Pause();
-            WaitingForPlayer = true;
-            // Tu peux ici déclencher un événement, afficher un prompt, etc.
-            LockSubtitles();
-        }
+         
+        // playableDirectors[directorIndex].timeUpdateMode = DirectorUpdateMode.Manual;
+        playableDirectors[directorIndex].Pause();
+        // Tu peux ici déclencher un événement, afficher un prompt, etc.
+        LockSubtitles();
     }
 
     private void LockSubtitles()
@@ -53,29 +48,27 @@ public class ScenarioManager : MonoBehaviour
 
     public void ResumeTimeline()
     {
-        if (WaitingForPlayer)
-        {
-            Debug.Log("[ScenarioManager] Timeline resumed.");
-            WaitingForPlayer = false;
-           // playableDirectors[directorIndex].timeUpdateMode = DirectorUpdateMode.GameTime;
-            playableDirectors[directorIndex].Play(); // ou Resume() selon ce que tu veux
-            UnlockSubtitles();
-        }
+        // playableDirectors[directorIndex].timeUpdateMode = DirectorUpdateMode.GameTime;
+        playableDirectors[directorIndex].Play(); // ou Resume() selon ce que tu veux
+        UnlockSubtitles();
+        
+    }
+
+    public void WaitForPlayerAction()
+    {
+        PauseManager.Pause(PauseReason.AwaitingPlayerInput);
+
     }
 
     // Cette méthode peut être appelée par un trigger ou une interaction
     public void OnPlayerDidAction()
     {
-        Debug.Log("[ScenarioManager] Player did expected action.");
-        ResumeTimeline();
+        PauseManager.Resume(PauseReason.AwaitingPlayerInput);
+        //ResumeTimeline();
     }
 
     // Méthode appelée par un autre signal dans la Timeline
-    public void TriggerSomething()
-    {
-        Debug.Log("[ScenarioManager] Triggered something.");
-        // Fais ce que tu veux ici (effets, dialogues, autre Timeline…)
-    }
+
 
     public void PlayDirector(PlayableDirector playableDirector)
     {

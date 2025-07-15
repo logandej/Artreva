@@ -1,72 +1,55 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 [ExecuteAlways]
 public class OutlineEffect : MonoBehaviour
 {
-    public Color outlineColor = Color.yellow;
-    public float outlineWidth = 0.03f;
+    public Material outlineMaterial;
 
-    private const string OUTLINE_OBJECT_NAME = "Outline_";
+    private List<Renderer> renderers = new();
+    private Dictionary<Renderer, Material[]> originalMats = new();
 
-    void OnEnable()
+    private void OnEnable()
     {
-        RemoveOutlines();
-        CreateOutlines();
+        ApplyOutline();
     }
 
-    void OnDisable()
+    private void OnDisable()
     {
-        RemoveOutlines();
+        RemoveOutline();
     }
 
-    void CreateOutlines()
+    private void ApplyOutline()
     {
-        Shader shader = Shader.Find("Custom/Outline");
-        if (shader == null)
+        renderers.Clear();
+        originalMats.Clear();
+
+        GetComponentsInChildren(true, renderers);
+
+        foreach (var r in renderers)
         {
-            Debug.LogError("Shader 'Custom/SimpleOutline' not found.");
-            return;
-        }
+            if (r == null || outlineMaterial == null) continue;
 
-        foreach (var mr in GetComponentsInChildren<MeshRenderer>())
-        {
-            var mf = mr.GetComponent<MeshFilter>();
-            if (!mf || !mf.sharedMesh) continue;
-
-            var outlineObj = new GameObject(OUTLINE_OBJECT_NAME + mr.name);
-            outlineObj.transform.SetParent(mr.transform, false);
-
-            var outlineMF = outlineObj.AddComponent<MeshFilter>();
-            var outlineMR = outlineObj.AddComponent<MeshRenderer>();
-
-            outlineMF.sharedMesh = mf.sharedMesh;
-
-            var mat = new Material(shader);
-            mat.SetColor("_OutlineColor", outlineColor);
-            mat.SetFloat("_OutlineWidth", outlineWidth);
-
-            outlineMR.sharedMaterial = mat;
-
-            outlineObj.hideFlags = HideFlags.DontSaveInBuild | HideFlags.DontSaveInEditor | HideFlags.NotEditable;
-        }
-    }
-
-    void RemoveOutlines()
-    {
-        foreach (var mr in GetComponentsInChildren<MeshRenderer>())
-        {
-            foreach (Transform child in mr.transform)
+            var mats = new List<Material>(r.sharedMaterials);
+            if (!mats.Contains(outlineMaterial))
             {
-                if (child.name.StartsWith(OUTLINE_OBJECT_NAME))
-                {
-#if UNITY_EDITOR
-                    DestroyImmediate(child.gameObject);
-#else
-                    Destroy(child.gameObject);
-#endif
-                }
+                originalMats[r] = r.sharedMaterials;
+                mats.Add(outlineMaterial);
+                r.sharedMaterials = mats.ToArray();
+            }
+        }
+    }
+
+    private void RemoveOutline()
+    {
+        foreach (var kvp in originalMats)
+        {
+            if (kvp.Key != null)
+            {
+                kvp.Key.sharedMaterials = kvp.Value;
             }
         }
     }
 }
+

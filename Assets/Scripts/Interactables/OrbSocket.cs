@@ -7,7 +7,7 @@ using UnityEngine.XR.Interaction.Toolkit;
 using UnityEngine.XR.Interaction.Toolkit.Interactables;
 using UnityEngine.XR.Interaction.Toolkit.Interactors;
 
-public class OrbSocket : MonoBehaviour
+public class OrbSocket : SelectFeedbacks
 {
     private List<Orb> allowedOrbs = new List<Orb>();
 
@@ -19,9 +19,6 @@ public class OrbSocket : MonoBehaviour
     public UnityEvent eventValidate = new();
     public UnityEvent eventRefuse = new();
 
-    public UnityEvent eventOrbInSocket = new();
-    public UnityEvent eventOrbOutSocket = new();
-
     #region XREvents
 
     private void Start()
@@ -29,24 +26,26 @@ public class OrbSocket : MonoBehaviour
         defaultMeshColor = mesh.material.color;   
     }
 
-    public void HoverEntered(HoverEnterEventArgs args)
+    public override void OnHoverEnter(HoverEnterEventArgs args)
     {
         if(IsOrb(args.interactableObject,out Orb orb) && currentAttachedOrb==null)
         {
             //ChangeLocalScale(Vector3.one/2);
             ObjectHelper.ChangeLocalScale(this.gameObject, Vector3.one / 2);
+            base.OnHoverEnter(args);
         }
     }
 
-    public void HoverExited(HoverExitEventArgs args)
+    public override void OnHoverExit(HoverExitEventArgs args)
     {
         if(IsOrb(args.interactableObject, out Orb orb) && currentAttachedOrb==null)
         {
             ObjectHelper.ChangeLocalScale(this.gameObject, Vector3.one / 3);
+            base.OnHoverExit(args);
         }
     }
 
-    public void SelectEntered(SelectEnterEventArgs args)
+    public override void OnSelectEnter(SelectEnterEventArgs args)
     {
         if (IsOrb(args.interactableObject, out Orb orb) && currentAttachedOrb==null)
         {
@@ -54,19 +53,19 @@ public class OrbSocket : MonoBehaviour
             //ForceSelectExit(args.interactableObject.GetOldestInteractorSelecting(), args.interactableObject);
 
             currentAttachedOrb = orb;
-            eventOrbInSocket?.Invoke();
+            base.OnSelectEnter(args);
         }
     }
 
 
-    public void SelectExited(SelectExitEventArgs args)
+    public override void OnSelectExit(SelectExitEventArgs args)
     {
         if (IsOrb(args.interactableObject, out Orb orb) && currentAttachedOrb != null)
         {
 
             currentAttachedOrb = null;
             //ObjectHelper.ChangeColor(mesh.gameObject, defaultMeshColor);
-            eventOrbOutSocket?.Invoke();
+            base.OnSelectExit(args);
         }
     }
     #endregion

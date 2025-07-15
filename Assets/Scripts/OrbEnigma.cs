@@ -57,8 +57,8 @@ public class OrbEnigma : MonoBehaviour
         {
             orbSocket.gameObject.SetActive(true);
             orbSocket.SetAllowedOrbs(goodOrbs);
-            orbSocket.eventOrbInSocket.AddListener(AddOrbInSocket);
-            orbSocket.eventOrbOutSocket.AddListener(RemoveOrbInSocket);
+            orbSocket.onSelectEnter.AddListener(AddOrbInSocket);
+            orbSocket.onSelectExit.AddListener(RemoveOrbInSocket);
         }
 
         enigmaActive = true;
@@ -69,6 +69,7 @@ public class OrbEnigma : MonoBehaviour
 
     private void AddOrbInSocket()
     {
+        print("addorbinsocket");
         counterOrbInSocket++;
         if(counterOrbInSocket == orbSockets.Count)
         {
@@ -98,6 +99,8 @@ public class OrbEnigma : MonoBehaviour
 
     private void CheckEachSocket()
     {
+        print("checkeach");
+
         int correct = 0;
         foreach (var orb in orbSockets)
         {

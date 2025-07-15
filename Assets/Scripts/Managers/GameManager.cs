@@ -141,14 +141,4 @@ public class GameManager : MonoBehaviour
         Instance.LightSwitcher.SwitchToNight();
     }
 
-    public void PauseGame()
-    {
-      
-            //ScenarioManager.Instance.PauseTimeline();
-    }
-    public void ResumeGame()
-    {
-            //ScenarioManager.Instance.ResumeTimeline();
-    }
-
 }

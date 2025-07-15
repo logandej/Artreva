@@ -45,8 +45,17 @@ public class UIManager : MonoBehaviour
         lse.RefreshString(); // Ceci déclenche la mise à jour du TMP Text
     }
 
+    public static void SetTextByKey(TMP_Text text, string key)
+    {
+        var lse = text.GetComponent<LocalizeStringEvent>();
+        lse.StringReference.TableEntryReference = key;
+        lse.RefreshString(); // Ceci déclenche la mise à jour du TMP Text
+    }
+
     public void ShowInfo(Sprite sprite)
     {
+        PauseManager.Pause(PauseReason.InfoPopup);
+
         infoImage.sprite = sprite;
         infoImage.color = new Color(1, 1, 1, 0);
         infoImage.gameObject.SetActive(true);
@@ -84,19 +93,15 @@ public class UIManager : MonoBehaviour
         yield return new WaitForSeconds(delay);
         infoImage.gameObject.SetActive(false);
         infoText.gameObject.SetActive(false);
+        PauseManager.Resume(PauseReason.InfoPopup);
     }
-
-    private bool showWhileWaitingForPlayer = false;
 
     public void ShowSettings()
     {
         canvasInfo.gameObject.SetActive(false);
         canvasSettings.gameObject.SetActive(true);
 
-        showWhileWaitingForPlayer = ScenarioManager.Instance.WaitingForPlayer;
-
-        if (!showWhileWaitingForPlayer)
-            GameManager.Instance.PauseGame();
+        PauseManager.Pause(PauseReason.SettingsMenu);
         
 
     }
@@ -106,8 +111,8 @@ public class UIManager : MonoBehaviour
         canvasInfo.gameObject.SetActive(true);
         canvasSettings.gameObject.SetActive(false);
 
-        if(!showWhileWaitingForPlayer)
-            GameManager.Instance.ResumeGame();
+        PauseManager.Resume(PauseReason.SettingsMenu);
+
 
     }
 

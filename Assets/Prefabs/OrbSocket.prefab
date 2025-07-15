@@ -180,7 +180,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 8603772796711809465}
         m_TargetAssemblyTypeName: OrbSocket, Assembly-CSharp
-        m_MethodName: HoverEntered
+        m_MethodName: OnHoverEnter
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -195,7 +195,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 8603772796711809465}
         m_TargetAssemblyTypeName: OrbSocket, Assembly-CSharp
-        m_MethodName: HoverExited
+        m_MethodName: OnHoverExit
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -210,7 +210,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 8603772796711809465}
         m_TargetAssemblyTypeName: OrbSocket, Assembly-CSharp
-        m_MethodName: SelectEntered
+        m_MethodName: OnSelectEnter
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -225,7 +225,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 8603772796711809465}
         m_TargetAssemblyTypeName: OrbSocket, Assembly-CSharp
-        m_MethodName: SelectExited
+        m_MethodName: OnSelectExit
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -281,17 +281,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f71ca7a7238e8c54fbc61eebd2b01ace, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  onHoverEnter:
+    m_PersistentCalls:
+      m_Calls: []
+  onHoverExit:
+    m_PersistentCalls:
+      m_Calls: []
+  onSelectEnter:
+    m_PersistentCalls:
+      m_Calls: []
+  onSelectExit:
+    m_PersistentCalls:
+      m_Calls: []
   mesh: {fileID: 4489584704333017122}
   eventValidate:
     m_PersistentCalls:
       m_Calls: []
   eventRefuse:
-    m_PersistentCalls:
-      m_Calls: []
-  eventOrbInSocket:
-    m_PersistentCalls:
-      m_Calls: []
-  eventOrbOutSocket:
     m_PersistentCalls:
       m_Calls: []
 --- !u!1 &7922245128325958475

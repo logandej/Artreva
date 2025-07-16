@@ -5,8 +5,8 @@ using UnityEngine.XR.Interaction.Toolkit;
 public class SelectFeedbacks : HoverFeedbacks, ISelectable
 {
     [Header("SELECT")]
-    public UnityEvent onSelectEnter;
-    public UnityEvent onSelectExit;
+    public UnityEvent onSelectEnter = new();
+    public UnityEvent onSelectExit = new();
 
     [Header("AudioSettings")]
     [SerializeField] AudioClip selectEnterClip;

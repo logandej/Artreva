@@ -7,7 +7,7 @@ public class AkamiEnigma : MonoBehaviour
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     [SerializeField] List<FarArtInteractable> pillars;
-
+    private List<UnityEvent> savedActions;
     public UnityEvent eventDone = new();
 
     private int pillarCount = 0;
@@ -22,6 +22,9 @@ public class AkamiEnigma : MonoBehaviour
 
         foreach (var pillar in pillars)
         {
+            //Save the normal action for later if it's the food pillar
+            savedActions[pillars.IndexOf(pillar)] = pillar.eventActivated;
+            pillar.eventActivated.RemoveAllListeners();
             pillar.eventActivated.AddListener(() => CheckIfGoodPillar(pillar));
         }
     }
@@ -35,20 +38,15 @@ public class AkamiEnigma : MonoBehaviour
             return;
         }
         pillarCount++;
-
+        savedActions[pillars.IndexOf(pillar)]?.Invoke();
         if(pillarCount == pillars.Count)
         {
             Nice();
         }
-
     }
 
     public void Nice()
     {
-        //foreach (var pillar in pillars)
-        //{
-        //    ObjectHelper.ChangeColor(pillar.gameObject, Color.magenta);
-        //}
         eventDone?.Invoke();
     }
 }

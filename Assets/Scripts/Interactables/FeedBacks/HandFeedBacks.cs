@@ -41,6 +41,22 @@ public class HandFeedBacks : SelectFeedbacks
         }
     }
 
+    public override void OnSelectEnter(SelectEnterEventArgs args)
+    {
+        if (IsHand(args.interactorObject.transform.gameObject) != Hand.None)
+        {
+            base.OnSelectEnter(args);
+        }
+    }
+
+    public override void OnSelectExit(SelectExitEventArgs args)
+    {
+        if (IsHand(args.interactorObject.transform.gameObject) != Hand.None)
+        {
+            base.OnSelectExit(args);
+        }
+    }
+
     private Hand IsHand(GameObject obj)
     {
         if (obj.name.Contains("LeftHand")) { return Hand.Left; }

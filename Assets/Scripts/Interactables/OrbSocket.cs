@@ -137,7 +137,6 @@ public class OrbSocket : SelectFeedbacks
         {
             //currentAttachedOrb.GetComponent<XRGrabInteractable>().select
             //GetComponent<XRSocketInteractor>().socketActive = canTake;
-            VRDebug.Instance.Log("CAN TAKE = "+canTake);
         }
     }
 

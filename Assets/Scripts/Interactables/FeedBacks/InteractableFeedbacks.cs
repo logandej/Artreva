@@ -12,4 +12,7 @@ public class InteractableFeedbacks : MonoBehaviour, IInteractableFeedbacks
     public virtual void OnHoverExit() => onHoverExit?.Invoke();
     public virtual void OnActivateStart() => onActivateStart?.Invoke();
     public virtual void OnActivateEnd() => onActivateEnd?.Invoke();
+
+
+
 }

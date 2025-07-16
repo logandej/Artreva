@@ -110,7 +110,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0111e49a4ec57a44ea76ccf40e0ad69c, type: 3}
   m_Name: SubtitleClip
   m_EditorClassIdentifier: 
-  customText: "Ah, vous \xEAtes venu d\xE9couvrir l'art contemporain ? "
+  customText: sub.mira.1_01
 --- !u!114 &-5722244190810424167
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -191,8 +191,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0111e49a4ec57a44ea76ccf40e0ad69c, type: 3}
   m_Name: SubtitleClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)
   m_EditorClassIdentifier: 
-  customText: "Observez la frise, explorez les \r\nmouvements artistiques pass\xE9s,
-    et faites votre choix."
+  customText: sub.mira.1_10
 --- !u!114 &-2976504205286463142
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -389,7 +388,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0111e49a4ec57a44ea76ccf40e0ad69c, type: 3}
   m_Name: SubtitleClip(Clone)(Clone)(Clone)(Clone)
   m_EditorClassIdentifier: 
-  customText: "Mais ne vous inqui\xE9tez pas, vous pouvez nous aider \xE0 la retrouver."
+  customText: sub.mira.1_07
 --- !u!114 &-1381230782832027328
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -412,6 +411,19 @@ MonoBehaviour:
   m_Loop: 0
   m_Version: 1
   m_Rotation: {x: 0, y: 0, z: 0, w: 1}
+--- !u!114 &-1308000669670013297
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0111e49a4ec57a44ea76ccf40e0ad69c, type: 3}
+  m_Name: SubtitleClip(Clone)(Clone)(Clone)(Clone)
+  m_EditorClassIdentifier: 
+  customText: sub.mira.1_03
 --- !u!114 &-686369460206871958
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -556,8 +568,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0111e49a4ec57a44ea76ccf40e0ad69c, type: 3}
   m_Name: SubtitleClip(Clone)(Clone)(Clone)(Clone)
   m_EditorClassIdentifier: 
-  customText: "Pour ouvrir le portail de l'art contemporain, \r\nvous devez choisir
-    celle qui marque son d\xE9but"
+  customText: sub.mira.1_09
 --- !u!114 &2283926893669968944
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1428,7 +1439,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0111e49a4ec57a44ea76ccf40e0ad69c, type: 3}
   m_Name: SubtitleClip(Clone)(Clone)(Clone)(Clone)
   m_EditorClassIdentifier: 
-  customText: "C\u2019est le Festival des Artmorphoses !"
+  customText: sub.mira.1_04
 --- !u!114 &3458727475446447728
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1523,7 +1534,7 @@ MonoBehaviour:
     m_Start: 8
     m_ClipIn: 0
     m_Asset: {fileID: 6924554026837961986}
-    m_Duration: 7
+    m_Duration: 2.6999999999999993
     m_TimeScale: 1
     m_ParentTrack: {fileID: 3458727475446447728}
     m_EaseInDuration: 0
@@ -1661,7 +1672,7 @@ MonoBehaviour:
     m_Start: 18.5
     m_ClipIn: 0
     m_Asset: {fileID: 6751204211491952823}
-    m_Duration: 6.483333333333334
+    m_Duration: 2.966666666666665
     m_TimeScale: 1
     m_ParentTrack: {fileID: 3458727475446447728}
     m_EaseInDuration: 0
@@ -2002,6 +2013,144 @@ MonoBehaviour:
     m_PostExtrapolationTime: 0
     m_PreExtrapolationTime: 0
     m_DisplayName: SubtitleClip
+  - m_Version: 1
+    m_Start: 10.7
+    m_ClipIn: 0
+    m_Asset: {fileID: -1308000669670013297}
+    m_Duration: 4.300000000000001
+    m_TimeScale: 1
+    m_ParentTrack: {fileID: 3458727475446447728}
+    m_EaseInDuration: 0
+    m_EaseOutDuration: 0
+    m_BlendInDuration: 0
+    m_BlendOutDuration: 0
+    m_MixInCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_MixOutCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_BlendInCurveMode: 0
+    m_BlendOutCurveMode: 0
+    m_ExposedParameterNames: []
+    m_AnimationCurves: {fileID: 0}
+    m_Recordable: 0
+    m_PostExtrapolationMode: 0
+    m_PreExtrapolationMode: 0
+    m_PostExtrapolationTime: 0
+    m_PreExtrapolationTime: 0
+    m_DisplayName: SubtitleClip
+  - m_Version: 1
+    m_Start: 21.466666666666665
+    m_ClipIn: 0
+    m_Asset: {fileID: 6408131425104843038}
+    m_Duration: 3.8833333333333364
+    m_TimeScale: 1
+    m_ParentTrack: {fileID: 3458727475446447728}
+    m_EaseInDuration: 0
+    m_EaseOutDuration: 0
+    m_BlendInDuration: 0
+    m_BlendOutDuration: 0
+    m_MixInCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_MixOutCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_BlendInCurveMode: 0
+    m_BlendOutCurveMode: 0
+    m_ExposedParameterNames: []
+    m_AnimationCurves: {fileID: 0}
+    m_Recordable: 0
+    m_PostExtrapolationMode: 0
+    m_PreExtrapolationMode: 0
+    m_PostExtrapolationTime: 0
+    m_PreExtrapolationTime: 0
+    m_DisplayName: SubtitleClip
   m_Markers:
     m_Objects: []
 --- !u!114 &3875034346771809770
@@ -2092,6 +2241,19 @@ MonoBehaviour:
   m_Loop: 0
   m_Version: 1
   m_Rotation: {x: 0, y: 0, z: 0, w: 1}
+--- !u!114 &6408131425104843038
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0111e49a4ec57a44ea76ccf40e0ad69c, type: 3}
+  m_Name: SubtitleClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)
+  m_EditorClassIdentifier: 
+  customText: sub.mira.1_06
 --- !u!114 &6669527585175404784
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2126,8 +2288,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0111e49a4ec57a44ea76ccf40e0ad69c, type: 3}
   m_Name: SubtitleClip(Clone)(Clone)(Clone)(Clone)
   m_EditorClassIdentifier: 
-  customText: "Cependant, il y a un l\xE9ger contretemps. La cl\xE9 permettant d'ouvrir
-    le portail de l'art contemporain a \xE9t\xE9 perdue."
+  customText: sub.mira.1_05
 --- !u!114 &6924554026837961986
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2140,8 +2301,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0111e49a4ec57a44ea76ccf40e0ad69c, type: 3}
   m_Name: SubtitleClip(Clone)(Clone)
   m_EditorClassIdentifier: 
-  customText: "Cela tombe bien, aujourd'hui se tient une exposition universelle o\xF9
-    les artistes contemporains viennent exposer leurs cr\xE9ations ! "
+  customText: sub.mira.1_02
 --- !u!114 &7460773121961641165
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2154,7 +2314,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0111e49a4ec57a44ea76ccf40e0ad69c, type: 3}
   m_Name: SubtitleClip(Clone)(Clone)(Clone)(Clone)(Clone)(Clone)
   m_EditorClassIdentifier: 
-  customText: "Ces orbes repr\xE9sentent diff\xE9rentes dates."
+  customText: sub.mira.1_08
 --- !u!114 &8114803688064503464
 MonoBehaviour:
   m_ObjectHideFlags: 1

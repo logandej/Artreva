@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -16,13 +17,16 @@ public class MaterialSwitcher : MonoBehaviour
     public Material material;
     public float timeToChange = 5;
 
-    [SerializeField] bool OnStart = false;
+    [SerializeField] bool OnStartChangeToEnd = false;
+    [SerializeField] bool OnStartChangeToStart = false;
 
     private void Start()
     {
         ChangeColors(false);
-        if(OnStart)
+        if(OnStartChangeToEnd)
             ChangeToEnd();
+        if(OnStartChangeToStart)
+            ChangeToStart();
     }
 
     public void ChangeToStart()
@@ -30,21 +34,61 @@ public class MaterialSwitcher : MonoBehaviour
         ChangeColors(false,timeToChange);
     }
 
+    public void ChangeToStart(float duration)
+    {
+        ChangeColors(false, duration);
+    }
+
     public void ChangeToEnd()
     {
         ChangeColors(true,timeToChange);
     }
 
+    public void ChangeToEnd(float duration)
+    {
+        ChangeColors(true, duration);
+    }
+
+    private Coroutine currentColorTransition;
+
+
     public void ChangeColors(bool ToEnd, float duration = 0)
     {
-        TransitionManager.InterpolateFloat(0, 1, duration, t =>
+        if (currentColorTransition != null)
         {
+            StopCoroutine(currentColorTransition);
+            currentColorTransition = null;
+        }
+
+        currentColorTransition = StartCoroutine(InterpolateColors(ToEnd, duration));
+    }
+
+    private IEnumerator InterpolateColors(bool toEnd, float duration)
+    {
+        float elapsed = 0f;
+        while (elapsed < duration)
+        {
+            float t = Mathf.Clamp01(elapsed / duration);
             foreach (var m in materialNameColorList)
             {
-                Color interpolatedColor = Color.Lerp(ToEnd ? m.colorStart : m.colorEnd, ToEnd ? m.colorEnd : m.colorStart, t);
+                Color interpolatedColor = Color.Lerp(
+                    toEnd ? m.colorStart : m.colorEnd,
+                    toEnd ? m.colorEnd : m.colorStart,
+                    t
+                );
                 material.SetColor(m.name, interpolatedColor);
             }
-            print("ishdfgi"+t);
-        });
+
+            elapsed += Time.deltaTime;
+            yield return null;
+        }
+
+        // Ensure final value is applied
+        foreach (var m in materialNameColorList)
+        {
+            material.SetColor(m.name, toEnd ? m.colorEnd : m.colorStart);
+        }
+
+        currentColorTransition = null;
     }
 }

@@ -7,14 +7,16 @@ public class AkamiEnigma : MonoBehaviour
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     [SerializeField] List<FarArtInteractable> pillars;
-    private List<UnityEvent> savedActions;
+    private List<List<UnityAction>> savedActions = new();
+
+
     public UnityEvent eventDone = new();
 
     private int pillarCount = 0;
 
     private void Start()
     {
-        StartEnigma();
+        Invoke(nameof(StartEnigma),5);
     }
 
     private void StartEnigma()
@@ -22,24 +24,28 @@ public class AkamiEnigma : MonoBehaviour
 
         foreach (var pillar in pillars)
         {
-            //Save the normal action for later if it's the food pillar
-            savedActions[pillars.IndexOf(pillar)] = pillar.eventActivated;
-            pillar.eventActivated.RemoveAllListeners();
             pillar.eventActivated.AddListener(() => CheckIfGoodPillar(pillar));
+
         }
     }
 
     private void CheckIfGoodPillar(FarArtInteractable pillar)
     {
         int index = pillars.IndexOf(pillar);
+
         if (index != pillarCount)
         {
             pillar.DeactivateNow();
             return;
         }
+
         pillarCount++;
-        savedActions[pillars.IndexOf(pillar)]?.Invoke();
-        if(pillarCount == pillars.Count)
+
+        // Appelle toutes les feedbacks sauvegardées pour ce pilier
+        pillar.GetComponentInChildren<AudioSource>().Play();
+        pillar.GetComponentInChildren<ParticleSystem>().Play();
+
+        if (pillarCount == pillars.Count)
         {
             Nice();
         }

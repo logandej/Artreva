@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering;
 
 public class MaterialSwitcher : MonoBehaviour
 {
@@ -14,6 +15,8 @@ public class MaterialSwitcher : MonoBehaviour
 
     public List<MaterialNameColor> materialNameColorList;
 
+    [SerializeField] bool newInstanceMat = false;
+    [SerializeField] MeshRenderer mesh;
     public Material material;
     public float timeToChange = 5;
 
@@ -22,6 +25,11 @@ public class MaterialSwitcher : MonoBehaviour
 
     private void Start()
     {
+        if (newInstanceMat)
+        {
+            material = new Material(material);
+            mesh.material  = material;
+        }
         ChangeColors(false);
         if(OnStartChangeToEnd)
             ChangeToEnd();

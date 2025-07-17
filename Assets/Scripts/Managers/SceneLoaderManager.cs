@@ -40,6 +40,7 @@ public class SceneLoaderManager : MonoBehaviour
     {
         isLoading = true;
         SceneFader.Instance.LoadWhiteFade();
+        AudioManager.Instance.ChangeMasterToLow();
         yield return new WaitForSeconds(SceneFader.Instance.FadeTime);
         loadingOperation = SceneManager.LoadSceneAsync(sceneName);
         loadingOperation.allowSceneActivation = false;
@@ -63,6 +64,7 @@ public class SceneLoaderManager : MonoBehaviour
 
         LoadingProgress = 1f;
         SceneFader.Instance.UnloadFade();
+        AudioManager.Instance.ChangeMasterToDefault();
         isLoading = false;
     }
 

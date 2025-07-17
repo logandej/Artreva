@@ -27,6 +27,22 @@ MonoBehaviour:
     m_Key: settings
     m_Metadata:
       m_Items: []
+  - m_Id: 7873691778850816
+    m_Key: indication1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7882407982964736
+    m_Key: indication2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7906249522585600
+    m_Key: indication3
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7908052263804928
+    m_Key: indication4
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

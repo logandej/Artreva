@@ -50,6 +50,7 @@ MonoBehaviour:
   ambianceSource: {fileID: 460541622441374348}
   musicVolume: 0.5
   ambianceVolume: 0.5
+  mixer: {fileID: 24100000, guid: b03dbead91cbfbe4a8c9c96d357f83cc, type: 2}
 --- !u!1 &2503262710494339905
 GameObject:
   m_ObjectHideFlags: 0

@@ -13,7 +13,7 @@ public class HoverFeedbacks : MonoBehaviour, IHoverable
     [SerializeField] AudioClip hoverEnterClip;
     [SerializeField] AudioClip hoverExitClip;
 
-    private void Start()
+    protected virtual void Awake()
     {
         onHoverEnter.AddListener(()=>AudioManager.Instance.PlaySoundEffect(source,hoverEnterClip));
         onHoverExit.AddListener(()=>AudioManager.Instance.PlaySoundEffect(source,hoverExitClip));

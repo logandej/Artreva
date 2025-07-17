@@ -93,6 +93,7 @@ public class GameManager : MonoBehaviour
     {
         UIManager.Instance.HideSettings();
         SceneLoaderManager.Instance.LoadScene(sceneName);
+     
     }
 
     public void SelectFrench()
@@ -140,5 +141,7 @@ public class GameManager : MonoBehaviour
     {
         Instance.LightSwitcher.SwitchToNight();
     }
+
+
 
 }

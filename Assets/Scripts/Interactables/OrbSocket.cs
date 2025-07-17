@@ -23,7 +23,8 @@ public class OrbSocket : SelectFeedbacks
 
     private void Start()
     {
-        defaultMeshColor = mesh.material.color;   
+        defaultMeshColor = mesh.material.color;
+        ObjectHelper.ChangeLocalScale(this.gameObject, Vector3.one / 3);
     }
 
     public override void OnHoverEnter(HoverEnterEventArgs args)
@@ -31,7 +32,8 @@ public class OrbSocket : SelectFeedbacks
         if(IsOrb(args.interactableObject,out Orb orb) && currentAttachedOrb==null)
         {
             //ChangeLocalScale(Vector3.one/2);
-            ObjectHelper.ChangeLocalScale(this.gameObject, Vector3.one / 2);
+            //ObjectHelper.ChangeLocalScale(this.gameObject, Vector3.one / 2);
+            TransitionManager.ChangeSize(gameObject, Vector3.one/2, .5f);
             base.OnHoverEnter(args);
         }
     }
@@ -40,7 +42,9 @@ public class OrbSocket : SelectFeedbacks
     {
         if(IsOrb(args.interactableObject, out Orb orb) && currentAttachedOrb==null)
         {
-            ObjectHelper.ChangeLocalScale(this.gameObject, Vector3.one / 3);
+            //ObjectHelper.ChangeLocalScale(this.gameObject, Vector3.one / 3);
+            TransitionManager.ChangeSize(gameObject, Vector3.one / 3, .5f);
+
             base.OnHoverExit(args);
         }
     }

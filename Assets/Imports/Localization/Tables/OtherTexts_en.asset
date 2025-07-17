@@ -31,6 +31,22 @@ MonoBehaviour:
     m_Localized: Settings
     m_Metadata:
       m_Items: []
+  - m_Id: 7873691778850816
+    m_Localized: Pinch the orb with your hand
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7882407982964736
+    m_Localized: Place the orb in the socket
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7906249522585600
+    m_Localized: Close your hand
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7908052263804928
+    m_Localized: Rotate with you wrist
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

@@ -523,7 +523,9 @@ PrefabInstance:
       value: StaticOrb
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 2025206988630212977, guid: 66f00190617e16c4fab049f8b26b2141, type: 3}
+    - {fileID: 6944140281630132926, guid: 66f00190617e16c4fab049f8b26b2141, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 66f00190617e16c4fab049f8b26b2141, type: 3}

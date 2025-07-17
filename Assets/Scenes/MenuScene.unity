@@ -780,6 +780,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: IndicatorStep 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7516020793689024939, guid: a9219d8e5f23c8044bc47a8ada75f509, type: 3}
+      propertyPath: m_StringReference.m_TableEntryReference.m_KeyId
+      value: 7873691778850816
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -796,11 +800,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9646390d6013e2e4a85f1b200f4ceed4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!4 &1676224903 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 1270306694978624560, guid: a9219d8e5f23c8044bc47a8ada75f509, type: 3}
-  m_PrefabInstance: {fileID: 1676224901}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1768828421
 GameObject:
   m_ObjectHideFlags: 0
@@ -1798,7 +1797,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2726113026737699015, guid: 6aa8f6a251b88ff489d3cf334bc969a0, type: 3}
       propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2726113026737699015, guid: 6aa8f6a251b88ff489d3cf334bc969a0, type: 3}
       propertyPath: m_FocusEntered.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -1815,7 +1814,7 @@ PrefabInstance:
     - target: {fileID: 2726113026737699015, guid: 6aa8f6a251b88ff489d3cf334bc969a0, type: 3}
       propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 2093767831}
+      objectReference: {fileID: 8098724329727147033}
     - target: {fileID: 2726113026737699015, guid: 6aa8f6a251b88ff489d3cf334bc969a0, type: 3}
       propertyPath: m_FocusExited.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
@@ -1854,7 +1853,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2726113026737699015, guid: 6aa8f6a251b88ff489d3cf334bc969a0, type: 3}
       propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: PlayOneShot
+      value: OnSelectEnter
       objectReference: {fileID: 0}
     - target: {fileID: 2726113026737699015, guid: 6aa8f6a251b88ff489d3cf334bc969a0, type: 3}
       propertyPath: m_FocusExited.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
@@ -1874,7 +1873,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2726113026737699015, guid: 6aa8f6a251b88ff489d3cf334bc969a0, type: 3}
       propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
-      value: UnityEngine.AudioSource, UnityEngine
+      value: HandFeedBacks, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 2726113026737699015, guid: 6aa8f6a251b88ff489d3cf334bc969a0, type: 3}
       propertyPath: m_FocusExited.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
@@ -1890,6 +1889,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2726113026737699015, guid: 6aa8f6a251b88ff489d3cf334bc969a0, type: 3}
       propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2726113026737699015, guid: 6aa8f6a251b88ff489d3cf334bc969a0, type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgument
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 2726113026737699015, guid: 6aa8f6a251b88ff489d3cf334bc969a0, type: 3}
@@ -1910,7 +1913,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2726113026737699015, guid: 6aa8f6a251b88ff489d3cf334bc969a0, type: 3}
       propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.AudioClip, UnityEngine
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 3226216027143439318, guid: 6aa8f6a251b88ff489d3cf334bc969a0, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1983,7 +1986,7 @@ PrefabInstance:
     - target: {fileID: 6316368873828447366, guid: 6aa8f6a251b88ff489d3cf334bc969a0, type: 3}
       propertyPath: selectEnterClip
       value: 
-      objectReference: {fileID: 8300000, guid: 23f6ef38b8351d24484efda4876fb908, type: 3}
+      objectReference: {fileID: 8300000, guid: b6f3c6162b8eef7489028bc7a4d5e19a, type: 3}
     - target: {fileID: 6316368873828447366, guid: 6aa8f6a251b88ff489d3cf334bc969a0, type: 3}
       propertyPath: onFoucsEnter.m_PersistentCalls.m_Calls.Array.size
       value: 2
@@ -2083,7 +2086,7 @@ PrefabInstance:
     - target: {fileID: 6316368873828447366, guid: 6aa8f6a251b88ff489d3cf334bc969a0, type: 3}
       propertyPath: onSelectEnter.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
       value: 
-      objectReference: {fileID: 1676224903}
+      objectReference: {fileID: 320918745}
     - target: {fileID: 6316368873828447366, guid: 6aa8f6a251b88ff489d3cf334bc969a0, type: 3}
       propertyPath: onSelectEnter.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
       value: 
@@ -2094,7 +2097,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6316368873828447366, guid: 6aa8f6a251b88ff489d3cf334bc969a0, type: 3}
       propertyPath: onSelectEnter.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_StringArgument
-      value: "Placez l'orbe dans le r\xE9c\xE8ptacle"
+      value: indication2
       objectReference: {fileID: 0}
     - target: {fileID: 6316368873828447366, guid: 6aa8f6a251b88ff489d3cf334bc969a0, type: 3}
       propertyPath: onFoucsEnter.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName

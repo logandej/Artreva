@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class AudioManager : MonoBehaviour
 {
@@ -14,6 +15,7 @@ public class AudioManager : MonoBehaviour
     [Range(0f, 1f)] public float musicVolume = 0.5f;
     [Range(0f, 1f)] public float ambianceVolume = 0.5f;
 
+    [SerializeField] AudioMixer mixer;
 
     private void Awake()
     {
@@ -64,6 +66,8 @@ public class AudioManager : MonoBehaviour
     #endregion
 
     #region Ambiance
+
+
     public void PlayAmbiance(AudioClip clip, bool loop = true)
     {
         if (ambianceSource && clip)
@@ -87,6 +91,7 @@ public class AudioManager : MonoBehaviour
 
     public void PlaySoundEffect(AudioSource audio, AudioClip clip)
     {
+        print("OKOPEZFGOJGZR");
         if (audio && clip)
         {
             audio.PlayOneShot(clip);
@@ -94,4 +99,19 @@ public class AudioManager : MonoBehaviour
     }
 
     #endregion
+
+    public void ChangeMasterToLow()
+    {
+        TransitionManager.InterpolateFloat(0, -80, 2, t =>
+        {
+            mixer.SetFloat("Master", t);
+        });
+    }
+    public void ChangeMasterToDefault()
+    {
+        TransitionManager.InterpolateFloat(-80, 0, 2, t =>
+        {
+            mixer.SetFloat("Master", t);
+        });
+    }
 }

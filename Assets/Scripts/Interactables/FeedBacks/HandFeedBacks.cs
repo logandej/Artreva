@@ -1,8 +1,10 @@
 using NUnit.Framework;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.XR.Interaction.Toolkit;
 using UnityEngine.XR.Interaction.Toolkit.Interactables;
+using UnityEngine.XR.Interaction.Toolkit.Interactors;
 
 public class HandFeedBacks : SelectFeedbacks
 {
@@ -15,6 +17,7 @@ public class HandFeedBacks : SelectFeedbacks
         Right,
         Left,
     }
+
     //It's the Near Far Interactor
     public override void OnHoverEnter(HoverEnterEventArgs args)
     {
@@ -63,7 +66,5 @@ public class HandFeedBacks : SelectFeedbacks
         if(obj.name.Contains("RightHand")) { return Hand.Right; }
         return Hand.None;
     }
-
-
 
 }

@@ -31,6 +31,22 @@ MonoBehaviour:
     m_Localized: "Param\xE8tres"
     m_Metadata:
       m_Items: []
+  - m_Id: 7873691778850816
+    m_Localized: Pincez l'orbe avec vos doigts
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7882407982964736
+    m_Localized: "Placez l'orbe dans le r\xE9c\xE8ptacle"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7906249522585600
+    m_Localized: Fermez votre main
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7908052263804928
+    m_Localized: Tournez votre poignet
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

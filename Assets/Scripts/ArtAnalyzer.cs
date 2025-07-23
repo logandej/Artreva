@@ -16,6 +16,7 @@ public class ArtAnalyzer : MonoBehaviour
     private List<GameObject> angleMarkers = new();
     private List<bool> observedAngles = new();
 
+    public UnityEvent eventStartAnalyzing = new();
     public UnityEvent eventDone = new();
 
     
@@ -65,6 +66,7 @@ public class ArtAnalyzer : MonoBehaviour
 
     public void GenerateMarkers()
     {
+        eventStartAnalyzing?.Invoke();
         float step = 360f / angleCount;
 
         for (int i = 0; i < angleCount; i++)
@@ -75,6 +77,7 @@ public class ArtAnalyzer : MonoBehaviour
             
 
             GameObject marker = Instantiate(markerPrefab, pos, Quaternion.Euler(0,angle,0), transform);
+            marker.SetActive(true);
             marker.name = "AngleMarker_" + angle;
             angleMarkers.Add(marker);
             observedAngles.Add(false);

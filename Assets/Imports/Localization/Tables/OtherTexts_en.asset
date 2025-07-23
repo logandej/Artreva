@@ -47,6 +47,99 @@ MonoBehaviour:
     m_Localized: Rotate with you wrist
     m_Metadata:
       m_Items: []
+  - m_Id: 10032311375273984
+    m_Localized: Freedom
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10032443030282240
+    m_Localized: Strength
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10032527352569856
+    m_Localized: Comfort
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10033094393110528
+    m_Localized: Dependence
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10033255081091072
+    m_Localized: Isolation
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10033510434512896
+    m_Localized: Peace
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10033607134191616
+    m_Localized: Abondance
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10033808532086784
+    m_Localized: Time
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10033985460412416
+    m_Localized: Memory
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10034025193054208
+    m_Localized: Forget
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10034110656192512
+    m_Localized: Hapiness
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10034180612988928
+    m_Localized: Power
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10040057311043584
+    m_Localized: Yes
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10040181760237568
+    m_Localized: No
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10171604164976640
+    m_Localized: Start
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10254217273712640
+    m_Localized: Analyse this lost art
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10254453220089856
+    m_Localized: To Find Akami, analyse, among those arts, the one that shows the
+      most "Freedom"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10254723492651008
+    m_Localized: Analyze this art while forwarding your hand
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10254942670200832
+    m_Localized: What does the art shows among these words ? You can analayse the
+      art again...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10255271314890752
+    m_Localized: What does the art shows among these words ? You can analayse the
+      art again...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10255385710338048
+    m_Localized: What does the art shows among these words ? You can analayse the
+      art again...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10258173471268864
+    m_Localized: Activate the other pillars in the good order. The akami name's art
+      is "Evolution"
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

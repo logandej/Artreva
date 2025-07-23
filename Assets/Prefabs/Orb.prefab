@@ -238,7 +238,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 1b57c577d2076084e89644cc0e2a886a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7cc2595341bbfe44ab5fab724c7e348e, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -377,6 +377,7 @@ GameObject:
   - component: {fileID: 2726113026737699015}
   - component: {fileID: 6316368873828447366}
   - component: {fileID: 498883267052505351}
+  - component: {fileID: 5675999520171662427}
   m_Layer: 3
   m_Name: Orb
   m_TagString: Untagged
@@ -686,7 +687,7 @@ MonoBehaviour:
         m_MethodName: set_sprite
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 21300000, guid: 0668286cb4eff4f4e831b1d3e2f6d19d, type: 3}
+          m_ObjectArgument: {fileID: 21300000, guid: e14d140b4b42fda47b0af5464c1aedf3, type: 3}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Sprite, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
@@ -713,7 +714,7 @@ MonoBehaviour:
         m_MethodName: set_sprite
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 21300000, guid: ea0ed8951c7c41e4a9c0493c21c80e16, type: 3}
+          m_ObjectArgument: {fileID: 21300000, guid: 7cc2595341bbfe44ab5fab724c7e348e, type: 3}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Sprite, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
@@ -745,6 +746,46 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   outlineMaterial: {fileID: 2100000, guid: c224afe5a3514fa4280c75801825d53e, type: 2}
+--- !u!114 &5675999520171662427
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7847912646208574887}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56eb0353ae6e5124bb35b17aff880f16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_StringReference:
+    m_TableReference:
+      m_TableCollectionName: GUID:68b0edebd833d61408fa2ec39e05c09c
+    m_TableEntryReference:
+      m_KeyId: 0
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  m_FormatArguments: []
+  m_UpdateString:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4758806558610053337}
+        m_TargetAssemblyTypeName: TMPro.TMP_Text, Unity.TextMeshPro
+        m_MethodName: set_text
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  references:
+    version: 2
+    RefIds: []
 --- !u!1 &7941839928190473758
 GameObject:
   m_ObjectHideFlags: 0
@@ -771,7 +812,7 @@ Transform:
   m_GameObject: {fileID: 7941839928190473758}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.8375105, y: -0.9673072, z: 0.5650087}
+  m_LocalPosition: {x: -0.03, y: -0.095, z: 0.5650087}
   m_LocalScale: {x: 1.6498873, y: 1.6498873, z: 1.6498873}
   m_ConstrainProportionsScale: 0
   m_Children: []

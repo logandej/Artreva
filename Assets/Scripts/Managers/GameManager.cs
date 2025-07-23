@@ -1,6 +1,7 @@
 using System.Collections;
 using Unity.VisualScripting;
 using Unity.XR.CoreUtils;
+using Unity.XR.PXR;
 using UnityEngine;
 using UnityEngine.Localization;
 using UnityEngine.Localization.Settings;
@@ -46,6 +47,7 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
+
         StartCoroutine(StartTable());
     }
 

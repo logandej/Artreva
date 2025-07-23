@@ -22,9 +22,6 @@ public class MyCustomSubtitle : MonoBehaviour
     public static UnityEvent eventUnlock = new();
 
     private bool changeWithView = true;
-
-    private string lastKey = "";
-
     public static float subtitle_size = .2f;
 
     private void Start()
@@ -45,34 +42,13 @@ public class MyCustomSubtitle : MonoBehaviour
         lse.StringReference.TableEntryReference = key;
         lse.RefreshString(); // Ceci déclenche la mise à jour du TMP Text
 
-        lastKey = key;
     }
 
     public void SetTextWithDuration(string key)
     {
         SetText(key);
-        Invoke("HideSubtitle",2);
+        Invoke("HideSubtitle",5);
 
-    }
-
-    private string IncrementKeySuffix(string key)
-    {
-        int underscoreIndex = key.LastIndexOf('_');
-        if (underscoreIndex == -1 || underscoreIndex == key.Length - 1)
-            return key;
-
-        string prefix = key.Substring(0, underscoreIndex + 1); // garde "sub.koonsa.4_"
-        string numberStr = key.Substring(underscoreIndex + 1); // garde "03"
-
-        if (!int.TryParse(numberStr, out int number))
-            return key;
-
-        number++; // incrémente
-
-        // Si l'incrément donne un nombre à 2 chiffres ou plus plus de padding
-        string result = (number >= 10) ? number.ToString() : number.ToString("D" + numberStr.Length);
-
-        return prefix + result;
     }
 
     public void HideSubtitle()
@@ -80,16 +56,6 @@ public class MyCustomSubtitle : MonoBehaviour
         canvas.gameObject.SetActive(false);
     }
 
-
-    private IEnumerator TypeText(string text)
-    {
-        this.subtitleText.text = "";
-        foreach (char c in text)
-        {
-            this.subtitleText.text += c;
-            yield return new WaitForSeconds(typingSpeed);
-        }
-    }
 
     private void Update()
     {

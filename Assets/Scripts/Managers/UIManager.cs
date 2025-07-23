@@ -19,7 +19,7 @@ public class UIManager : MonoBehaviour
     [Header("Settings")]
     public Canvas canvasSettings;
 
-    public int TimeShowInfo { get; set; } = 5;
+    public int TimeShowInfo { get; set; } = 10;
 
     private void Awake()
     {
@@ -70,7 +70,7 @@ public class UIManager : MonoBehaviour
             infoText.color = c;
         });
 
-        Invoke(nameof(HideInfo), 5f);
+        Invoke(nameof(HideInfo), TimeShowInfo);
     }
 
 

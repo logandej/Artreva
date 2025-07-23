@@ -18,6 +18,7 @@ public class FarArtInteractable : MonoBehaviour
     public UnityEvent eventActivated = new();
 
     [SerializeField] protected Slider slider;
+    [SerializeField] private bool autoPlaceSlider = true;
     public float ActivePercent => focusTimer/activationDelay;
 
     private void Awake()
@@ -25,13 +26,13 @@ public class FarArtInteractable : MonoBehaviour
         feedbacks = GetComponentInChildren<IInteractableFeedbacks>();
         slider.gameObject.SetActive(false);
         Renderer renderer = transform.GetComponentInChildren<Renderer>();
-        if (renderer != null)
+        if (renderer != null && autoPlaceSlider)
         {
-            slider.transform.position = renderer.bounds.center;
+            slider.transform.parent.position = renderer.bounds.center;
         }
         else
         {
-            slider.transform.position = transform.position; // fallback
+            //slider.transform.parent.position = transform.position; // fallback
         }
 
     }

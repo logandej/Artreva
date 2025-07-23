@@ -14,7 +14,7 @@ public class OrbSocket : SelectFeedbacks
     private Orb currentAttachedOrb;
 
     [SerializeField] MeshRenderer mesh;
-    private Color defaultMeshColor;
+    //private Color defaultMeshColor;
 
     public UnityEvent eventValidate = new();
     public UnityEvent eventRefuse = new();
@@ -23,7 +23,7 @@ public class OrbSocket : SelectFeedbacks
 
     private void Start()
     {
-        defaultMeshColor = mesh.material.color;
+        //defaultMeshColor = mesh.material.color;
         ObjectHelper.ChangeLocalScale(this.gameObject, Vector3.one / 3);
     }
 
@@ -55,7 +55,7 @@ public class OrbSocket : SelectFeedbacks
         {
             //OnSelectOrb();
             //ForceSelectExit(args.interactableObject.GetOldestInteractorSelecting(), args.interactableObject);
-
+            TransitionManager.ChangeSize(gameObject, Vector3.one / 2, .5f);
             currentAttachedOrb = orb;
             base.OnSelectEnter(args);
         }
@@ -66,7 +66,7 @@ public class OrbSocket : SelectFeedbacks
     {
         if (IsOrb(args.interactableObject, out Orb orb) && currentAttachedOrb != null)
         {
-
+            TransitionManager.ChangeSize(gameObject, Vector3.one / 3, .5f);
             currentAttachedOrb = null;
             //ObjectHelper.ChangeColor(mesh.gameObject, defaultMeshColor);
             base.OnSelectExit(args);

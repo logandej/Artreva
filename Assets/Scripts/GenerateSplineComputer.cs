@@ -43,7 +43,7 @@ public class GenerateSplineComputer : MonoBehaviour
 
 
         Vector3 origin = handTransform.position;
-        Vector3 direction = handTransform.forward;
+        Vector3 direction = -1*handTransform.up + handTransform.forward;
 
         bool hasTarget = true;
         Vector3 targetPos;

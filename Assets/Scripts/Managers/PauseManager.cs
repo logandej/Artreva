@@ -14,6 +14,12 @@ public class PauseManager : MonoBehaviour
 
     public static bool IsPaused => activePauseReasons.Count > 0;
 
+    private void Start()
+    {
+        activePauseReasons.Clear();
+        UpdatePauseState();
+    }
+
     public static void Pause(PauseReason reason)
     {
         if (activePauseReasons.Add(reason))
@@ -35,6 +41,7 @@ public class PauseManager : MonoBehaviour
         if (IsPaused)
         {
             //Time.timeScale = 0f;
+            print("paused");
             ScenarioManager.Instance.PauseTimeline();
         }
         else

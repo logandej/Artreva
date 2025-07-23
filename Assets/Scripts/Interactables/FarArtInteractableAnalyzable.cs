@@ -16,6 +16,7 @@ public class FarArtInteractableAnalyzable : FarArtInteractable
 
     [SerializeField] ArtAnalyzer analyzer;
 
+  
     public UnityEvent eventAnalyzed = new();
 
     private void Start()

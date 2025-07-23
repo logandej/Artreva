@@ -19,7 +19,7 @@ MonoBehaviour:
     m_Items: []
   m_TableData:
   - m_Id: 73426100015
-    m_Localized: "Seiez-vous interess\xE9 pour d\xE9couvrir ma nouvelle oeuvre qui
+    m_Localized: "Seriez-vous interess\xE9 pour d\xE9couvrir ma nouvelle oeuvre qui
       se trouve \xE0 quelques m\xE8tres d'ici ?"
     m_Metadata:
       m_Items: []
@@ -112,7 +112,7 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 73426100022
     m_Localized: "Tendez votre main et activez toutes les colonnes ! Il y a cependant
-      un ordre \xE0 respecter... Amusez-vous avec mon oeuvre \"Evolution\" !"
+      un ordre \xE0 respecter... Amusez-vous avec mon oeuvre \"Evolution\" ! "
     m_Metadata:
       m_Items: []
   - m_Id: 73426100023

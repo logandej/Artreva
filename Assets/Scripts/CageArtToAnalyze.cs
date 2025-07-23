@@ -17,12 +17,13 @@ public class CageArtToAnalyze : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        DissolveBy();
+        //DissolveBy();
     }
 
     public void OnAction()
     {
         TransitionManager.ChangePosition(dissolve.gameObject, goTo.position, transitionDuration);
+        dissolve.Dissolve(2);
         Invoke(nameof(EnableArt), transitionDuration);
     }
 

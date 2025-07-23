@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6191125575786464397}
   - component: {fileID: 4425664691556759102}
+  - component: {fileID: 4813216419882558311}
   m_Layer: 0
   m_Name: Helper
   m_TagString: Untagged
@@ -26,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 82474185489848117}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0.639}
+  m_LocalPosition: {x: 0, y: 0.846, z: -0.015}
   m_LocalScale: {x: 1.0291026, y: 1.0291026, z: 1.0291026}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -45,6 +46,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 700eed20d7275e042b4cd9b2cb22d8a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &4813216419882558311
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 82474185489848117}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 897d31bdb05367e4f97c066daac94a15, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sizeScale: 0.2
 --- !u!1 &427136558489437556
 GameObject:
   m_ObjectHideFlags: 0
@@ -851,7 +865,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -0.0653944, y: -0.17644799, z: -0.0995934, w: 0.12268944}
+  m_margin: {x: -0.0653944, y: -0.17644799, z: -0.0995934, w: 0.2551835}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -955,8 +969,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 2100000, guid: 72107ddfa6af612418de479dd11f34ca, type: 2}
-  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_Material: {fileID: 2100000, guid: e1a0e5fddd924ed4aa6b495601586a31, type: 2}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -988,7 +1002,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1111923438579787249
 Transform:
   m_ObjectHideFlags: 0
@@ -1166,7 +1180,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5971703054149219854}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0.558}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1177,7 +1191,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0.035}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 1, y: 0.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &1107754889191420468
@@ -1270,14 +1284,14 @@ RectTransform:
   m_GameObject: {fileID: 6046017319369902073}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.23189166, y: 0.23189166, z: 0.23189166}
+  m_LocalScale: {x: 0.2911721, y: 0.23189166, z: 0.23189166}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8810726078323146432}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -0.107}
+  m_AnchoredPosition: {x: 0, y: -0.077}
   m_SizeDelta: {x: 1, y: 1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1280505167496655040
@@ -1476,7 +1490,20 @@ MonoBehaviour:
           m_StringArgument: indication3
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 4477907344188438262}
+        m_TargetAssemblyTypeName: UnityEngine.UI.Image, UnityEngine.UI
+        m_MethodName: set_sprite
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 21300000, guid: 9755dc0d0aa4f2048ab14497c25d2c18, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Sprite, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: indication3
+          m_BoolArgument: 1
+        m_CallState: 2
   slider: {fileID: 2424998739837563220}
+  autoPlaceSlider: 1
   rotationSpeed: 50
   canDeanalyze: 1
   deanalyzeDelay: 10
@@ -1513,6 +1540,34 @@ MonoBehaviour:
   markerPrefab: {fileID: 4390676041951116457}
   redShieldMat: {fileID: 2100000, guid: 6e39a77bc2e4b124eaf1a154d821e886, type: 2}
   greenShieldMat: {fileID: 2100000, guid: f43ed9b8a029cc44194006880b16ac71, type: 2}
+  eventStartAnalyzing:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3171668604741382422}
+        m_TargetAssemblyTypeName: UnityEngine.Localization.Components.LocalizeStringEvent,
+          Unity.Localization
+        m_MethodName: SetEntry
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: indication4
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 4477907344188438262}
+        m_TargetAssemblyTypeName: UnityEngine.UI.Image, UnityEngine.UI
+        m_MethodName: set_sprite
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 21300000, guid: 4af4f4eced93a8d4dbf85bd115cc69b3, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Sprite, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: indication4
+          m_BoolArgument: 0
+        m_CallState: 2
   eventDone:
     m_PersistentCalls:
       m_Calls: []
@@ -1537,19 +1592,6 @@ MonoBehaviour:
   onActivateStart:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3171668604741382422}
-        m_TargetAssemblyTypeName: UnityEngine.Localization.Components.LocalizeStringEvent,
-          Unity.Localization
-        m_MethodName: SetEntry
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: indication4
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 8379826805226487100}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive

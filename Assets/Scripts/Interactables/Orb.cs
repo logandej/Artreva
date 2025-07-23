@@ -5,7 +5,7 @@ public class Orb: MonoBehaviour
     [SerializeField] bool isPartOfEnigma = true;
 
     private Vector3 initialPosition;
-    private static float maxFar = 1f;
+    private static float maxFar = .5f;
     private bool isReturningToInitialPosition = false;
     private float initialSize;
 

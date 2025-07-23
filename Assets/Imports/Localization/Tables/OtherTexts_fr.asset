@@ -32,11 +32,12 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 7873691778850816
-    m_Localized: Pincez l'orbe avec vos doigts
+    m_Localized: "Pincez la sph\xE8re \"Commencer\" avec vos doigts"
     m_Metadata:
       m_Items: []
   - m_Id: 7882407982964736
-    m_Localized: "Placez l'orbe dans le r\xE9c\xE8ptacle"
+    m_Localized: "Placez la sph\xE8re \"Commencer\" dans le r\xE9c\xE8ptacle juste
+      au dessus"
     m_Metadata:
       m_Items: []
   - m_Id: 7906249522585600
@@ -45,6 +46,99 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 7908052263804928
     m_Localized: Tournez votre poignet
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10032311375273984
+    m_Localized: "Libert\xE9"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10032443030282240
+    m_Localized: Force
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10032527352569856
+    m_Localized: Confort
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10033094393110528
+    m_Localized: "D\xE9pendance"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10033255081091072
+    m_Localized: Isolement
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10033510434512896
+    m_Localized: Paix
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10033607134191616
+    m_Localized: Abundance
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10033808532086784
+    m_Localized: Temps
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10033985460412416
+    m_Localized: "M\xE9moire"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10034025193054208
+    m_Localized: Oubli
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10034110656192512
+    m_Localized: Joie
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10034180612988928
+    m_Localized: Puissance
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10040057311043584
+    m_Localized: Oui
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10040181760237568
+    m_Localized: Non
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10171604164976640
+    m_Localized: Commencer
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10254217273712640
+    m_Localized: Analyzez cette oeuvre perdue...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10254453220089856
+    m_Localized: "Pour trouver Akami, analysez, parmi ces oeuvre, celle que repr\xE9sente
+      le plus la libert\xE9"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10254723492651008
+    m_Localized: Analysez cette oeuvre en tendant votre main
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10254942670200832
+    m_Localized: "Que repr\xE9sente l'oeuvre parmi ces 3 mots ? Vous pouvez analyser
+      l'oeuvre de nouveau si besoin"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10255271314890752
+    m_Localized: "Que repr\xE9sente l'oeuvre parmi ces 4 mots ? Vous pouvez analyser
+      l'oeuvre de nouveau si besoin"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10255385710338048
+    m_Localized: "Que repr\xE9sente l'oeuvre parmi ces 5 mots ? Vous pouvez analyser
+      l'oeuvre de nouveau si besoin"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10258173471268864
+    m_Localized: Activez les autres colonnes dans le bon ordre. L'oeuvre d'Akami
+      s'appelle "Evolution"...
     m_Metadata:
       m_Items: []
   references:

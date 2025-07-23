@@ -56,6 +56,7 @@ public class ScenarioManager : MonoBehaviour
 
     public void WaitForPlayerAction()
     {
+        print("WAITFORPLAYER");
         PauseManager.Pause(PauseReason.AwaitingPlayerInput);
 
     }
@@ -98,6 +99,12 @@ public class ScenarioManager : MonoBehaviour
     public void ChangePlayerPosition(Transform transform)
     {
         StartCoroutine(ChangePlayerPositionCoroutine(transform));
+    }
+    public void ChanePlayerPositionInstantly(Transform transform)
+    {
+        GameManager.Instance.Player.transform.position = transform.position;
+        GameManager.Instance.Player.transform.rotation = transform.rotation;
+
     }
     IEnumerator ChangePlayerPositionCoroutine(Transform transform)
     {

@@ -190,7 +190,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8045366032564436171, guid: a81953805e609574f819ae48b52aa5d5, type: 3}
       propertyPath: eventAnalyzed.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 8045366032564436171, guid: a81953805e609574f819ae48b52aa5d5, type: 3}
       propertyPath: eventAnalyzed.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
@@ -198,11 +198,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8045366032564436171, guid: a81953805e609574f819ae48b52aa5d5, type: 3}
       propertyPath: eventAnalyzed.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: 
+      value: SetActive
       objectReference: {fileID: 0}
     - target: {fileID: 8045366032564436171, guid: a81953805e609574f819ae48b52aa5d5, type: 3}
       propertyPath: eventAnalyzed.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: ScenarioManager, Assembly-CSharp
+      value: UnityEngine.GameObject, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 8045366032564436171, guid: a81953805e609574f819ae48b52aa5d5, type: 3}
       propertyPath: eventAnalyzed.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -218,31 +218,31 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8954514804273364919, guid: a81953805e609574f819ae48b52aa5d5, type: 3}
       propertyPath: eventDone.m_PersistentCalls.m_Calls.Array.size
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8954514804273364919, guid: a81953805e609574f819ae48b52aa5d5, type: 3}
       propertyPath: eventDone.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 4
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 8954514804273364919, guid: a81953805e609574f819ae48b52aa5d5, type: 3}
       propertyPath: eventDone.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 6478695919380416436}
+      objectReference: {fileID: 1116698963531823453}
     - target: {fileID: 8954514804273364919, guid: a81953805e609574f819ae48b52aa5d5, type: 3}
       propertyPath: eventDone.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8954514804273364919, guid: a81953805e609574f819ae48b52aa5d5, type: 3}
       propertyPath: eventDone.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: Solve
+      value: SetActive
       objectReference: {fileID: 0}
     - target: {fileID: 8954514804273364919, guid: a81953805e609574f819ae48b52aa5d5, type: 3}
       propertyPath: eventDone.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: DissolveReplaceMaterial, Assembly-CSharp
+      value: UnityEngine.GameObject, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 8954514804273364919, guid: a81953805e609574f819ae48b52aa5d5, type: 3}
       propertyPath: eventDone.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_FloatArgument
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8954514804273364919, guid: a81953805e609574f819ae48b52aa5d5, type: 3}
       propertyPath: eventDone.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -259,6 +259,11 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 3437024728179822173}
   m_SourcePrefab: {fileID: 100100000, guid: a81953805e609574f819ae48b52aa5d5, type: 3}
+--- !u!1 &1116698963531823453 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 82474185489848117, guid: a81953805e609574f819ae48b52aa5d5, type: 3}
+  m_PrefabInstance: {fileID: 1034224962759519848}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &6122856189294883424 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6530940036259929096, guid: a81953805e609574f819ae48b52aa5d5, type: 3}

@@ -27403,68 +27403,6 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-    - m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 7883065705173186717, guid: 0fa45526c7703614b82aed22293942f1, type: 3}
-          m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-          m_MethodName: LoadScene
-          m_Mode: 5
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: FestivalScene
-            m_BoolArgument: 0
-          m_CallState: 2
-        - m_Target: {fileID: 7883065705173186717, guid: 0fa45526c7703614b82aed22293942f1, type: 3}
-          m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-          m_MethodName: SetGameStatus
-          m_Mode: 3
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 3
-            m_FloatArgument: 0
-            m_StringArgument: FestivalScene
-            m_BoolArgument: 0
-          m_CallState: 2
-        - m_Target: {fileID: 6639151103745668976}
-          m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
-          m_MethodName: Play
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 3
-            m_FloatArgument: 0
-            m_StringArgument: FestivalScene
-            m_BoolArgument: 0
-          m_CallState: 2
-        - m_Target: {fileID: 1703122456}
-          m_TargetAssemblyTypeName: MaterialSwitcher, Assembly-CSharp
-          m_MethodName: ChangeToEnd
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 3
-            m_FloatArgument: 0
-            m_StringArgument: FestivalScene
-            m_BoolArgument: 0
-          m_CallState: 2
-        - m_Target: {fileID: 1703122457}
-          m_TargetAssemblyTypeName: MaterialSwitcher, Assembly-CSharp
-          m_MethodName: ChangeToEnd
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 3
-            m_FloatArgument: 0
-            m_StringArgument: FestivalScene
-            m_BoolArgument: 0
-          m_CallState: 2
   - events:
     - m_PersistentCalls:
         m_Calls:
@@ -29390,7 +29328,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7162020715104266600, guid: ea63a65a4fc8dc9409ad321edc9a88f7, type: 3}
       propertyPath: m_text
-      value: 1945
+      value: 1950
+      objectReference: {fileID: 0}
+    - target: {fileID: 7162020715104266600, guid: ea63a65a4fc8dc9409ad321edc9a88f7, type: 3}
+      propertyPath: m_fontSize
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7380387416168943785, guid: ea63a65a4fc8dc9409ad321edc9a88f7, type: 3}
       propertyPath: m_Name
@@ -29446,11 +29388,11 @@ PrefabInstance:
       objectReference: {fileID: 805248562635256118}
     - target: {fileID: 8140080122035820843, guid: ea63a65a4fc8dc9409ad321edc9a88f7, type: 3}
       propertyPath: eventGoodAnswer.m_PersistentCalls.m_Calls.Array.size
-      value: 1
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8140080122035820843, guid: ea63a65a4fc8dc9409ad321edc9a88f7, type: 3}
       propertyPath: eventGoodAnswer.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8140080122035820843, guid: ea63a65a4fc8dc9409ad321edc9a88f7, type: 3}
       propertyPath: eventGoodAnswer.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
@@ -29471,7 +29413,7 @@ PrefabInstance:
     - target: {fileID: 8140080122035820843, guid: ea63a65a4fc8dc9409ad321edc9a88f7, type: 3}
       propertyPath: eventGoodAnswer.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 2122730335}
+      objectReference: {fileID: 7883065705173186717, guid: 0fa45526c7703614b82aed22293942f1, type: 3}
     - target: {fileID: 8140080122035820843, guid: ea63a65a4fc8dc9409ad321edc9a88f7, type: 3}
       propertyPath: eventGoodAnswer.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
@@ -29510,7 +29452,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8140080122035820843, guid: ea63a65a4fc8dc9409ad321edc9a88f7, type: 3}
       propertyPath: eventGoodAnswer.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: OnPlayerDidAction
+      value: LoadScene
       objectReference: {fileID: 0}
     - target: {fileID: 8140080122035820843, guid: ea63a65a4fc8dc9409ad321edc9a88f7, type: 3}
       propertyPath: eventGoodAnswer.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
@@ -29530,7 +29472,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8140080122035820843, guid: ea63a65a4fc8dc9409ad321edc9a88f7, type: 3}
       propertyPath: eventGoodAnswer.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: ScenarioManager, Assembly-CSharp
+      value: GameManager, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 8140080122035820843, guid: ea63a65a4fc8dc9409ad321edc9a88f7, type: 3}
       propertyPath: eventGoodAnswer.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
@@ -29566,7 +29508,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8140080122035820843, guid: ea63a65a4fc8dc9409ad321edc9a88f7, type: 3}
       propertyPath: eventGoodAnswer.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
-      value: 
+      value: FestivalScene
       objectReference: {fileID: 0}
     - target: {fileID: 8140080122035820843, guid: ea63a65a4fc8dc9409ad321edc9a88f7, type: 3}
       propertyPath: eventGoodAnswer.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_StringArgument

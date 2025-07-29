@@ -1657,6 +1657,34 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2108077260650858938}
     m_Modifications:
+    - target: {fileID: 1793478384489162195, guid: 294e1e9cfa82f0146a3af1e409abccd7, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1793478384489162195, guid: 294e1e9cfa82f0146a3af1e409abccd7, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1793478384489162195, guid: 294e1e9cfa82f0146a3af1e409abccd7, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1793478384489162195, guid: 294e1e9cfa82f0146a3af1e409abccd7, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.002
+      objectReference: {fileID: 0}
+    - target: {fileID: 1793478384489162195, guid: 294e1e9cfa82f0146a3af1e409abccd7, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.008
+      objectReference: {fileID: 0}
+    - target: {fileID: 1793478384489162195, guid: 294e1e9cfa82f0146a3af1e409abccd7, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.013
+      objectReference: {fileID: 0}
+    - target: {fileID: 1793478384489162195, guid: 294e1e9cfa82f0146a3af1e409abccd7, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4556116787941975432, guid: 294e1e9cfa82f0146a3af1e409abccd7, type: 3}
       propertyPath: m_Name
       value: OrbSocket

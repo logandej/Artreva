@@ -56,7 +56,7 @@ public class SceneFader : MonoBehaviour
 
     private void ChangementsWhileFadeFinished()
     {
-        GameManager.Instance.SensePackMR?.ActiveMR(false);
+        GameManager.Instance.SensePackMR.ActiveMR(false);
     }
 
 }

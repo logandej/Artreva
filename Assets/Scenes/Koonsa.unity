@@ -6224,6 +6224,26 @@ SkinnedMeshRenderer:
   m_CorrespondingSourceObject: {fileID: 2418719259911998956, guid: d6878e1999eb4b44a9f5a263af86c185, type: 3}
   m_PrefabInstance: {fileID: 1023167462}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &1023167466 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 396022238245481883, guid: d6878e1999eb4b44a9f5a263af86c185, type: 3}
+  m_PrefabInstance: {fileID: 1023167462}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1023167467 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1728413274935132825, guid: d6878e1999eb4b44a9f5a263af86c185, type: 3}
+  m_PrefabInstance: {fileID: 1023167462}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1023167468 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1529869696053733263, guid: d6878e1999eb4b44a9f5a263af86c185, type: 3}
+  m_PrefabInstance: {fileID: 1023167462}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1023167469 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6543932304408510071, guid: d6878e1999eb4b44a9f5a263af86c185, type: 3}
+  m_PrefabInstance: {fileID: 1023167462}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1023167471 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1820897918385990095, guid: d6878e1999eb4b44a9f5a263af86c185, type: 3}
@@ -6583,7 +6603,7 @@ PrefabInstance:
     - target: {fileID: 9131672452651728422, guid: 4d6ddb69800abd04ca0d09bdc8259b83, type: 3}
       propertyPath: leftHandPalm
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1023167467}
     - target: {fileID: 9131672452651728422, guid: 4d6ddb69800abd04ca0d09bdc8259b83, type: 3}
       propertyPath: gloveMaterial
       value: 
@@ -6595,11 +6615,11 @@ PrefabInstance:
     - target: {fileID: 9131672452651728422, guid: 4d6ddb69800abd04ca0d09bdc8259b83, type: 3}
       propertyPath: rightHandPalm
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1023167466}
     - target: {fileID: 9131672452651728422, guid: 4d6ddb69800abd04ca0d09bdc8259b83, type: 3}
       propertyPath: leftHandAnchor
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1023167469}
     - target: {fileID: 9131672452651728422, guid: 4d6ddb69800abd04ca0d09bdc8259b83, type: 3}
       propertyPath: leftRayRenderer
       value: 
@@ -6607,7 +6627,7 @@ PrefabInstance:
     - target: {fileID: 9131672452651728422, guid: 4d6ddb69800abd04ca0d09bdc8259b83, type: 3}
       propertyPath: rightHandAnchor
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1023167468}
     - target: {fileID: 9131672452651728422, guid: 4d6ddb69800abd04ca0d09bdc8259b83, type: 3}
       propertyPath: rightRayRenderer
       value: 

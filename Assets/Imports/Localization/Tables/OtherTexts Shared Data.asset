@@ -131,6 +131,52 @@ MonoBehaviour:
     m_Key: orbAkami.1_3
     m_Metadata:
       m_Items: []
+  - m_Id: 21990648912322560
+    m_Key: warning
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22002162813673472
+    m_Key: warning.indicator.01
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22018879837216768
+    m_Key: 'systemhand
+
+'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22074231878361088
+    m_Key: artperiode.1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22074644996333568
+    m_Key: artperiode.2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22075200590618624
+    m_Key: artperiode.3
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22075401380339712
+    m_Key: artperiode.4
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22075746114379776
+    m_Key: artperiode.5
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22076072670306304
+    m_Key: artperiode.6
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22076262286401536
+    m_Key: artperiode.7
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22076332012511232
+    m_Key: artperiode.8
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

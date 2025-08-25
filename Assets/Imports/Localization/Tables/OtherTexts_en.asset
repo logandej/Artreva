@@ -72,7 +72,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 10033607134191616
-    m_Localized: Abondance
+    m_Localized: Abundance
     m_Metadata:
       m_Items: []
   - m_Id: 10033808532086784
@@ -138,6 +138,73 @@ MonoBehaviour:
   - m_Id: 10258173471268864
     m_Localized: Activate the other pillars in the good order. The akami name's art
       is "Evolution"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21990648912322560
+    m_Localized: 'Using virtual reality may cause visual discomfort, dizziness, or
+      disorientation.
+
+
+      This experience is intended for users aged 13 and above
+      who do not suffer from heart conditions or epilepsy.
+
+
+      It is strongly
+      discouraged for pregnant women, elderly people, and those prone to physical
+      or sensitive conditions (dizziness, motion sickness, migraines, balance or
+      vision disorders).
+
+
+      If you experience any discomfort, remove the headset
+      immediately.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22002162813673472
+    m_Localized: Pinch the sphere with your fingers to begin
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22018879837216768
+    m_Localized: This system uses hands tracking
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22074231878361088
+    m_Localized: Prehistoric art
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22074644996333568
+    m_Localized: Ancient art
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22075200590618624
+    m_Localized: Medieval Art
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22075401380339712
+    m_Localized: 'Renaissance
+
+      &
+
+      Mannerism Art'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22075746114379776
+    m_Localized: 'Baroque
+
+      &
+
+      Classical Art'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22076072670306304
+    m_Localized: Neoclassical and Romantic Art
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22076262286401536
+    m_Localized: Modern Art
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22076332012511232
+    m_Localized: Contemporary Art
     m_Metadata:
       m_Items: []
   references:

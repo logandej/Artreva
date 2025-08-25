@@ -54,7 +54,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 73426100008
-    m_Localized: "Ces orbes repr\xE9sentent diff\xE9rentes dates."
+    m_Localized: "Ces sph\xE8res repr\xE9sentent diff\xE9rentes dates."
     m_Metadata:
       m_Items: []
   - m_Id: 73426100009
@@ -102,7 +102,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 73426100020
-    m_Localized: "Voici des tout nouveaux gants, ils permettront de faire r\xE9agir
+    m_Localized: "Voici des tout nouveaux gants, ils vous permettront de faire r\xE9agir
       les colonnes,  essaye les !"
     m_Metadata:
       m_Items: []

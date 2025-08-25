@@ -41,7 +41,9 @@ public class SceneLoaderManager : MonoBehaviour
         isLoading = true;
         SceneFader.Instance.LoadWhiteFade();
         AudioManager.Instance.ChangeMasterToLow();
+        UIManager.Instance.HideSettings();
         yield return new WaitForSeconds(SceneFader.Instance.FadeTime);
+        
         loadingOperation = SceneManager.LoadSceneAsync(sceneName);
         loadingOperation.allowSceneActivation = false;
 

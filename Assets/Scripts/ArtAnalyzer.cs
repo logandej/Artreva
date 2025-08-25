@@ -46,6 +46,11 @@ public class ArtAnalyzer : MonoBehaviour
         {
             if (!observedAngles[closestIndex]) // Check if already observed
             {
+                if (closestIndex == angleMarkers.Count / 2)
+                {
+                    observedAngles[angleMarkers.Count/2] = false;
+                    angleMarkers[closestIndex].GetComponentInChildren<MeshRenderer>().material = redShieldMat;
+                }
                 observedAngles[closestIndex] = true;
                 angleMarkers[closestIndex].GetComponentInChildren<MeshRenderer>().material = greenShieldMat;
                 Debug.Log($"Marker #{closestIndex} observé par proximité !");

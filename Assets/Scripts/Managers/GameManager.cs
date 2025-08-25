@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Collections.Generic;
 using Unity.VisualScripting;
 using Unity.XR.CoreUtils;
 using Unity.XR.PXR;
@@ -6,6 +7,7 @@ using UnityEngine;
 using UnityEngine.Localization;
 using UnityEngine.Localization.Settings;
 using UnityEngine.Localization.Tables;
+using UnityEngine.XR;
 
 public class GameManager : MonoBehaviour
 {
@@ -17,7 +19,6 @@ public class GameManager : MonoBehaviour
     public LightSwitcher LightSwitcher { get; private set; }
 
     private StringTable _cachedTable;
-    private StringTable _cachedTable2;
 
     public GameStates GameStatus;
     public enum GameStates
@@ -47,7 +48,13 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
+        var subsystems = new List<XRInputSubsystem>();
+        SubsystemManager.GetSubsystems(subsystems);
 
+        if (subsystems.Count > 0)
+        {
+            xrInput = subsystems[0];
+        }
         StartCoroutine(StartTable());
     }
 
@@ -59,7 +66,6 @@ public class GameManager : MonoBehaviour
 
         var tableOp2 = LocalizationSettings.StringDatabase.GetTableAsync("OtherTexts");
         yield return tableOp2;
-        _cachedTable2 = tableOp2.Result;
 
     }
 
@@ -93,7 +99,7 @@ public class GameManager : MonoBehaviour
 
     public void LoadScene(string sceneName)
     {
-        UIManager.Instance.HideSettings();
+       
         SceneLoaderManager.Instance.LoadScene(sceneName);
      
     }
@@ -123,6 +129,7 @@ public class GameManager : MonoBehaviour
     public void ResetGame()
     {
         Instance.GameStatus = GameStates.Warning;
+        SceneLoaderManager.Instance.LoadScene("warning");
         //TODO
     }
 
@@ -142,6 +149,15 @@ public class GameManager : MonoBehaviour
     public void SwitchToNight()
     {
         Instance.LightSwitcher.SwitchToNight();
+    }
+    private XRInputSubsystem xrInput;
+    public void RecenterPlayer()
+    {
+        if (xrInput != null)
+        {
+            xrInput.TryRecenter();
+            Debug.Log("Vue recentrée (OpenXR) !");
+        }
     }
 
 

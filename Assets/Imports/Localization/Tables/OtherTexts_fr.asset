@@ -36,8 +36,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 7882407982964736
-    m_Localized: "Placez la sph\xE8re \"Commencer\" dans le r\xE9c\xE8ptacle juste
-      au dessus"
+    m_Localized: "Placez la sph\xE8re \"Commencer\" dans le r\xE9ceptacle juste au-dessus"
     m_Metadata:
       m_Items: []
   - m_Id: 7906249522585600
@@ -73,7 +72,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 10033607134191616
-    m_Localized: Abundance
+    m_Localized: Abondance
     m_Metadata:
       m_Items: []
   - m_Id: 10033808532086784
@@ -139,6 +138,61 @@ MonoBehaviour:
   - m_Id: 10258173471268864
     m_Localized: Activez les autres colonnes dans le bon ordre. L'oeuvre d'Akami
       s'appelle "Evolution"...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21990648912322560
+    m_Localized: "L\u2019utilisation de la r\xE9alit\xE9 virtuelle peut provoquer
+      une g\xEAne visuelle, des vertiges ou une d\xE9sorientation.\n\nCette exp\xE9rience
+      est r\xE9serv\xE9e aux personnes de 13 ans et plus ne pr\xE9sentant aucun trouble
+      cardiaque ou \xE9pileptique.\n\nElle est fortement d\xE9conseill\xE9e aux femmes
+      enceintes, aux personnes \xE2g\xE9es, ainsi qu\u2019\xE0 celles sujettes \xE0
+      des troubles physiques ou sensibles (vertiges, mal des transports, migraines,
+      troubles de l\u2019\xE9quilibre ou de la vision).\n\nEn cas d\u2019inconfort,
+      retirez imm\xE9diatement le casque."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22002162813673472
+    m_Localized: "Pincez la sph\xE8re avec vos doigts pour commencer"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22018879837216768
+    m_Localized: "Ce syst\xE8me utilise le suivi des mains"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22074231878361088
+    m_Localized: "Art Pr\xE9historique"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22074644996333568
+    m_Localized: Art Antique
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22075200590618624
+    m_Localized: "Art M\xE9di\xE9val"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22075401380339712
+    m_Localized: "Art \nde la Renaissace\n& du Mani\xE9risme"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22075746114379776
+    m_Localized: 'Art Baroque
+
+      &
+
+      Classique'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22076072670306304
+    m_Localized: "Art N\xE9oclassique & Romantique"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22076262286401536
+    m_Localized: Art Moderne
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22076332012511232
+    m_Localized: Art Contemporain
     m_Metadata:
       m_Items: []
   references:

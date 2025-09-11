@@ -128,8 +128,10 @@ public class GameManager : MonoBehaviour
 
     public void ResetGame()
     {
-        Instance.GameStatus = GameStates.Warning;
+        SetGameStatus(0);
+        PauseManager.ClearOnRestart();
         SceneLoaderManager.Instance.LoadScene("warning");
+
         //TODO
     }
 

@@ -91,7 +91,6 @@ public class AudioManager : MonoBehaviour
 
     public void PlaySoundEffect(AudioSource audio, AudioClip clip)
     {
-        print("OKOPEZFGOJGZR");
         if (audio && clip)
         {
             audio.PlayOneShot(clip);
@@ -102,16 +101,16 @@ public class AudioManager : MonoBehaviour
 
     public void ChangeMasterToLow()
     {
-        TransitionManager.InterpolateFloat(0, -80, 2, t =>
+        TransitionManager.InterpolateFloat(0, -80, 3, t =>
         {
-            mixer.SetFloat("Master", t);
+            mixer.SetFloat("MasterVolume", t);
         });
     }
     public void ChangeMasterToDefault()
     {
-        TransitionManager.InterpolateFloat(-80, 0, 2, t =>
+        TransitionManager.InterpolateFloat(-80, 0, 1, t =>
         {
-            mixer.SetFloat("Master", t);
+            mixer.SetFloat("MasterVolume", t);
         });
     }
 }

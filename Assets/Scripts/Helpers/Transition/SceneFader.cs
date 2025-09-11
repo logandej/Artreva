@@ -40,23 +40,48 @@ public class SceneFader : MonoBehaviour
     }
     private void LoadFade(Color color)
     {
-        TransitionManager.ChangeBaseColor(sphereFader, color, FadeTime);
-        Invoke(nameof(ChangementsWhileFadeFinished),FadeTime);
+        LoadFade(color, FadeTime);
+    }
+
+    public void LoadFade(Color color, float duration)
+    {
+        TransitionManager.ChangeBaseColor(sphereFader, color, duration);
+        Invoke(nameof(ChangementsWhileFadeFinished), duration);
+
+    }
+
+    public void LoadFadeThenUnload(Color color, float time, float duration)
+    {
+        //Load
+        LoadFade(color, duration);
+        var basefadeDuration = FadeTime;
+        FadeTime = duration;
+
+        //Unload in time
+        Invoke(nameof(UnloadFade),duration+2*time);
+        FadeTime = basefadeDuration;
     }
 
     public void UnloadFadeIn(float time)
     {
         Invoke(nameof(UnloadFade),time);
     }
+ 
+
 
     public void UnloadFade()
     {
-        TransitionManager.ChangeBaseColor(sphereFader, new Color(0, 0, 0, 0), FadeTime);
+        UnloadFade(FadeTime);
+    }
+
+    public void UnloadFade(float duration)
+    {
+        TransitionManager.ChangeBaseColor(sphereFader, new Color(0, 0, 0, 0), duration);
     }
 
     private void ChangementsWhileFadeFinished()
     {
-        GameManager.Instance.SensePackMR.ActiveMR(false);
+        GameManager.Instance.SensePackMR?.ActiveMR(false);
     }
 
 }

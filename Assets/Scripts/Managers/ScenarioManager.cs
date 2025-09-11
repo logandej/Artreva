@@ -13,6 +13,7 @@ public class ScenarioManager : MonoBehaviour
         if(Instance == null)
         {
             Instance = this;
+            PauseManager.ClearOnRestart();
         }
         else
         {
@@ -24,11 +25,13 @@ public class ScenarioManager : MonoBehaviour
     private int directorIndex = 0;
     public void PauseTimeline()
     {
-         
-        // playableDirectors[directorIndex].timeUpdateMode = DirectorUpdateMode.Manual;
-        playableDirectors[directorIndex].Pause();
-        // Tu peux ici déclencher un événement, afficher un prompt, etc.
-        LockSubtitles();
+        if (playableDirectors.Count > 0)
+        {
+            // playableDirectors[directorIndex].timeUpdateMode = DirectorUpdateMode.Manual;
+            playableDirectors[directorIndex].Pause();
+            // Tu peux ici déclencher un événement, afficher un prompt, etc.
+            LockSubtitles();
+        }
     }
 
     private void LockSubtitles()
@@ -48,9 +51,12 @@ public class ScenarioManager : MonoBehaviour
 
     public void ResumeTimeline()
     {
-        // playableDirectors[directorIndex].timeUpdateMode = DirectorUpdateMode.GameTime;
-        playableDirectors[directorIndex].Play(); // ou Resume() selon ce que tu veux
-        UnlockSubtitles();
+        if (playableDirectors.Count > 0)
+        {
+            // playableDirectors[directorIndex].timeUpdateMode = DirectorUpdateMode.GameTime;
+            playableDirectors[directorIndex].Play(); // ou Resume() selon ce que tu veux
+            UnlockSubtitles();
+        }
         
     }
 

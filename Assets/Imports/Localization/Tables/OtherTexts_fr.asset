@@ -112,8 +112,9 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 10254453220089856
-    m_Localized: "Pour trouver Akami, analysez, parmi ces oeuvre, celle que repr\xE9sente
-      le plus la libert\xE9"
+    m_Localized: "Retrouvez Akami pour lib\xE9rer les \u0153uvres et rouvrir le portail
+      dimensionnel.\n\nPour y parvenir, analysez, parmi ces oeuvres, celle qui renferme
+      le secret de l'art contemporain..."
     m_Metadata:
       m_Items: []
   - m_Id: 10254723492651008
@@ -121,18 +122,15 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 10254942670200832
-    m_Localized: "Que repr\xE9sente l'oeuvre parmi ces 3 mots ? Vous pouvez analyser
-      l'oeuvre de nouveau si besoin"
+    m_Localized: "Que repr\xE9sente l'oeuvre parmi ces 3 mots ? "
     m_Metadata:
       m_Items: []
   - m_Id: 10255271314890752
-    m_Localized: "Que repr\xE9sente l'oeuvre parmi ces 4 mots ? Vous pouvez analyser
-      l'oeuvre de nouveau si besoin"
+    m_Localized: "Que repr\xE9sente l'oeuvre parmi ces 4 mots ? "
     m_Metadata:
       m_Items: []
   - m_Id: 10255385710338048
-    m_Localized: "Que repr\xE9sente l'oeuvre parmi ces 5 mots ? Vous pouvez analyser
-      l'oeuvre de nouveau si besoin"
+    m_Localized: "Que repr\xE9sente l'oeuvre parmi ces 5 mots ? "
     m_Metadata:
       m_Items: []
   - m_Id: 10258173471268864
@@ -193,6 +191,18 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 22076332012511232
     m_Localized: Art Contemporain
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23222991656361984
+    m_Localized: Ouvrez votre main en pointant cette colonne
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27525586994634752
+    m_Localized: "Le d\xE9partement du Var vous remercie d'avoir jou\xE9 !"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28221290759102464
+    m_Localized: "Selectionnez la date de d\xE9but de l'art contemporain"
     m_Metadata:
       m_Items: []
   references:

@@ -112,8 +112,12 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 10254453220089856
-    m_Localized: To Find Akami, analyse, among those arts, the one that shows the
-      most "Freedom"
+    m_Localized: 'Join Akami to free the artworks and reopen the dimensional portal.
+
+
+      To
+      do this, analyze, among these artworks, the one that is hiding the secret of
+      contemporary art...'
     m_Metadata:
       m_Items: []
   - m_Id: 10254723492651008
@@ -205,6 +209,18 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 22076332012511232
     m_Localized: Contemporary Art
+    m_Metadata:
+      m_Items: []
+  - m_Id: 23222991656361984
+    m_Localized: Open your hand pointing to this column
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27525586994634752
+    m_Localized: The Var department thanks you for playing!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28221290759102464
+    m_Localized: Select the start date of contemporary art
     m_Metadata:
       m_Items: []
   references:

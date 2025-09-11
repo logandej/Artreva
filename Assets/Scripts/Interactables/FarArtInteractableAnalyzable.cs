@@ -19,6 +19,8 @@ public class FarArtInteractableAnalyzable : FarArtInteractable
   
     public UnityEvent eventAnalyzed = new();
 
+    public bool UnloadVisionAfter10sec = true;
+
     private void Start()
     {
         if(GetComponentInChildren<CurvedSpawner>() != null)
@@ -42,6 +44,8 @@ public class FarArtInteractableAnalyzable : FarArtInteractable
 
     }
 
+    float beforeTotalWhite = 0.7f;
+    float durationTotalWhite = 0.2f;
     private void StopAnalyzing()
     {
         isAnalyzing = false;
@@ -53,9 +57,32 @@ public class FarArtInteractableAnalyzable : FarArtInteractable
             Invoke(nameof(Deanalyze),deanalyzeDelay);
         }
         analyzer.eventDone.RemoveListener(StopAnalyzing);
+
+      
+
+        ChangeVision();
+        Invoke(nameof(InvokeEventAnalyzed), beforeTotalWhite + durationTotalWhite / 2);
+
+        if (UnloadVisionAfter10sec)
+        {
+            //UnloadVision (10 sec set on events on the editor...)
+            Invoke(nameof(ChangeVision), 10);
+        }
+
+
+    }
+
+    private void ChangeVision()
+    {
+        SceneFader.Instance.LoadFadeThenUnload(Color.black, durationTotalWhite, beforeTotalWhite);
+        
+    }
+
+ 
+
+    private void InvokeEventAnalyzed()
+    {
         eventAnalyzed?.Invoke();
-
-
     }
 
     private void Deanalyze()
@@ -77,7 +104,7 @@ public class FarArtInteractableAnalyzable : FarArtInteractable
     protected override void ActivateNow()
     {
         base.ActivateNow();
-        slider.gameObject.SetActive(true);
+        slider.gameObject.SetActive(false);
         HandActionManager.Instance.LockAnalyzable(this);
     }
 

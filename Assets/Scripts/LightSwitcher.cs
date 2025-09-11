@@ -1,4 +1,6 @@
 using UnityEngine;
+using static UnityEngine.Rendering.DebugUI;
+using UnityEngine.Rendering;
 
 public class LightSwitcher : MonoBehaviour
 {
@@ -13,15 +15,8 @@ public class LightSwitcher : MonoBehaviour
     public void SwitchToNight()
     {
 
-        TransitionManager.InterpolateFloat(dayIntensity, nightIntensity,5, intensity => {
-            sunLight.intensity = intensity;
-        });
-
-        TransitionManager.InterpolateFloat(dayAmbiantIntensity, nightAmbiantIntensity, 5, intensity =>
-        {
-            RenderSettings.ambientIntensity = intensity;
-        });
-
+     
+        ChangeLightNight();
        
         //RenderSettings.ambientLight = nightAmbient;
 
@@ -36,15 +31,8 @@ public class LightSwitcher : MonoBehaviour
 
     public void SwitchToDay()
     {
-        TransitionManager.InterpolateFloat(nightIntensity, dayIntensity, 5, intensity => {
-            sunLight.intensity = intensity;
-        });
 
-        TransitionManager.InterpolateFloat(nightAmbiantIntensity, dayAmbiantIntensity, 5, intensity =>
-        {
-            RenderSettings.ambientIntensity = intensity;
-        });
-
+        ChangeLightDay();
 
         //RenderSettings.ambientLight = nightAmbient;
 
@@ -56,6 +44,55 @@ public class LightSwitcher : MonoBehaviour
             RenderSettings.skybox.SetColor("_Tint", interpolatedColor); // "_Tint" dépend du shader utilisé
         });
 
+    }
+
+    public void ChangeLightNight()
+    {
+        TransitionManager.InterpolateFloat(dayIntensity, nightIntensity, 5, intensity => {
+            sunLight.intensity = intensity;
+        });
+
+        TransitionManager.InterpolateFloat(dayAmbiantIntensity, nightAmbiantIntensity, 5, intensity =>
+        {
+            RenderSettings.ambientIntensity = intensity;
+        });
+    }
+
+    public void ChangeLightDay()
+    {
+        TransitionManager.InterpolateFloat(nightIntensity, dayIntensity, 5, intensity => {
+            sunLight.intensity = intensity;
+        });
+
+        TransitionManager.InterpolateFloat(nightAmbiantIntensity, dayAmbiantIntensity, 5, intensity =>
+        {
+            RenderSettings.ambientIntensity = intensity;
+        });
+    }
+
+    public void ChangeColorSkybox(string color)
+    {
+        ChangeColorSkybox(color,2);
+    }
+
+    public void ChangeColorSkybox(string color, float duration)
+    {
+        // Récupère la couleur actuelle du skybox
+        Color baseColor = RenderSettings.skybox.GetColor("_Tint"); 
+
+        // Conversion string -> Color
+        if (!ColorUtility.TryParseHtmlString(color, out Color targetColor))
+        {
+            Debug.LogWarning($"Impossible de convertir '{color}' en Color. Utiliser un format HTML (#RRGGBB ou #RRGGBBAA).");
+            return;
+        }
+
+        // Interpolation via ton TransitionManager
+        TransitionManager.InterpolateFloat(0, 1, duration, t =>
+        {
+            Color interpolatedColor = Color.Lerp(baseColor, targetColor, t);
+            RenderSettings.skybox.SetColor("_Tint", interpolatedColor);
+        });
     }
 
 }

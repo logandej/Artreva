@@ -12,6 +12,7 @@ public class CrowdSpawner : MonoBehaviour
     public Vector3 baseRotation = Vector3.zero;
     public float YRotation = 0;
     public bool RandomYRotation = true;
+    public bool YRandom = false;
     public float YOffset = 1;
     public int count = 500;
 
@@ -37,7 +38,7 @@ public class CrowdSpawner : MonoBehaviour
 
             Vector3 localPos = new Vector3(
                 Random.Range(-zone.size.x / 2f, zone.size.x / 2f),
-                YOffset,
+                YRandom ? Random.Range(-zone.size.y / 2f, zone.size.y / 2f) : YOffset,
                 Random.Range(-zone.size.z / 2f, zone.size.z / 2f)
             );
 

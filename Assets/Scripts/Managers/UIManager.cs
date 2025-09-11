@@ -95,13 +95,19 @@ public class UIManager : MonoBehaviour
         infoText.gameObject.SetActive(false);
         PauseManager.Resume(PauseReason.InfoPopup);
     }
-
+    private bool rayswhereactivebeforesettings = false;
     public void ShowSettings()
     {
         canvasInfo.gameObject.SetActive(false);
         canvasSettings.gameObject.SetActive(true);
 
         PauseManager.Pause(PauseReason.SettingsMenu);
+
+        if (HandActionManager.Instance.EnableHandRays)
+        {
+            rayswhereactivebeforesettings = true;
+            HandActionManager.Instance.EnableHandRays = false;
+        }
         
 
     }
@@ -113,6 +119,11 @@ public class UIManager : MonoBehaviour
 
         PauseManager.Resume(PauseReason.SettingsMenu);
 
+        if (rayswhereactivebeforesettings)
+        {
+            HandActionManager.Instance.EnableHandRays = true;
+            rayswhereactivebeforesettings = false;
+        }
 
     }
 

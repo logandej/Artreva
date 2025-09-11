@@ -422,7 +422,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   source: {fileID: 4775221993123258801}
-  hoverEnterClip: {fileID: 0}
+  hoverEnterClip: {fileID: 8300000, guid: 9a9b42f4f137c4d4fbaa9f02e5fabd6d, type: 3}
   hoverExitClip: {fileID: 0}
   onSelectEnter:
     m_PersistentCalls:

@@ -21,6 +21,7 @@ public class FarArtInteractable : MonoBehaviour
     [SerializeField] private bool autoPlaceSlider = true;
     public float ActivePercent => focusTimer/activationDelay;
 
+    
     private void Awake()
     {
         feedbacks = GetComponentInChildren<IInteractableFeedbacks>();
@@ -61,6 +62,7 @@ public class FarArtInteractable : MonoBehaviour
             isFocusing = true;
             slider.gameObject.SetActive(true);
             feedbacks?.OnHoverEnter();
+           
         }
     }
 

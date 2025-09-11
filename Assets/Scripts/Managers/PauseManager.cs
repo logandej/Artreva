@@ -20,11 +20,20 @@ public class PauseManager : MonoBehaviour
         UpdatePauseState();
     }
 
+    public static void ClearOnRestart()
+    {
+        activePauseReasons.Clear();
+    }
+
     public static void Pause(PauseReason reason)
     {
         if (activePauseReasons.Add(reason))
         {
             UpdatePauseState();
+        }
+        else
+        {
+            print (" ALRDEADY A REASON WHY NOT PAUSE "+ reason);
         }
     }
 
@@ -38,6 +47,11 @@ public class PauseManager : MonoBehaviour
 
     private static void UpdatePauseState()
     {
+        if (ScenarioManager.Instance == null)
+        {
+            print(" SCENARIO MANAGER NULL ");
+            return;
+        }
         if (IsPaused)
         {
             //Time.timeScale = 0f;
@@ -46,6 +60,8 @@ public class PauseManager : MonoBehaviour
         }
         else
         {
+            print("Nopaused because " + activePauseReasons.Count);
+
             Time.timeScale = 1f;
             ScenarioManager.Instance.ResumeTimeline();
         }

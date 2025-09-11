@@ -39,7 +39,6 @@ public class Orb: MonoBehaviour
     public void StartOrbForEnigma()
     {
         gameObject.SetActive(true);
-        print("APPAR");
         TransitionManager.ChangeSize(gameObject, Vector3.one * initialSize, 1f);
     }
 

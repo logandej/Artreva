@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,8 +7,7 @@ public class CurvedSpawner : MonoBehaviour
 {
     [SerializeField] private List<GameObject> objectsToAnimate;
     private List<Vector3> objectsStartSize = new();
-    [SerializeField] private float maxDistance = 5f;
-    [SerializeField] private int maxPoints = 3;
+    [SerializeField] private float radius = 2f;
     [SerializeField] private float transitionDuration = 1.5f;
     [SerializeField] private float curveStrength = 1f;
 
@@ -27,44 +27,39 @@ public class CurvedSpawner : MonoBehaviour
     public void LaunchAnimations()
     {
         finishedCount = 0; // reset
+        int index = 0;
         foreach (var obj in objectsToAnimate)
         {
-            StartCoroutine(AnimateObject(obj));
+            StartCoroutine(AnimateObject(obj,index));
+            index++;
         }
     }
 
-    private IEnumerator AnimateObject(GameObject obj)
+    private IEnumerator AnimateObject(GameObject obj, int index)
     {
         obj.SetActive(true);
+
+        // Point de départ de l'objet
         Vector3 startPos = obj.transform.position;
-        List<Vector3> points = new List<Vector3>();
+        float radius = this.radius;   // rayon du cercle
 
-        Vector3 firstPoint = startPos + Random.insideUnitSphere * maxDistance / 2;
-        firstPoint.y = Mathf.Abs(firstPoint.y);
-        points.Add(firstPoint);
+        // Calcul de l’angle pour cet objet
+        float stepAngle = 180f / (objectsToAnimate.Count + 1);
+        float angle = stepAngle * (index + 1);
+        float rad = angle * Mathf.Deg2Rad;
 
-        if (Vector3.Distance(startPos, firstPoint) < maxDistance / 2f)
-        {
-            int extraPoints = Random.Range(1, maxPoints);
-            for (int i = 0; i < extraPoints; i++)
-            {
-                Vector3 next = points[^1] + Random.insideUnitSphere * maxDistance / 2;
-                next.y = Mathf.Abs(next.y);
-                points.Add(next);
-            }
-        }
+        // Position cible sur un arc vertical (XY)
+        Vector3 targetPos = new Vector3(
+            startPos.x + radius * Mathf.Cos(rad), // décalage latéral
+            startPos.y + radius * Mathf.Sin(rad), // monte en hauteur
+            startPos.z                             // pas de profondeur
+        );
 
-        Vector3 currentPos = startPos;
-        foreach (var point in points)
-        {
-            Vector3 direction = (point - currentPos).normalized;
-            direction = new Vector3(direction.x, -direction.y, -direction.z);
-            TransitionManager.ChangePosition(obj, point, transitionDuration, direction, curveStrength);
-            TransitionManager.ChangeSize(obj, objectsStartSize[objectsToAnimate.IndexOf(obj)], transitionDuration);
-            yield return new WaitForSeconds(transitionDuration);
-            currentPos = point;
-        }
+        // Animation
+        TransitionManager.ChangePosition(obj, targetPos, transitionDuration, Vector3.up, curveStrength);
+        TransitionManager.ChangeSize(obj, objectsStartSize[objectsToAnimate.IndexOf(obj)], transitionDuration);
 
+        yield return new WaitForSeconds(transitionDuration);
         yield return new WaitForSeconds(5f);
 
         finishedCount++;

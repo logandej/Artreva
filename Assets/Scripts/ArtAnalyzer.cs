@@ -19,16 +19,21 @@ public class ArtAnalyzer : MonoBehaviour
     public UnityEvent eventStartAnalyzing = new();
     public UnityEvent eventDone = new();
 
-    
+    private float startYRotation = 0;
 
+    [SerializeField] AudioClip clip;
+    [SerializeField] AudioSource audiosource;
 
+    private void Start()
+    {
+        startYRotation = transform.localEulerAngles.y;
+    }
 
     public void AnalyzeFromProximity()
     {
         float closestDist = float.MaxValue;
         int closestIndex = -1;
         var playerTransform = GameManager.Instance.Player.transform;
-
 
         for (int i = 0; i < angleMarkers.Count; i++)
         {
@@ -46,14 +51,11 @@ public class ArtAnalyzer : MonoBehaviour
         {
             if (!observedAngles[closestIndex]) // Check if already observed
             {
-                if (closestIndex == angleMarkers.Count / 2)
-                {
-                    observedAngles[angleMarkers.Count/2] = false;
-                    angleMarkers[closestIndex].GetComponentInChildren<MeshRenderer>().material = redShieldMat;
-                }
+              
                 observedAngles[closestIndex] = true;
                 angleMarkers[closestIndex].GetComponentInChildren<MeshRenderer>().material = greenShieldMat;
-                Debug.Log($"Marker #{closestIndex} observé par proximité !");
+                //audiosource.pitch += 0.1f;
+                audiosource.PlayOneShot(clip);
                 CheckAllAnalyzed();
             }
         }
@@ -64,7 +66,15 @@ public class ArtAnalyzer : MonoBehaviour
         if (observedAngles.All(c => c == true)) // If all booleans of the list are equals to 'true' could write (c=>c) only but it's for readibility
         {
             eventDone?.Invoke();
+            float lastStep = 360 - transform.localEulerAngles.y;
+
+            TransitionManager.ChangeRotation(
+                this.gameObject,
+                transform.localEulerAngles + new Vector3(0, lastStep, 0),
+                1
+            );
             Invoke(nameof(DestroyMarkers),3);
+            //audiosource.pitch -= angleCount/0.1f;
         }
     }
 
@@ -72,7 +82,7 @@ public class ArtAnalyzer : MonoBehaviour
     public void GenerateMarkers()
     {
         eventStartAnalyzing?.Invoke();
-        float step = 360f / angleCount;
+        float step = startYRotation +  360f / angleCount;
 
         for (int i = 0; i < angleCount; i++)
         {

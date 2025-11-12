@@ -114,7 +114,6 @@ public class GameManager : MonoBehaviour
     {
         LocalizationSettings.SelectedLocale = LocalizationSettings.AvailableLocales.Locales[0];
         //StartCoroutine(StartTable()); // recharge bien la table pour la nouvelle langue
-
     }
 
 

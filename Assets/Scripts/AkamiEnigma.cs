@@ -7,7 +7,6 @@ public class AkamiEnigma : MonoBehaviour
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     [SerializeField] List<FarArtInteractable> pillars;
-    private List<List<UnityAction>> savedActions = new();
 
 
     public UnityEvent eventDone = new();
@@ -41,9 +40,9 @@ public class AkamiEnigma : MonoBehaviour
 
         pillarCount++;
 
-        // Appelle toutes les feedbacks sauvegardées pour ce pilier
         pillar.GetComponentInChildren<AudioSource>().Play();
         pillar.GetComponentInChildren<ParticleSystem>().Play();
+        //pillar.transform.Find("Socle").
 
         if (pillarCount == pillars.Count)
         {

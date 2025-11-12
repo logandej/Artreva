@@ -54,6 +54,7 @@ public class MaterialSwitcher : MonoBehaviour
 
     public void ChangeToEnd(float duration)
     {
+
         ChangeColors(true, duration);
     }
 
@@ -73,6 +74,11 @@ public class MaterialSwitcher : MonoBehaviour
 
     private IEnumerator InterpolateColors(bool toEnd, float duration)
     {
+        if (newInstanceMat)
+        {
+            material = new Material(material);
+            mesh.material = material;
+        }
         float elapsed = 0f;
         while (elapsed < duration)
         {
@@ -96,7 +102,6 @@ public class MaterialSwitcher : MonoBehaviour
         {
             material.SetColor(m.name, toEnd ? m.colorEnd : m.colorStart);
         }
-
         currentColorTransition = null;
     }
 }

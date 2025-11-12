@@ -118,6 +118,60 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!1 &4544476864859537974
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4411773214871941718}
+  - component: {fileID: 145335801777073959}
+  m_Layer: 0
+  m_Name: RefuseShow
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4411773214871941718
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4544476864859537974}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.02981621, y: 0.0077705383, z: -0.040359497}
+  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8992645090187362266}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &145335801777073959
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4544476864859537974}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71c4c35f9960d4d419e529a35abd0b4e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  materialNameColorList:
+  - name: _ColorA
+    colorStart: {r: 0.22352941, g: 0.29803923, b: 0.8666667, a: 0.5254902}
+    colorEnd: {r: 0.5377358, g: 0.022828398, b: 0.11034625, a: 0.54509807}
+  newInstanceMat: 1
+  mesh: {fileID: 4489584704333017122}
+  material: {fileID: 2100000, guid: 4e6f9efd8a3ace94291dc17cfce6246d, type: 2}
+  timeToChange: 0.5
+  OnStartChangeToEnd: 0
+  OnStartChangeToStart: 0
 --- !u!1 &4556116787941975432
 GameObject:
   m_ObjectHideFlags: 0
@@ -154,6 +208,8 @@ Transform:
   - {fileID: 2440093356702650497}
   - {fileID: 1793478384489162195}
   - {fileID: 7305063437816053172}
+  - {fileID: 5885252717337320122}
+  - {fileID: 4411773214871941718}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1492554058305780985
@@ -327,10 +383,34 @@ MonoBehaviour:
   mesh: {fileID: 4489584704333017122}
   eventValidate:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2214801046664434786}
+        m_TargetAssemblyTypeName: MaterialSwitcher, Assembly-CSharp
+        m_MethodName: ChangeToEnd
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   eventRefuse:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 145335801777073959}
+        m_TargetAssemblyTypeName: MaterialSwitcher, Assembly-CSharp
+        m_MethodName: ChangeToEnd
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1748182978499379471
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -482,6 +562,60 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!1 &7570318181240017556
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5885252717337320122}
+  - component: {fileID: 2214801046664434786}
+  m_Layer: 0
+  m_Name: ValidShow
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5885252717337320122
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7570318181240017556}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.02981621, y: 0.0077705383, z: -0.040359497}
+  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8992645090187362266}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2214801046664434786
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7570318181240017556}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71c4c35f9960d4d419e529a35abd0b4e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  materialNameColorList:
+  - name: _ColorA
+    colorStart: {r: 0.2235294, g: 0.29803923, b: 0.8666667, a: 0.5254902}
+    colorEnd: {r: 0.28744358, g: 0.6132076, b: 0.043387324, a: 0.54509807}
+  newInstanceMat: 1
+  mesh: {fileID: 4489584704333017122}
+  material: {fileID: 2100000, guid: 4e6f9efd8a3ace94291dc17cfce6246d, type: 2}
+  timeToChange: 0.5
+  OnStartChangeToEnd: 0
+  OnStartChangeToStart: 0
 --- !u!1 &7922245128325958475
 GameObject:
   m_ObjectHideFlags: 0

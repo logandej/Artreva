@@ -29343,6 +29343,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5051247812963848490, guid: ea63a65a4fc8dc9409ad321edc9a88f7, type: 3}
+      propertyPath: eventRefuse.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5051247812963848490, guid: ea63a65a4fc8dc9409ad321edc9a88f7, type: 3}
+      propertyPath: eventRefuse.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 5586526523013850134, guid: ea63a65a4fc8dc9409ad321edc9a88f7, type: 3}
       propertyPath: m_Layer
       value: 3

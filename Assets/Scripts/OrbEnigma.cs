@@ -106,7 +106,7 @@ public class OrbEnigma : MonoBehaviour
         {
             if(orb.CheckOrb()) correct++;
         }
-
+        orbSockets.ForEach(c=> c.ShowIfGood());
         if(correct == orbSockets.Count)
         {
             GoodAnswer();

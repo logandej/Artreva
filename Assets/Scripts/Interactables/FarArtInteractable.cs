@@ -13,7 +13,7 @@ public class FarArtInteractable : MonoBehaviour
     private bool isFocusing = false;
     protected bool isActive = false;
     private float focusTimer = 0f;
-    private IInteractableFeedbacks feedbacks;
+    public IInteractableFeedbacks feedbacks;
 
     public UnityEvent eventActivated = new();
 

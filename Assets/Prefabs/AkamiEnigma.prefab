@@ -287,6 +287,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 1636423270366277373}
     m_Modifications:
     - target: {fileID: 776764710987299758, guid: 558d9355a9113a04f9bf25f3fe20728e, type: 3}
+      propertyPath: activationDelay
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 776764710987299758, guid: 558d9355a9113a04f9bf25f3fe20728e, type: 3}
       propertyPath: eventActivated.m_PersistentCalls.m_Calls.Array.size
       value: 0
       objectReference: {fileID: 0}
@@ -1048,6 +1052,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 1636423270366277373}
     m_Modifications:
     - target: {fileID: 776764710987299758, guid: 558d9355a9113a04f9bf25f3fe20728e, type: 3}
+      propertyPath: activationDelay
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 776764710987299758, guid: 558d9355a9113a04f9bf25f3fe20728e, type: 3}
       propertyPath: eventActivated.m_PersistentCalls.m_Calls.Array.size
       value: 0
       objectReference: {fileID: 0}
@@ -1808,6 +1816,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1636423270366277373}
     m_Modifications:
+    - target: {fileID: 776764710987299758, guid: 558d9355a9113a04f9bf25f3fe20728e, type: 3}
+      propertyPath: activationDelay
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 776764710987299758, guid: 558d9355a9113a04f9bf25f3fe20728e, type: 3}
       propertyPath: eventActivated.m_PersistentCalls.m_Calls.Array.size
       value: 0
@@ -36484,6 +36496,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 1636423270366277373}
     m_Modifications:
     - target: {fileID: 776764710987299758, guid: 558d9355a9113a04f9bf25f3fe20728e, type: 3}
+      propertyPath: activationDelay
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 776764710987299758, guid: 558d9355a9113a04f9bf25f3fe20728e, type: 3}
       propertyPath: eventActivated.m_PersistentCalls.m_Calls.Array.size
       value: 0
       objectReference: {fileID: 0}
@@ -37245,6 +37261,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 1636423270366277373}
     m_Modifications:
     - target: {fileID: 776764710987299758, guid: 558d9355a9113a04f9bf25f3fe20728e, type: 3}
+      propertyPath: activationDelay
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 776764710987299758, guid: 558d9355a9113a04f9bf25f3fe20728e, type: 3}
       propertyPath: eventActivated.m_PersistentCalls.m_Calls.Array.size
       value: 0
       objectReference: {fileID: 0}
@@ -38005,6 +38025,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1636423270366277373}
     m_Modifications:
+    - target: {fileID: 776764710987299758, guid: 558d9355a9113a04f9bf25f3fe20728e, type: 3}
+      propertyPath: activationDelay
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 776764710987299758, guid: 558d9355a9113a04f9bf25f3fe20728e, type: 3}
       propertyPath: eventActivated.m_PersistentCalls.m_Calls.Array.size
       value: 0

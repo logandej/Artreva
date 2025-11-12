@@ -681,7 +681,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 2049993173}
+    m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 5336186960391751790, guid: 6abc76b40b133154a91d14528cc20ba5, type: 3}
       propertyPath: m_Enabled
@@ -1051,7 +1051,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 2049993172}
+    m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 3029536390279617180, guid: e664d688bb65af54a9146781a2b6f500, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1149,7 +1149,7 @@ PrefabInstance:
     - target: {fileID: 81377485681184336, guid: 12e7c6e2a052ca344a4b1b5616e1597c, type: 3}
       propertyPath: m_HandShapeOrPose
       value: 
-      objectReference: {fileID: 11400000, guid: 3a1999f721ceab24487b3ce32f73edf5, type: 2}
+      objectReference: {fileID: 11400000, guid: 6548f068970ecbf44b64baedda9afa7e, type: 2}
     - target: {fileID: 81377485681184336, guid: 12e7c6e2a052ca344a4b1b5616e1597c, type: 3}
       propertyPath: m_GestureEnded.m_PersistentCalls.m_Calls.Array.size
       value: 2
@@ -1253,7 +1253,7 @@ PrefabInstance:
     - target: {fileID: 81377485681184336, guid: 12e7c6e2a052ca344a4b1b5616e1597c, type: 3}
       propertyPath: m_GesturePerformed.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgument
       value: 
-      objectReference: {fileID: 11400000, guid: 3a1999f721ceab24487b3ce32f73edf5, type: 2}
+      objectReference: {fileID: 11400000, guid: 6548f068970ecbf44b64baedda9afa7e, type: 2}
     - target: {fileID: 81377485681184336, guid: 12e7c6e2a052ca344a4b1b5616e1597c, type: 3}
       propertyPath: m_GestureEnded.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
@@ -2937,7 +2937,7 @@ PrefabInstance:
     - target: {fileID: 3178947021513892429, guid: 12e7c6e2a052ca344a4b1b5616e1597c, type: 3}
       propertyPath: m_HandShapeOrPose
       value: 
-      objectReference: {fileID: 11400000, guid: 3a1999f721ceab24487b3ce32f73edf5, type: 2}
+      objectReference: {fileID: 11400000, guid: 6548f068970ecbf44b64baedda9afa7e, type: 2}
     - target: {fileID: 3178947021513892429, guid: 12e7c6e2a052ca344a4b1b5616e1597c, type: 3}
       propertyPath: m_GestureEnded.m_PersistentCalls.m_Calls.Array.size
       value: 2
@@ -3037,7 +3037,7 @@ PrefabInstance:
     - target: {fileID: 3178947021513892429, guid: 12e7c6e2a052ca344a4b1b5616e1597c, type: 3}
       propertyPath: m_GesturePerformed.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgument
       value: 
-      objectReference: {fileID: 11400000, guid: 3a1999f721ceab24487b3ce32f73edf5, type: 2}
+      objectReference: {fileID: 11400000, guid: 6548f068970ecbf44b64baedda9afa7e, type: 2}
     - target: {fileID: 3178947021513892429, guid: 12e7c6e2a052ca344a4b1b5616e1597c, type: 3}
       propertyPath: m_GestureEnded.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
@@ -7287,15 +7287,15 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 2218496723442559053, guid: d6878e1999eb4b44a9f5a263af86c185, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 753855343}
+    - targetCorrespondingSourceObject: {fileID: 2218496723442559053, guid: d6878e1999eb4b44a9f5a263af86c185, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1117478282}
     - targetCorrespondingSourceObject: {fileID: 657184242161839408, guid: d6878e1999eb4b44a9f5a263af86c185, type: 3}
       insertIndex: -1
       addedObject: {fileID: 312906295}
-    - targetCorrespondingSourceObject: {fileID: 4399806423645351520, guid: d6878e1999eb4b44a9f5a263af86c185, type: 3}
-      insertIndex: 2
-      addedObject: {fileID: 753855343}
-    - targetCorrespondingSourceObject: {fileID: 2062385652673493497, guid: d6878e1999eb4b44a9f5a263af86c185, type: 3}
-      insertIndex: 2
-      addedObject: {fileID: 1117478282}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 2218496723442559054, guid: d6878e1999eb4b44a9f5a263af86c185, type: 3}
       insertIndex: -1
@@ -7322,16 +7322,6 @@ Camera:
 --- !u!1 &2049993171 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 657184242118504722, guid: d6878e1999eb4b44a9f5a263af86c185, type: 3}
-  m_PrefabInstance: {fileID: 2049993167}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &2049993172 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2062385652673493497, guid: d6878e1999eb4b44a9f5a263af86c185, type: 3}
-  m_PrefabInstance: {fileID: 2049993167}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &2049993173 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4399806423645351520, guid: d6878e1999eb4b44a9f5a263af86c185, type: 3}
   m_PrefabInstance: {fileID: 2049993167}
   m_PrefabAsset: {fileID: 0}
 --- !u!114 &2049993174

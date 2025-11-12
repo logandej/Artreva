@@ -6114,7 +6114,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0537d55a89758bf4485c2a2ee034911b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  activationDelay: 2
+  activationDelay: 0.5
   deactivateAfterAutoDelay: 0
   deactivationDelay: 1
   eventActivated:
@@ -6270,7 +6270,7 @@ GameObject:
   - component: {fileID: 3547911488710966515}
   - component: {fileID: 3126956706893018071}
   m_Layer: 0
-  m_Name: Cylinder (1)
+  m_Name: Socle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

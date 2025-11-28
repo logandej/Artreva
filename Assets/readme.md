@@ -9,7 +9,7 @@
 
 Artreva est une application VR développée dans le cadre du musée virtuel du Département du Var consacré à l'art contemporain.  
 
-<img src="Textures/img/affiche.png" width="20vw" alt="affiche Artreva">
+<img src="Textures/img/affiche.png" width="200vw" alt="affiche Artreva">
 ---
 
 ## 2. Environnement technique
@@ -45,7 +45,7 @@ float graceSeconds = 10f;
 -Le menu du jeu ainsi que la scène sur les portails avec Mira est normalement en Réalité Augmenté, le joueur voit des éléments 3D superposés à l'environnement autour de lui
 -Après avoir réussi la première énigme sur l'art contemporain, le joueur rentre dans le festival, en Réalité Virtuelle. Il ne voit plus autour de lui.
 
-<img src="Textures/img/sceneChart.png" width="200vw" alt="Diagramme des scènes">
+<img src="Textures/img/sceneChart.png" width="500vw" alt="Diagramme des scènes">
 ---
 
 ## 4 BUILD : Configuration du keystore Android (Pico / Build APK)

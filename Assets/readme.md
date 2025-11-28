@@ -9,6 +9,7 @@
 
 Artreva est une application VR développée dans le cadre du musée virtuel du Département du Var consacré à l'art contemporain.  
 
+![Affiche Artreva](Textures/img/affiche.png)
 ---
 
 ## 2. Environnement technique
@@ -37,6 +38,19 @@ Paramètre à ajuster :
 ```csharp
 float graceSeconds = 10f;
 ``` 
+
+```mermaid
+flowchart TD
+
+    A[1 - Warning] --> B[2 - menuScene]
+    B --> C[3 - Intro]
+    C --> D[4 - festivalScene]
+    D --> E[5 - koonsaScene]
+    E --> D2[6 - festivalScene (même scène que 4)]
+
+    %% Lien visuel entre D et D2
+    D --- D2
+```
 
 ---
 

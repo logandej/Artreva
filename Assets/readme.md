@@ -27,7 +27,7 @@ Artreva est une application VR développée dans le cadre du musée virtuel du D
 Le jeu se joue **entièrement avec les mains** (tracking mains).  
 Pour plus de détails, se référer au *document utilisateur*.
 
-L'application se réinitialise automatiquement lorsque le casque reste **immobile ou posé plus de 10 secondes**.
+L'application se réinitialise automatiquement lorsque le casque reste **posé plus de 10 secondes**.
 
 Pour modifier cette durée :
 
@@ -46,7 +46,7 @@ float graceSeconds = 10f;
 - Le menu du jeu ainsi que la scène sur les portails avec Mira est normalement en Réalité Augmenté, le joueur voit des éléments 3D superposés à l'environnement autour de lui
 - Après avoir réussi la première énigme sur l'art contemporain, le joueur rentre dans le festival, en Réalité Virtuelle. Il ne voit plus autour de lui.
 
-<img src="Textures/img/sceneChart.png" width="500vw" alt="Diagramme des scènes">
+<img src="Textures/img/sceneChart.png" width="700vw" alt="Diagramme des scènes">
 
 ---
 
@@ -76,12 +76,12 @@ Si le message suivant apparaît lors du build :
 
 Une scène se déroule comme suit : 
 
-<img src="Textures/img/sceneSeqChart.png" width="500vw" alt="Diagramme de séquence de scénario">
+<img src="Textures/img/sceneSeqChart.png" width="700vw" alt="Diagramme de séquence de scénario">
 
 - L'objet Scene Info possède un ensemble d'évenements à executer dès le Awake de la scène. Il donne au Scénario Mangager quel scénario exécuter.
 - Une TimeLine se lance ensuite. 2 Signaux peuvent être envoyés au Scénario Manager pendant le déroulé d'une scène.
     -  **NextEvent (ou NextEventStep)** : `Va lancer le prochain event de la liste du ScénarioManager`
-    -  **WaitForPlayerAction (ou PauseTimeline)** : `Met en pause la Timeline en attand une Action Joueur`
+    -  **WaitForPlayerAction (ou PauseTimeline)** : `Met en pause la Timeline en attendant une Action Joueur`
 - Depuis n'importe quel Script, on peut appeler la fonction pour relancer la timeLine :
 ```csharp
     public void OnPlayerDidAction()
@@ -89,6 +89,8 @@ Une scène se déroule comme suit :
 ## 7 Diagramme de classe (UML)
 
 - Voici le diagramme de classe simplifié de l'application. Il y a les scripts principaux. Il y en a d'autres dans le projets mais non liés aux autres ou moins nécessaires d'afficher...
+
+Le seul Objet de type `DontDestroyOnLoad` est le : **GameManager**
 
 <img src="Textures/img/classDiagram.webp" width="700vw" alt="Diagramme de classes">
 

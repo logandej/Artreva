@@ -32,7 +32,7 @@ Artreva est une application VR développée dans le cadre du musée virtuel du D
    - **Key alias** : `key1`
    - **Key password** : `i2lSud`
 
-![Configuration du keystore](/Textures/img/userkey.png)
+![Configuration du keystore](Assets/Textures/img/userkey.png)
 
 
 Si jamais il y a l'erreur de build : 

@@ -72,7 +72,27 @@ Si le message suivant apparaît lors du build :
 
 ---
 
+## 6 Déroulement de scénario 
 
+Une scène se déroule comme suit : 
+
+<img src="Textures/img/sceneSeqChart.png" width="500vw" alt="Diagramme de séquence de scénario">
+
+- L'objet Scene Info possède un ensemble d'évenements à executer dès le Awake de la scène. Il donne au Scénario Mangager quel scénario exécuter.
+- Une TimeLine se lance ensuite. 2 Signaux peuvent être envoyés au Scénario Manager pendant le déroulé d'une scène.
+    -  **NextEvent (ou NextEventStep)** : `Va lancer le prochain event de la liste du ScénarioManager`
+    -  **WaitForPlayerAction (ou PauseTimeline)** : `Met en pause la Timeline en attand une Action Joueur`
+- Depuis n'importe quel Script, on peut appeler la fonction pour relancer la timeLine :
+```csharp
+    public void OnPlayerDidAction()
+``` 
+## 7 Diagramme de classe (UML)
+
+- Voici le diagramme de classe simplifié de l'application. Il y a les scripts principaux. Il y en a d'autres dans le projets mais non liés aux autres ou moins nécessaires d'afficher...
+
+<img src="Textures/img/classDiagram.webp" width="700vw" alt="Diagramme de classes">
+
+##
 
 Si problèmes de normals avec les Splines : Aller sur splineComputer, sélectionner N pour Normals, selection tous les points, selectionner LookUp-> Apply
 

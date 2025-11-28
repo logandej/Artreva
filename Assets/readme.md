@@ -21,13 +21,25 @@ Artreva est une application VR développée dans le cadre du musée virtuel du D
 
 ---
 
-Code de la clé projet key 1 : i2lSud
+## 3 BUILD : Configuration du keystore Android (Pico / Build APK)
+
+1. Dans Unity, aller dans :  
+   `Edit > Project Settings > Player > Publishing Settings`
+
+2. Dans la section **Keystore** :
+   - Renseigner le chemin du keystore
+   - **Keystore password** : `i2lSud`
+   - **Key alias** : `key1`
+   - **Key password** : `i2lSud`
+
+![Configuration du keystore](/Textures/img/userkey.png)
+
 
 Si jamais il y a l'erreur de build : 
 CommandInvokationFailure: Gradle build failed.
 
 -Regardez si la keyPassword est bien la bonne.
-Sinon il faur redémarrer le PC. LA librairie a mal été lié ou je ne sais quoi c'est bizarre.
+
 
 Si problèmes de normals avec les Splines : Aller sur splineComputer, sélectionner N pour Normals, selection tous les points, selectionner LookUp-> Apply
 

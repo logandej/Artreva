@@ -12,8 +12,6 @@ public class VRDebug : MonoBehaviour
     [Header("Nombre max de lignes à afficher")]
     public int maxLines = 200;
 
-    private Queue<string> logLines = new Queue<string>();
-
     void Awake()
     {
         if(Instance == null)
@@ -28,23 +26,7 @@ public class VRDebug : MonoBehaviour
             return;
         }
 
-        //Application.logMessageReceived += HandleLog;
     }
-
-    //void OnDestroy()
-    //{
-    //    Application.logMessageReceived -= HandleLog;
-    //}
-
-    //void HandleLog(string logString, string stackTrace, LogType type)
-    //{
-    //    if (logLines.Count >= maxLines)
-    //        logLines.Dequeue();
-
-    //    logLines.Enqueue(logString);
-    //    debugText.text = string.Join("\n", logLines);
-    //}
-
     public void Log(string str)
     {
         debugText.text += str + "\n";
